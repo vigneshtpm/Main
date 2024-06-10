@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download Page</title>
+    <link rel="stylesheet" href="assets/css/index1.css">
+    <link rel="stylesheet" href="bootstrap-5.2.3-dist/css/bootstrap.min.css"> 
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <style>
+       
+                @media (min-width: 768px) {
+        .navbar-toggler {
+            display: none;
+        }
+        }
+        
+    </style>
+</head>
+<body>
+    <!--Start Header-->
+    <div id="header"></div>
+    <div id="navigation"></div>
+      <!--End Navigation bar-->
+      <!--Menu Side bar-->
+      <!--Mobile Menu-->
+      <div class="offcanvas offcanvas-start 
+                  d-md-block" 
+        tabindex="-1" id="sidebar"style="background-color: #000064;"
+        aria-labelledby="sidebarLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title text-white "
+                id="sidebarLabel">Menu</h5>
+            <button type="button" style="background-color: white;"
+                    class="btn-close"
+                    data-bs-dismiss="offcanvas"
+                    aria-label="Close">
+            </button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="nav flex-column navFix" >
+              
+                <li class="nav-item">
+                    <a class="nav-link  text-white"
+                    href="Personal.html">
+                    <i class="fa-solid fa-user"></i> &emsp;
+                        Personal Information
+                    </a>
+                </li>
+            
+                <li class="nav-item">
+                    <a class="nav-link  text-white"
+                    href="education.html"><i class="fa-solid fa-user-graduate"></i> &emsp;
+                        Education Details
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link  text-white"
+                    href="Certificate.html"><i class="fa-solid fa-cloud-arrow-up"></i> &ensp;
+                        Certificate Upload
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link  text-white"
+                    href="preview.html"><i class="fa-regular fa-eye"></i> &ensp;
+                        Perview Details
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link  text-white"
+                    href="#"><i class="fa-solid fa-indian-rupee-sign"></i> &emsp;
+                        Payment 
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link  text-white"
+                    href="download.html"><i class="fa-solid fa-file-pdf"></i> &emsp;
+                        Download Application
+                    </a>
+                </li>
+               
+            </ul>
+           
+        </div>
+    </div>
+    <!--End Mobile Menu-->
+<!--Windows Menu-->
+    <div class="container-fluid" style="margin-top: 5px;">
+        <div class="row">
+            <nav id="sidebarMenu"
+                class="col-md-4 col-lg-3 col-xxl-2 d-none 
+                        d-md-block  sidebar" style="background-color: #000064;">
+                <div class="position-sticky 
+                             vh-100" style="background-color: #000064;">
+                    <div class="pt-3">
+                        <h4 class="offcanvas-title sidebar-heading d-flex 
+                                justify-content-between 
+                                align-items-center px-3 
+                                mt-4 mb-1 text-muted">
+                            <span class=" text-white" style="margin-bottom: 15px;">
+                                Menu
+                            </span>
+                        </h4>
+                        <ul class="nav flex-column navFix" >
+                           
+                            <li class="nav-item">
+                                <a class="nav-link  text-white"
+                                href="Personal.html">
+                                <i class="fa-solid fa-user"></i> &emsp;
+                                    Personal Information
+                                </a>
+                            </li>
+                        
+                            <li class="nav-item">
+                                <a class="nav-link  text-white"
+                                href="education.html"><i class="fa-solid fa-user-graduate"></i>&emsp;
+                                    Education Details
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link  text-white"
+                                href="Certificate.html"><i class="fa-solid fa-cloud-arrow-up"></i> &ensp;
+                                    Certificate Upload
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link  text-white"
+                                href="preview.html"><i class="fa-regular fa-eye"></i> &ensp;
+                                    Perview Details
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link  text-white"
+                                href="#"><i class="fa-solid fa-indian-rupee-sign"></i></i> &emsp;
+                                    Payment
+                                </a>
+                            </li>
+                            
+                            <li class="nav-item">
+                                <a class="nav-link  text-white"
+                                href="download.html"><i class="fa-solid fa-file-pdf"></i> &emsp;
+                                    Download Application
+                                </a>
+                            </li>
+                           
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <!--Starting Main Page-->
+            <main class="col-md-8 ms-sm-auto col-lg-9 col-xxl-10 px-md-4  ">
+                <div class="pt-3 " style="margin-bottom: 10%;">
+                    <h2 class="text-color text-center" style="color: #000064;">Application Download</h2><br>
+                    <form id="download" method="post" action="pdf.php">
+                        <input type="submit" class="btn btn-primary" value="Download ">
+                    </form>
+                </div>
+            </main>
+            <!--End Main Page-->
+            
+          
+        </div>
+    </div>
+    <!-- End Windows Menu-->
+      <!--End Menu Side bar-->
+            
+    <script scr = "bootstrap-5.2.3-dist/js/bootstrap.min.js"></script>
+    <script src = "bootstrap-5.2.3-dist/js/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Font Awesome -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>    
+
+    <script>
+        $(document).ready(function(){
+            $("#header").load("header.html");
+            $("#navigation").load("navigation.html")
+        });
+    </script>
+</body>
+</html>

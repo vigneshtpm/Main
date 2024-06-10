@@ -1,0 +1,86 @@
+.responsive-text {
+  font-size: 16px;
+}
+
+@media (min-width: 576px) {
+  .responsive-text {
+    font-size: 18px;
+  }
+}
+
+@media (min-width: 768px) {
+  .responsive-text {
+    font-size: 19px;
+  }
+}
+
+@media (min-width: 992px) {
+  .responsive-text {
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .responsive-text {
+    font-size: 21px;
+  }
+}
+@media (min-width: 768px) {
+  .navbar-toggler {
+      display: none;
+  }
+  }
+  
+body {
+  font-family: Arial, sans-serif;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropbtn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.dropbtn img {
+  width: 30px; /* Adjust the size as needed */
+  height: 30px; /* Adjust the size as needed */
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  border-radius: 12px ;
+  left: 50%; /* Centering the dropdown content horizontally */
+  transform: translateX(-90%); /* Centering trick */
+  top: 100%;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+
+
+.navFix li a:hover{
+    border: 2px solid;
+    border-color: white ;
+    border-radius: 10px;
+    
+}

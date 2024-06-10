@@ -1,0 +1,41 @@
+<div class="header" style='margin-top: 20px;'>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-3 col-xl-2 text-center">
+                <img src="" alt="logo" width="120px" class="imageHandle li-1">
+            </div>
+            
+            <div class="col-6 col-xl-8">
+                <div class=" fw-bold responsive-text-PU text-center hl-1" style=" color: #000064; font-size: 25px;"></div>
+                <div class="fw-bold responsive-text text-center hl-2"></div>
+                <div class="fw-bold responsive-text text-center hl-3"></div>
+            </div>
+            <div class="col-3 col-xl-2 text-center">
+                <img src="" alt="periyar" width="120px" class="imageHandle li-2">
+            </div>
+        </div>
+    </div>
+</div>
+<!--End Header-->
+
+
+<script>
+    $(document).ready(function(){
+        $.ajax({
+            url: 'header.php',
+            type: 'GET',
+            success: function(response){
+                if(response.success){
+                    $('.hl-1').text(response.data.headerLine1);
+                    $('.hl-2').text(response.data.headerLine2);
+                    $('.hl-3').text(response.data.headerLine3);
+                    $('.li-1').attr('src', response.data.logoImage1);
+                    $('.li-2').attr('src', response.data.logoImage2);
+                }
+            },
+            error: function(){
+                alert("Error");
+            }
+        });
+    });
+</script>
