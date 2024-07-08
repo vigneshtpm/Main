@@ -16,7 +16,13 @@
             display: none;
         }
         }
-        
+       
+        .form-control[disabled] {
+            border: none;
+            background-color: transparent; /* Optional: To make the background transparent */
+            
+        }
+   
     </style>
 </head>
 <body>
@@ -66,7 +72,7 @@
                 <li class="nav-item">
                     <a class="nav-link  text-white"
                     href="preview.html"><i class="fa-regular fa-eye"></i> &ensp;
-                        Perview Details
+                        Preview Details
                     </a>
                 </li>
                 <li class="nav-item">
@@ -130,7 +136,7 @@
                             <li class="nav-item">
                                 <a class="nav-link  text-white"
                                 href="preview.html"><i class="fa-regular fa-eye"></i> &ensp;
-                                    Perview Details
+                                    Preview Details
                                 </a>
                             </li>
                             <li class="nav-item">
@@ -155,8 +161,10 @@
             <main class="col-md-8 ms-sm-auto col-xxl-10 col-lg-9 px-md-4  ">
                 <div class="pt-3 " style="margin-bottom: 10%;">
                     <h2 class="text-color text-center" style="color: #000064;">Preview Applicant</h2><br>
-                    <!-- Write code Here-->
+                    
+                       
                 </div>
+                
             </main>
             <!--End Main Page-->
             
@@ -176,7 +184,7 @@
             $("#header").load("header.html");
             $("#navigation").load("navigation.html")
         });
+        
     </script>
-
 </body>
 </html>

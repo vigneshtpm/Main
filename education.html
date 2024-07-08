@@ -18,13 +18,100 @@
         }
         
     </style>
+    <style>
+        thead {
+    background-color: #1a237e; /* Dark blue color */
+    color: #fff; /* White text for contrast */
+    text-align: center;
+}
+
+thead th {
+    padding: 10px;
+    border: 1px solid #fff; /* White border for better separation */
+}
+
+.mid-center {
+    vertical-align: middle; /* Aligns content vertically in the center */
+    text-align: center; /* Aligns content horizontally in the center */
+}
+
+        .form-inline-custom .form-group {
+            display: flex;
+            align-items: center;
+        }
+        .form-inline-custom .form-group label {
+            margin-right: 10px;
+            white-space: nowrap;
+        }
+        .form-inline-custom .form-control {
+            flex: 1;
+            min-width: 0;
+        }
+        .form-inline-custom .col-md-6 {
+            display: flex;
+            align-items: center;
+            flex-wrap: nowrap;
+        }
+
+        .table th, .table td {
+            vertical-align: middle;
+            text-align: center;
+            padding: 5px;
+        }
+        .table thead th {
+            text-align: center;
+        }
+        .form-control, .form-select {
+            width: 100%;
+            padding: 5px;
+            box-sizing: border-box;
+        }
+        .select2me {
+            display: flex;
+            gap: 0.5rem;
+        }
+        .dropdown-container {
+            display: flex;
+            gap: 10px;
+        }
+
+        .dropdown-container .form-control {
+            width: auto;
+            flex: 1;
+        }
+        
+        /* (A) BASICS - HIDE DEFAULT + SHOW CUSTOM ARROW */
+.select2me {
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    background-image: url('data:image/svg+xml;utf8,<svg fill="black" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>'); /* Custom arrow SVG */
+    background-repeat: no-repeat;
+    background-position: right 10px center; /* Position of the arrow */
+    background-color: white; /* Background color of the select */
+    padding-right: 30px; /* Space for the arrow */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    height: 35px; /* Adjust height as needed */
+    width: 100%; /* Full width */
+    font-size: 16px;
+    color: #333;
+}
+
+/* (B) HOVER EFFECT */
+.select2me:hover {
+    background-color: #f0f0f0; /* Change background color on hover */
+}
+
+    </style>
 
 </head>
 <body>
-     <!--Start Header-->
-     <div id="header"></div>
-     <div id="navigation"></div>
-       <!--End Navigation bar-->
+    <!--Start Header-->
+    <div id="header"></div>
+    <div id="navigation"></div>
+    <!--End Header-->
+   
       <!--Menu Side bar-->
       <!--Mobile Menu-->
       <div class="offcanvas offcanvas-start 
@@ -66,7 +153,7 @@
                 <li class="nav-item">
                     <a class="nav-link  text-white"
                     href="preview.html"><i class="fa-regular fa-eye"></i> &ensp;
-                        Perview Details
+                        Preview Details
                     </a>
                 </li>
                 <li class="nav-item">
@@ -130,7 +217,7 @@
                             <li class="nav-item">
                                 <a class="nav-link  text-white"
                                 href="preview.html"><i class="fa-regular fa-eye"></i> &ensp;
-                                    Perview Details
+                                    Preview Details
                                 </a>
                             </li>
                             <li class="nav-item">
@@ -152,7 +239,9 @@
                 </div>
             </nav>
             <!--Starting Main Page-->
-            <main class="col-md-8 ms-sm-auto col-lg-10 px-md-4  ">
+            
+            <main class="col-md-8 ms-sm-auto col-lg-9 col-xxl-10 col-md-4">
+                <form method="post" action="eduinsert.php">
                 <div class="pt-3 " style="margin-bottom: 10%;">
                     <h2 class="text-color text-center" style="color: #000064;">Education Qualification</h2><br>
                     <!-- Write code Here-->
@@ -160,14 +249,14 @@
                     <div class="col-md-12">
                         <div class="table-responsive">
                         <table class="table table-bordered form-table">
-                            <col style="width:10%;"/>
-                            <col style="width:10%;"/>
-                            <col style="width:10%;"/>
-                            <col style="width:10%;"/>
-                            <col style="width:10%;"/>
-                            <col style="width:10%;"/>
-                            <col style="width:15%;"/>
-                            <col style="width:10%;"/>
+                            <col style="inline-size:10%;"/>
+                            <col style="inline-size:10%;"/>
+                            <col style="inline-size:10%;"/>
+                            <col style="inline-size:10%;"/>
+                            <col style="inline-size:10%;"/>
+                            <col style="inline-size:10%;"/>
+                            <col style="inline-size:15%;"/>
+                            <col style="inline-size:10%;"/>
                             <thead>
                                 <tr>
                                     <th class="mid-center">Course</th>
@@ -187,37 +276,54 @@
                                         <input class="form-control" id="sslc_course" name="sslc_course" type="hidden" value="S.S.L.C. (X Std.)">
                                     </td>
                                     <td>
-                                        <input class="form-control req_field" id="sslc_ins" name="sslc_ins" type="text" value="">
+                                        <input class="form-control req_field" id="sslc_ins" name="Institution_SSLC" type="text" value="">
                                     </td>
                                     <td>
-                                        <input class="form-control req_field" id="sslc_board" name="sslc_board" type="text" value="">
+                                        <input class="form-control req_field" id="sslc_board" name="Board_SSLC" type="text" value="">
                                     </td>
                                     <td>
-                                        <input class="form-control req_field" id="sslc_sub" name="sslc_sub" type="text" value="">
+                                        <input class="form-control req_field" id="sslc_sub" name="Subject_Studied_SSLC" type="text" value="">
                                     </td>
                                     <td>
-                                        <input class="form-control req_field" id="sslc_reg_no" name="sslc_reg_no" type="text" value="">
+                                        <input class="form-control req_field" id="sslc_reg_no" name="Register_No_SSLC" type="text" value="">
                                     </td>
                                     <td>
-                                        <input class="form-control req_field number_dot_only number_only_100" id="sslc_perc" max="100" maxlength="5" name="sslc_perc" type="text" value="">
+                                        <input class="form-control req_field number_dot_only number_only_100" id="sslc_perc" max="100" maxlength="5" name="Percentage_SSLC" type="text" value="">
                                     </td>
                                     <td>
-                                        <input id="year" class="maxvalue" type="month">
+                                        <div class="dropdown-container">
+                                            <select class="select2me form-control month" id="month" name="month_SSLC">
+                                                <option value="1">January</option>
+                                                <option value="2">February</option>
+                                                <option value="3">March</option>
+                                                <option value="4">April</option>
+                                                <option value="5">May</option>
+                                                <option value="6">June</option>
+                                                <option value="7">July</option>
+                                                <option value="8">August</option>
+                                                <option value="9">September</option>
+                                                <option value="10">October</option>
+                                                <option value="11">November</option>
+                                                <option value="12">December</option>
+                                            </select>
+                                    
+                                            <select class="select2me form-control year" id="year" name="year_SSLC"></select>
+                                        </div>
                                         <span class="req_symbol" id="passing_date_span" style="display:none">Month & Year of passing is Required!</span>
                                     </td>
-                                     <td>
-                                        <select class="select2me form-control mode_req_field" id="sslc_mode" name="sslc_mode" tabindex="1">
+                                    <td>
+                                        <select class="select2me form-control mode_req_field" id="sslc_mode" name="Regular_Private_SSLC" tabindex="1">
                                             <option value="">Select</option>
                                             <option value="Regular">Regular</option>
                                             <option value="Private">Private</option>
                                             <option value="Other Mode">Other Mode</option>
                                         </select><br/>
                                         <span class="req_symbol" id="sslc_mode_span" style="display:none">SSLC Regular / Private / Other Study is Required!</span>
-                                    </td>
+                                    </td>                                    
                                 </tr>
                                 <tr>
                                     <td>
-                                        <select class="select2me form-control mode_req_field" id="hsc_course" name="hsc_course" tabindex="1">
+                                        <select class="select2me form-control mode_req_field" id="hsc_course" name="Hsc_diploma" tabindex="1">
                                             <option value="">Select HSC(+2) / Diploma</option>
                                             <option selected="" value="HSC">HSC(+2)</option>
                                             <option value="Diploma">Diploma</option>
@@ -225,26 +331,43 @@
                                         <span class="req_symbol" id="hsc_course_span" style="display:none">HSC Course is Required!</span>
                                     </td>
                                     <td>
-                                        <input class="form-control req_field" id="hsc_ins" name="hsc_ins" type="text" value=""/>
+                                        <input class="form-control req_field" id="hsc_ins" name="Institution_HSC" type="text" value=""/>
                                     </td>
                                     <td>
-                                        <input class="form-control req_field" id="hsc_board" name="hsc_board" type="text" value=""/>
+                                        <input class="form-control req_field" id="hsc_board" name="Board_HSC" type="text" value=""/>
                                     </td>
                                     <td>
-                                        <input class="form-control req_field" id="hsc_sub" name="hsc_sub" type="text" value=""/>
+                                        <input class="form-control req_field" id="hsc_sub" name="Subject_Studied_HSC" type="text" value=""/>
                                     </td>
                                     <td>
-                                        <input class="form-control req_field" id="hsc_reg_no" name="hsc_reg_no" type="text" value=""/>
+                                        <input class="form-control req_field" id="hsc_reg_no" name="Register_No_HSC" type="text" value=""/>
                                     </td>
                                     <td>
-                                        <input class="form-control req_field number_dot_only number_only_100" id="hsc_perc" maxlength="5" name="hsc_perc" type="text" value=""/>
+                                        <input class="form-control req_field number_dot_only number_only_100" id="hsc_perc" maxlength="5" name="Percentage_HSC" type="text" value=""/>
                                     </td>
                                     <td>
-                                        <input id="year" class="maxvalue" type="month" >
+                                        <div class="dropdown-container">
+                                            <select class="select2me form-control month" id="month" name="month_HSC">
+                                                <option value="1">January</option>
+                                                <option value="2">February</option>
+                                                <option value="3">March</option>
+                                                <option value="4">April</option>
+                                                <option value="5">May</option>
+                                                <option value="6">June</option>
+                                                <option value="7">July</option>
+                                                <option value="8">August</option>
+                                                <option value="9">September</option>
+                                                <option value="10">October</option>
+                                                <option value="11">November</option>
+                                                <option value="12">December</option>
+                                            </select>
+                                
+                                            <select class="select2me form-control year" id="year" name="year_HSC"></select>
+                                        </div>
                                         <span class="req_symbol" id="passing_date_span" style="display:none">Month & Year of passing is Required!</span>
                                     </td>
                                     <td>
-                                        <select class="select2me form-control mode_req_field" id="hsc_mode" name="hsc_mode" tabindex="1">
+                                        <select class="select2me form-control mode_req_field" id="hsc_mode" name="Regular_Private_HSC" tabindex="1">
                                             <option value="">Select</option>
                                             <option value="Regular">Regular</option>
                                             <option value="Private">Private</option>
@@ -257,585 +380,138 @@
                         </table>
                     </div>
                     </div>
+                    <br>
                     <!--school ends-->
                     <h3>College Details</h3>
                     <div class="form-group">
-                        <div class="row">
-                            <div class="col-md-6 mb-3">
-                              <label for="collegeName">Name of the College Last Studied<span style="color: red;">*</span></label>
-                              <input type="text" class="form-control" id="collegeName" name="collegeName" required>
-                            </div>
-                            <div class="col-md-6 mb-3">
-                              <label for="universityName">Name of the University Last Studied<span style="color: red;">*</span></label>
-                              <input type="text" class="form-control" id="universityName" name="universityName" required>
-                            </div>
-                          </div>
-                          <div class="row form-row">
-                           <div class="col-md-6 mb-3">
-                            <div class="form-group">
-                             <label class="control-label">Qualifying Degree<span style="color: red;">*</span></label>
-                                  <select class="select2me form-control mode_req_field" id="qualify_deg_sub_list" name="qualify_deg_sub_list" tabindex="1">
-                                    <option value="OTHERS">OTHERS</option>
-                                    <option value="B.A. ECONOMICS">B.A. ECONOMICS</option>
-                                    <option value="B.A. ENGLISH">B.A. ENGLISH</option>
-                                    <option value="B.A. ENGLISH (CA)">B.A. ENGLISH (CA)</option>
-                                    <option value="B.A. HISTORY">B.A. HISTORY</option>
-                                    <option value="B.A. POLITICAL SCIENCE">B.A. POLITICAL SCIENCE</option>
-                                    <option value="B.A TAMIL">B.A TAMIL</option>
-                                    <option value="B.LIT TAMIL">B.LIT TAMIL</option>
-                                    <option value="B.A. JOURNALISM AND MASS COMMUNICATION">B.A. JOURNALISM AND MASS COMMUNICATION</option>
-                                    <option value="B.A. PUBLIC ADMINISTRATION">B.A. PUBLIC ADMINISTRATION</option>
-                                    <option value="B.S.W.">B.S.W.</option>
-                                    <option value="B.B.A.">B.B.A.</option>
-                                    <option value="B.B.A. (COMPUTER APPLICATION)">B.B.A. (COMPUTER APPLICATION)</option>
-                                    <option value="B.B.A. (INTERNATIONAL BUSINESS)">B.B.A. (INTERNATIONAL BUSINESS)</option>
-                                    <option value="B.B.A (RETAIL MANAGEMENT)">B.B.A (RETAIL MANAGEMENT)</option>
-                                    <option value="B. COM. (COMPUTER APPLICATION)">B. COM. (COMPUTER APPLICATION)</option>
-                                    <option value="B. COM. (ACCOUNTING AND FINANCE)">B. COM. (ACCOUNTING AND FINANCE)</option>
-                                    <option value="B.COM. (CO-OPERATION)">B.COM. (CO-OPERATION)</option>
-                                    <option value="B.COM (ELECTRONIC BANKING)">B.COM (ELECTRONIC BANKING)</option>
-                                    <option value="B.COM [BANKING AND INSURANCE]">B.COM [BANKING AND INSURANCE]</option>
-                                    <option value="B.COM (Security Marketing Practices)">B.COM (Security Marketing Practices)</option>
-                                    <option value="B.COM (Financial Marketing Analytics)">B.COM (Financial Marketing Analytics)</option>
-                                    <option value="B. COM.">B. COM.</option>
-                                    <option value="B. COM. CORPORATE SECRETARYSHIP">B. COM. CORPORATE SECRETARYSHIP</option>
-                                    <option value="BACHELOR OF COMPUTER APPLICATIONS (BCA)">BACHELOR OF COMPUTER APPLICATIONS (BCA)</option>
-                                    <option value="B.SC. BIOCHEMISTRY">B.SC. BIOCHEMISTRY</option>
-                                    <option value="B.SC. BIOINFORMATICS">B.SC. BIOINFORMATICS</option>
-                                    <option value="B.SC. BOTANY">B.SC. BOTANY</option>
-                                    <option value="B.SC. ZOOLOGY">B.SC. ZOOLOGY</option>
-                                    <option value="B.SC. MICROBIOLOGY">B.SC. MICROBIOLOGY</option>
-                                    <option value="B.SC. BIOTECHNOLOGY">B.SC. BIOTECHNOLOGY</option>
-                                    <option value="B.SC. COMPUTER SCIENCE">B.SC. COMPUTER SCIENCE</option>
-                                    <option value="B.SC. COSTUME DESIGN AND FASHION">B.SC. COSTUME DESIGN AND FASHION</option>
-                                    <option value="B.SC. HOTEL MANAGEMENT AND CATERING SCIENCE">B.SC. HOTEL MANAGEMENT AND CATERING SCIENCE</option>
-                                    <option value="B.SC. PSYCHOLOGY">B.SC. PSYCHOLOGY</option>
-                                    <option value="B.SC. FASHION TECHNOLOGY">B.SC. FASHION TECHNOLOGY</option>
-                                    <option value="B.SC. TEXTILES &amp; FASHION DESIGNING">B.SC. TEXTILES &amp; FASHION DESIGNING</option>
-                                    <option value="B.SC. HOME SCIENCE">B.SC. HOME SCIENCE</option>
-                                    <option value="B.SC. NUTRITION AND DIETETICS">B.SC. NUTRITION AND DIETETICS</option>
-                                    <option value="B.SC. DIGITAL PRINT MEDIA">B.SC. DIGITAL PRINT MEDIA</option>
-                                    <option value="B.SC. GEOGRAPHY">B.SC. GEOGRAPHY</option>
-                                    <option value="B.SC. (INFORMATION SCIENCE)">B.SC. (INFORMATION SCIENCE)</option>
-                                    <option value="B.SC. PHYSICS">B.SC. PHYSICS</option>
-                                    <option value="B.SC. MATHEMATICS">B.SC. MATHEMATICS</option>
-                                    <option value="B.SC. MATHEMATICS (CA)">B.SC. MATHEMATICS (CA)</option>
-                                    <option value="B.Sc. MATHEMATICS (ACTUARIAL SCIENCE)">B.Sc. MATHEMATICS (ACTUARIAL SCIENCE)</option>
-                                    <option value="B.SC. CHEMISTRY">B.SC. CHEMISTRY</option>
-                                    <option value="B.SC. GEOLOGY">B.SC. GEOLOGY</option>
-                                    <option value="B.SC. APPLIED GEOLOGY">B.SC. APPLIED GEOLOGY</option>
-                                    <option value="B.SC. ELECTRONICS AND COMMUNICATION">B.SC. ELECTRONICS AND COMMUNICATION</option>
-                                    <option value="B.SC. STATISTICS">B.SC. STATISTICS</option>
-                                    <option value="B.SC (VISUAL COMMUNICATION)">B.SC (VISUAL COMMUNICATION)</option>
-                                    <option value="M.A. ECONOMICS">M.A. ECONOMICS</option>
-                                    <option value="M.A. TAMIL">M.A. TAMIL</option>
-                                    <option value="M.A. ENGLISH">M.A. ENGLISH</option>
-                                    <option value="M.A. HISTORY">M.A. HISTORY</option>
-                                    <option value="M.A. POLITICAL SCIENCE">M.A. POLITICAL SCIENCE</option>
-                                    <option value="M.COM">M.COM</option>
-                                    <option value="M.COM (C.A)">M.COM (C.A)</option>
-                                    <option value="M.COM. (CO-OPERATION)">M.COM. (CO-OPERATION)</option>
-                                    <option value="M.COM. (CORPORATE SECRETARYSHIP)">M.COM. (CORPORATE SECRETARYSHIP)</option>
-                                    <option value="M.A PUBLIC ADMINISTRATION">M.A PUBLIC ADMINISTRATION</option>
-                                    <option value="M.B.A">M.B.A</option>
-                                    <option value="M.SC. APPLIED MICROBIOLOGY">M.SC. APPLIED MICROBIOLOGY</option>
-                                    <option value="M.SC. MICROBIOLOGY">M.SC. MICROBIOLOGY</option>
-                                    <option value="M. SC. BOTANY">M. SC. BOTANY</option>
-                                    <option value="M.SC. TEXTILE AND FASHION DESIGNING">M.SC. TEXTILE AND FASHION DESIGNING</option>
-                                    <option value="M.SC. COSTUME DESIGN AND FASHION">M.SC. COSTUME DESIGN AND FASHION</option>
-                                    <option value="M.SC COMPUTER SCIENCE">M.SC COMPUTER SCIENCE</option>
-                                    <option value="M.SC. COMPUTER SCIENCE-DATA ANALYTICS">M.SC. COMPUTER SCIENCE-DATA ANALYTICS</option>
-                                    <option value="M.SC. ELECTRONICS &amp; COMMUNICATION">M.SC. ELECTRONICS &amp; COMMUNICATION</option>
-                                    <option value="M.SC. FOOD PROCESSING">M.SC. FOOD PROCESSING</option>
-                                    <option value="M.SC. FOOD &amp; NUTRITION">M.SC. FOOD &amp; NUTRITION</option>
-                                    <option value="M.SC. MATHEMATICS">M.SC. MATHEMATICS</option>
-                                    <option value="M.SC. MATHEMATICS (CA)">M.SC. MATHEMATICS (CA)</option>
-                                    <option value="M.SC. STATISTICS">M.SC. STATISTICS</option>
-                                    <option value="M.C.A">M.C.A</option>
-                                    <option value="M.SC. PHYSICS">M.SC. PHYSICS</option>
-                                    <option value="M.SC. SOFTWARE SCIENCE">M.SC. SOFTWARE SCIENCE</option>
-                                    <option value="M.S.W.">M.S.W.</option>
-                                    <option value="M.SC. GEOGRAPHY">M.SC. GEOGRAPHY</option>
-                                    <option value="M.SC. MEDICAL BIOCHEMISTRY">M.SC. MEDICAL BIOCHEMISTRY</option>
-                                    <option value="M.SC., ORGANIC CHEMISTRY">M.SC., ORGANIC CHEMISTRY</option>
-                                    <option value="M.SC., ANALYTICAL CHEMISTRY">M.SC., ANALYTICAL CHEMISTRY</option>
-                                    <option value="M.SC BIOTECHNOLOGY">M.SC BIOTECHNOLOGY</option>
-                                    <option value="M.SC. CHEMISTRY">M.SC. CHEMISTRY</option>
-                                    <option value="M.SC. ZOOLOGY">M.SC. ZOOLOGY</option>
-                                    <option value="M.SC. BIOCHEMISTRY">M.SC. BIOCHEMISTRY</option>
-                                    <option value="M.SC. GEOLOGY">M.SC. GEOLOGY</option>
-                                    <option value="M.SC. NUTRITION AND DIETETICS">M.SC. NUTRITION AND DIETETICS</option>
-                                    <option value="fgtnftrgnhj">fgtnftrgnhj</option>
-                                    <option value="BE(ECE)">BE(ECE)</option>
-                                    <option value="B.Sc ENVIRONMENTAL SCIENCE (H)">B.Sc ENVIRONMENTAL SCIENCE (H)</option>
-                                    <option value="Triple Major (MICROBIOLOGY CHEMISTRY ZOOLOGY) ">Triple Major (MICROBIOLOGY CHEMISTRY ZOOLOGY) </option>
-                                    <option value="M.E (CSE)">M.E (CSE)</option>
-                                    <option value="B. VOC FOOD PROCESSING TECHNOLOGY">B. VOC FOOD PROCESSING TECHNOLOGY</option>
-                                    <option value="B.E">B.E</option>
-                                    <option value="B.SC Computer Science, Mathematics, Electronics">B.SC Computer Science, Mathematics, Electronics</option>
-                                    <option value="B.COM">B.COM</option>
-                                    <option value="12TH">12TH</option>
-                                    <option value="B.E.(MECHANICAL ENGINEERING)">B.E.(MECHANICAL ENGINEERING)</option>
-                                    <option value="B.Ed">B.Ed</option>
-                                    <option value="BA SOCIOLOGY">BA SOCIOLOGY</option>
-                                    <option value="B.VOC DAIRY PRODUCTION AND TECHNOLOGY">B.VOC DAIRY PRODUCTION AND TECHNOLOGY</option>
-                                    <option value="B SC CHEMISTRY">B SC CHEMISTRY</option>
-                                    <option value="B.Voc FOOD SCIENCE AND NUTRITION">B.Voc FOOD SCIENCE AND NUTRITION</option>
-                                    <option value="B. SC. CLINICAL NUTRITION AND DIETETICS (MAJOR)">B. SC. CLINICAL NUTRITION AND DIETETICS (MAJOR)</option>
-                                    <option value="B.TECH CHEMICAL ENGINEERING">B.TECH CHEMICAL ENGINEERING</option>
-                                    <option value="B.VOC TEXTILES AND APPAREL DESIGN">B.VOC TEXTILES AND APPAREL DESIGN</option>
-                                    <option value="B.voc (textile and apparel design)">B.voc (textile and apparel design)</option>
-                                    <option value="BSC GEOLOGY">BSC GEOLOGY</option>
-                                    <option value="BSC BIO TECHNOLOGY">BSC BIO TECHNOLOGY</option>
-                                    <option value="B.Voc Food Processing and Engineering ">B.Voc Food Processing and Engineering </option>
-                                    <option value="B SC FIRE AND INDUSTRIAL SAFETY">B SC FIRE AND INDUSTRIAL SAFETY</option>
-                                    <option value="B.SC Statistics">B.SC Statistics</option>
-                                    <option value="BSC FOOD TECHNOLOGY AND QUALITY ASSURANCE ">BSC FOOD TECHNOLOGY AND QUALITY ASSURANCE </option>
-                                    <option value="B. SC. ZOOLOGY ">B. SC. ZOOLOGY </option>
-                                    <option value="B.Voc Renewable Energy Management">B.Voc Renewable Energy Management</option>
-                                    <option value="BSC BIOCHEMISTRY[ PERSUING FINAL YEAR]">BSC BIOCHEMISTRY[ PERSUING FINAL YEAR]</option>
-                                    <option value="B Sc Nursing">B Sc Nursing</option>
-                                    <option value="BE CSE">BE CSE</option>
-                                    <option value="B.SC.Information Technology">B.SC.Information Technology</option>
-                                    <option value="B.SC, TEXTILES">B.SC, TEXTILES</option>
-                                    <option value="Food Science and Nutrition">Food Science and Nutrition</option>
-                                    <option value="B.E AUTOMOBILE ENGINEERING">B.E AUTOMOBILE ENGINEERING</option>
-                                    <option value="B.Sc. Nutrition &amp; Dietetics">B.Sc. Nutrition &amp; Dietetics</option>
-                                    <option value="B.SC. APPLIED SCIENCE">B.SC. APPLIED SCIENCE</option>
-                                    <option value="B.SC FOOD SCIENCE AND NUTRITION">B.SC FOOD SCIENCE AND NUTRITION</option>
-                                    <option value="B.Tech">B.Tech</option>
-                                    <option value="B.Sc">B.Sc</option>
-                                    <option value="BCA">BCA</option>
-                                    <option value="B.SC CHEMISTRY ">B.SC CHEMISTRY </option>
-                                    <option value="BSC NUTRITION ,FOOD SERVICE MANAGEMENT AND DIETETICS">BSC NUTRITION ,FOOD SERVICE MANAGEMENT AND DIETETICS</option>
-                                    <option value="B.Sc in chemistry, environmental science and botany">B.Sc in chemistry, environmental science and botany</option>
-                                    <option value="B.Voc Food Processing and Engineering">B.Voc Food Processing and Engineering</option>
-                                    <option value="MATHEMATICS">MATHEMATICS</option>
-                                    <option value="B A SOCIOLOGY ">B A SOCIOLOGY </option>
-                                    <option value="B.Sc. Medical Bionanotechnology">B.Sc. Medical Bionanotechnology</option>
-                                    <option value="B.sc Mathematics">B.sc Mathematics</option>
-                                    <option value="DEGREE">DEGREE</option>
-                                    <option value="B.Sc Fashion Designing and Apparel Making">B.Sc Fashion Designing and Apparel Making</option>
-                                    <option value="Bsc biotechnology">Bsc biotechnology</option>
-                                    <option value="Bsc nutrition and dietetics">Bsc nutrition and dietetics</option>
-                                    <option value=" "> </option>
-                                    <option value="B.S.W">B.S.W</option>
-                                    <option value="FOOD SCIENCE &amp; NUTRITION ">FOOD SCIENCE &amp; NUTRITION </option>
-                                    <option value="BSC RADIOLOGY IMAGING TECHNOLOGY">BSC RADIOLOGY IMAGING TECHNOLOGY</option>
-                                    <option value="bachelor of pharmacy">bachelor of pharmacy</option>
-                                    <option value="B SC AGRICULTURE">B SC AGRICULTURE</option>
-                                    <option value="BSC NURSING ">BSC NURSING </option>
-                                    <option value="Bsc Geography">Bsc Geography</option>
-                                    <option value="B.Sc APPLIED SCIENCE">B.Sc APPLIED SCIENCE</option>
-                                    <option value="BSc FOOD TECHNOLOGY">BSc FOOD TECHNOLOGY</option>
-                                    <option value="BSC PHYSICIAN ASSISTANT">BSC PHYSICIAN ASSISTANT</option>
-                                    <option value="B.SC PHYSICS">B.SC PHYSICS</option>
-                                    <option value="B.SC Food Science &amp; Nutrition">B.SC Food Science &amp; Nutrition</option>
-                                    <option value="Bachelor of Naturopathy and Yogic science">Bachelor of Naturopathy and Yogic science</option>
-                                    <option value="Bsc Food science and Nutrition">Bsc Food science and Nutrition</option>
-                                    <option value="B.voc ( food processing and quality control )">B.voc ( food processing and quality control )</option>
-                                    <option value="BSC PHYSICS WITH NT">BSC PHYSICS WITH NT</option>
-                                    <option value="Bsc ZOOLOGY">Bsc ZOOLOGY</option>
-                                    <option value="BNYS">BNYS</option>
-                                    <option value="BSc. CHEMISTRY">BSc. CHEMISTRY</option>
-                                    <option value="B.SC VISUAL COMMUNICATION">B.SC VISUAL COMMUNICATION</option>
-                                    <option value="Bsc. Microbiology">Bsc. Microbiology</option>
-                                    <option value="B.SC. Earth Science">B.SC. Earth Science</option>
-                                    <option value="B.SC. Physical Science">B.SC. Physical Science</option>
-                                    <option value="B.Sc. Chemical Science">B.Sc. Chemical Science</option>
-                                    <option value="B.Sc. Electronics">B.Sc. Electronics</option>
-                                    <option value="B.Sc. Industrial Electronics">B.Sc. Industrial Electronics</option>
-                                    <option value="B.Sc. Biomedical Instrumentation">B.Sc. Biomedical Instrumentation</option>
-                                    <option value="B.Sc. Instrumentation">B.Sc. Instrumentation</option>
-                                    <option value="B.Sc. Food Science">B.Sc. Food Science</option>
-                                    <option value="B.Sc. Clinical Nutrition and Dietetics">B.Sc. Clinical Nutrition and Dietetics</option>
-                                    <option value="B.Sc. Food service management and Dietetics">B.Sc. Food service management and Dietetics</option>
-                                    <option value="B.Sc. Nutrition">B.Sc. Nutrition</option>
-                                    <option value="B.Sc. Food Technology">B.Sc. Food Technology</option>
-                                    <option value="B.Sc. Agriculture">B.Sc. Agriculture</option>
-                                    <option value="B.Sc. Computer Technology">B.Sc. Computer Technology</option>
-                                    <option value="B.Sc. Animal Biotechnology">B.Sc. Animal Biotechnology</option>
-                                    <option value="B.Sc. Plant Biotechnology">B.Sc. Plant Biotechnology</option>
-                                    <option value="B.Sc. Animal Science">B.Sc. Animal Science</option>
-                                    <option value="B.Sc. Plant Science">B.Sc. Plant Science</option>
-                                    <option value="B.Sc. Applied Animal Science">B.Sc. Applied Animal Science</option>
-                                    <option value="B.Sc. Animal Biochemistry">B.Sc. Animal Biochemistry</option>
-                                    <option value="B.Sc. Animal Bioinformatics">B.Sc. Animal Bioinformatics</option>
-                                    <option value="B.Sc. Anima Biology">B.Sc. Anima Biology</option>
-                                    <option value="BSMS">BSMS</option>
-                                    <option value="BAMS">BAMS</option>
-                                    <option value="BHMS">BHMS</option>
-                                    <option value="B.Sc. Chemistry with Botany">B.Sc. Chemistry with Botany</option>
-                                    <option value="B.Sc. Chemistry with Zoology">B.Sc. Chemistry with Zoology</option>
-                                    <option value="B.Sc. Farm Science">B.Sc. Farm Science</option>
-                                    <option value="B.Sc. Microbial Gene Technology">B.Sc. Microbial Gene Technology</option>
-                                    <option value="B.Sc. Marine Biology">B.Sc. Marine Biology</option>
-                                    <option value="B.Sc. Agriculture">B.Sc. Agriculture</option>
-                                    <option value="B.Sc. Fisheries Science">B.Sc. Fisheries Science</option>
-                                    <option value="B.Sc. Aquaculture">B.Sc. Aquaculture</option>
-                                    <option value="B.Sc. Medical Lab Technology">B.Sc. Medical Lab Technology</option>
-                                    <option value="MBBS">MBBS</option>
-                                    <option value="BDS">BDS</option>
-                                    <option value="B.Pharm">B.Pharm</option>
-                                    <option value="B.Sc. Integrated Biology">B.Sc. Integrated Biology</option>
-                                    <option value="B.Sc. Medical Biochemistry">B.Sc. Medical Biochemistry</option>
-                                    <option value="B.E">B.E</option>
-                                    <option value="B.A. Women Studies">B.A. Women Studies</option>
-                                    <option value="B.B.M.">B.B.M.</option>
-                                    <option value="B.B.M. (COMPUTER APPLICATION)">B.B.M. (COMPUTER APPLICATION)</option>
-                                    <option value="B.A. Corporate Secretary Ship">B.A. Corporate Secretary Ship</option>
-                                    <option value="B.A. Cooperation">B.A. Cooperation</option>
-                                    <option value="B.CS.Information Technology">B.CS.Information Technology</option>
-                                    <option value="B.Sc. - Rural Development and Sociology">B.Sc. - Rural Development and Sociology</option>
-                                    <option value="B.SC BIO TECHNOLOGY">B.SC BIO TECHNOLOGY</option>
-                                    <option value="Bachelor of Science in Biotechnology">Bachelor of Science in Biotechnology</option>
-                                    <option value="BSC HOME SCIENCE NUTRITION FOOD SERVICE MANAGEMENT AND DIETETICS">BSC HOME SCIENCE NUTRITION FOOD SERVICE MANAGEMENT AND DIETETICS</option>
-                                    <option value="BA ENGLISH HONS">BA ENGLISH HONS</option>
-                                    <option value="CRIMINOLGY AND POLICE ADMINS">CRIMINOLGY AND POLICE ADMINS</option>
-                                    <option value="B.A.History ">B.A.History </option>
-                                    <option value="B.COM COMPUTER APPLICATION">B.COM COMPUTER APPLICATION</option>
-                                    <option value="B.SC., CHEMISTRY">B.SC., CHEMISTRY</option>
-                                    <option value="B.A.HOME SCIENCE">B.A.HOME SCIENCE</option>
-                                    <option value="B.A. PSYCHOLOGY">B.A. PSYCHOLOGY</option>
-                                    <option value="B.Sc. Microbiology with Nanotechnology">B.Sc. Microbiology with Nanotechnology</option>
-                                    <option value="B.S.C Food science and nutrition ">B.S.C Food science and nutrition </option>
-                                    <option value="BA psychology">BA psychology</option>
-                                    <option value="B.SC PSYCHOLOGY">B.SC PSYCHOLOGY</option>
-                                    <option value="BSC STATISTICS">BSC STATISTICS</option>
-                                    <option value="BSC CHEMISTRY">BSC CHEMISTRY</option>
-                                    <option value="B.sc Chemistry and Industrial chemistry">B.sc Chemistry and Industrial chemistry</option>
-                                    <option value="B. SC., Microbiology ">B. SC., Microbiology </option>
-                                    <option value="B.A. PROG">B.A. PROG</option>
-                                    <option value="B. SC MATHEMATICS">B. SC MATHEMATICS</option>
-                                    <option value="Bachelor Of Elementary Education (B.el.ed) ">Bachelor Of Elementary Education (B.el.ed) </option>
-                                    <option value="B.Sc FOODSCIENCE AND NUTRITION">B.Sc FOODSCIENCE AND NUTRITION</option>
-                                    <option value="B.SC PHYSIOLOGY">B.SC PHYSIOLOGY</option>
-                                    <option value="Bsc PHYSIOLOGY HONORS">Bsc PHYSIOLOGY HONORS</option>
-                                    <option value="B.SC GEOLOGY">B.SC GEOLOGY</option>
-                                    <option value="B.SC FOOD PROCESSING TECHNOLOGY AND MANAGEMENT">B.SC FOOD PROCESSING TECHNOLOGY AND MANAGEMENT</option>
-                                    <option value="B.SC BIOTECHNOLOGY,CHEMISTRY,ZOOLOGY(Triple major)">B.SC BIOTECHNOLOGY,CHEMISTRY,ZOOLOGY(Triple major)</option>
-                                    <option value="B A PHILOSOPHY">B A PHILOSOPHY</option>
-                                    <option value="BA English">BA English</option>
-                                    <option value="BIOCHEMISTRY AND INDUSTRIAL MICROBIOLOGY">BIOCHEMISTRY AND INDUSTRIAL MICROBIOLOGY</option>
-                                    <option value="B. SC PHILOSOPHY">B. SC PHILOSOPHY</option>
-                                    <option value="BE METALLURGICAL ENGINEERING">BE METALLURGICAL ENGINEERING</option>
-                                    <option value="B.E. METALLURGICAL ENGNEERING">B.E. METALLURGICAL ENGNEERING</option>
-                                    <option value="B.A PSYCHOLOGY">B.A PSYCHOLOGY</option>
-                                    <option value="BA PHILOSOPHY">BA PHILOSOPHY</option>
-                                    <option value="B.A Honours Psychology">B.A Honours Psychology</option>
-                                    <option value="CIVIL ENGINEERING">CIVIL ENGINEERING</option>
-                                    <option value="Bsc Computer science">Bsc Computer science</option>
-                                    <option value="BSC MICROBIOLOGY">BSC MICROBIOLOGY</option>
-                                    <option value="B.Sc. Fashion Technology and Apparel Making">B.Sc. Fashion Technology and Apparel Making</option>
-                                    <option value="B.Sc Microbiology ">B.Sc Microbiology </option>
-                                    <option value="B.Voc sustainable energy management">B.Voc sustainable energy management</option>
-                                    <option value="BSC. FOOD SCIENCE &amp; NUTRITION">BSC. FOOD SCIENCE &amp; NUTRITION</option>
-                                    <option value="B.SC., Microbiology">B.SC., Microbiology</option>
-                                    <option value="B. Voc Food Processing and Nutraceuticals">B. Voc Food Processing and Nutraceuticals</option>
-                                    <option value="B.Voc Food processing and nutraceuticals">B.Voc Food processing and nutraceuticals</option>
-                                    <option value="B. Sc Microbiology">B. Sc Microbiology</option>
-                                    <option value="Padmavani Arts &amp; Science College For Women ">Padmavani Arts &amp; Science College For Women </option>
-                                    <option value="BSC. PSYCHOLOGY">BSC. PSYCHOLOGY</option>
-                                    <option value="BA MALAYALAM">BA MALAYALAM</option>
-                                    <option value="BVOC Food Science and Nutrition ">BVOC Food Science and Nutrition </option>
-                                    <option value="Bsc. CLINICAL NUTRITION AND DIETETICS">Bsc. CLINICAL NUTRITION AND DIETETICS</option>
-                                    <option value="BA ARABIC">BA ARABIC</option>
-                                    <option value="BSc. Biotechnology (Multimajor)">BSc. Biotechnology (Multimajor)</option>
-                                    <option value="BVOC DATA SCIENCE">BVOC DATA SCIENCE</option>
-                                    <option value="B.Sc. Food Processing and Quality Control">B.Sc. Food Processing and Quality Control</option>
-                                    <option value="B.com (professional accounting)">B.com (professional accounting)</option>
-                                    <option value="B.Sc FOOD PROCESSING AND TECHNOLOGY">B.Sc FOOD PROCESSING AND TECHNOLOGY</option>
-                                    <option value="B.Sc.MEDICAL LAB TECHNOLOGY">B.Sc.MEDICAL LAB TECHNOLOGY</option>
-                                    <option value="BSW (BACHELOR SOCIAL WORK)">BSW (BACHELOR SOCIAL WORK)</option>
-                                    <option value="B SC  STATISTICS">B SC  STATISTICS</option>
-                                    <option value="B.Voc NUTRITION AND HEALTH CARE SCIENCES">B.Voc NUTRITION AND HEALTH CARE SCIENCES</option>
-                                    <option value="BSC PLANT BIOLOGY AND PLANT BIOTECHNOLOGY">BSC PLANT BIOLOGY AND PLANT BIOTECHNOLOGY</option>
-                                    <option value="Bvoc Food Processing and Nutraceuticals">Bvoc Food Processing and Nutraceuticals</option>
-                                    <option value="B Tech (Agricultural Information Technology)">B Tech (Agricultural Information Technology)</option>
-                                    <option value="B.Voc">B.Voc</option>
-                                    <option value="BSC LIFE SCIENCE">BSC LIFE SCIENCE</option>
-                                    <option value="B.SC Chemistry, Microbiology and Biotechnology">B.SC Chemistry, Microbiology and Biotechnology</option>
-                                    <option value="B.Sc.Fashion Designing and Apparel Making">B.Sc.Fashion Designing and Apparel Making</option>
-                                    <option value="B.VOC (Hons) FOOD PROCESSING TECHNOLOGY">B.VOC (Hons) FOOD PROCESSING TECHNOLOGY</option>
-                                    <option value="B.V.Sc. &amp; A.H.,">B.V.Sc. &amp; A.H.,</option>
-                                    <option value="Plus Two">Plus Two</option>
-                                    <option value="BSC NUTRICIAN DIABIETIES">BSC NUTRICIAN DIABIETIES</option>
-                                    <option value="B SC PHIYCS ">B SC PHIYCS </option>
-                                    <option value="B.SC.B.Ed( INTEGRATED) CHEMISTRY">B.SC.B.Ed( INTEGRATED) CHEMISTRY</option>
-                                    <option value="B. Sc food Science and nutrition ">B. Sc food Science and nutrition </option>
-                                    <option value="B.Sc., Software Computer Science ">B.Sc., Software Computer Science </option>
-                                    <option value="B.A">B.A</option>
-                                    <option value="BA applied psychology">BA applied psychology</option>
-                                    <option value="bsc. textiles and fashion designn">bsc. textiles and fashion designn</option>
-                                    <option value="B.sc(Mathemetics)">B.sc(Mathemetics)</option>
-                                    <option value="B.Com (CA)">B.Com (CA)</option>
-                                    <option value="B. A. JOURNALISM AND MASS COMMUNICATION HONOURS">B. A. JOURNALISM AND MASS COMMUNICATION HONOURS</option>
-                                    <option value="B.Sc. (Hons.) Botany ">B.Sc. (Hons.) Botany </option>
-                                    <option value="NIL">NIL</option>
-                                    <option value="Bsc Mathematics">Bsc Mathematics</option>
-                                    <option value="B.sc  chemistry">B.sc  chemistry</option>
-                                    <option value="B.P.T">B.P.T</option>
-                                    <option value="BACHELOR OF BUSINESS ADMINISTRATION">BACHELOR OF BUSINESS ADMINISTRATION</option>
-                                    <option value="M.A (INTEGRATED) HOME SCIENCE">M.A (INTEGRATED) HOME SCIENCE</option>
-                                    <option value="B.SC COMPUTER TECHNOLOGY">B.SC COMPUTER TECHNOLOGY</option>
-                                    <option value="B.SC.PHYSICS">B.SC.PHYSICS</option>
-                                    <option value="B.A HOME SCIENCE">B.A HOME SCIENCE</option>
-                                    <option value="BSC MATHS">BSC MATHS</option>
-                                    <option value="BACHELOR OF COMMERCE">BACHELOR OF COMMERCE</option>
-                                    <option value="M.E EMBEDDED SYSTEM TECHNOLOGIES">M.E EMBEDDED SYSTEM TECHNOLOGIES</option>
-                                    <option value="BSc.FAMILY AND COMMUNITY SCIENCE">BSc.FAMILY AND COMMUNITY SCIENCE</option>
-                                    <option value="B.E.Mechanical ">B.E.Mechanical </option>
-                                    <option value="B.E MECHANICAL ENGINEERING">B.E MECHANICAL ENGINEERING</option>
-                                    <option value="Bsc. Food Science and Nutrition">Bsc. Food Science and Nutrition</option>
-                                    <option value="PG">PG</option>
-                                    <option value="BSC ENVIRONMENTAL SCIENCES">BSC ENVIRONMENTAL SCIENCES</option>
-                                    <option value="Bsc physiology">Bsc physiology</option>
-                                    <option value="BA SOCIOLOGY AND MALAYALAM DOUBLE MAIN">BA SOCIOLOGY AND MALAYALAM DOUBLE MAIN</option>
-                                    <option value="BSC-CHEMISTRY">BSC-CHEMISTRY</option>
-                                    <option value="B.Sc Computer Science">B.Sc Computer Science</option>
-                                    <option value="B.Sc FOOD PROCESSING TECHNOLOGY AND TECHNOLOGY">B.Sc FOOD PROCESSING TECHNOLOGY AND TECHNOLOGY</option>
-                                    <option value="B.Sc FOOD PROCESSING TECHNOLOGY">B.Sc FOOD PROCESSING TECHNOLOGY</option>
-                                    <option value="B.Sc. - Culinary Arts &amp; Chef Management">B.Sc. - Culinary Arts &amp; Chef Management</option>
-                                    <option value="B.A. SOCIOLOGY">B.A. SOCIOLOGY</option>
-                                    <option value="B.Sc Data Science">B.Sc Data Science</option>
-                                    <option value="B.Sc Data Analytics">B.Sc Data Analytics</option>
-                                    <option value="B.SC Biochemistry and Biotechnology ">B.SC Biochemistry and Biotechnology </option>
-                                    <option value="B.Voc Food Processing Technology">B.Voc Food Processing Technology</option>
-                                    <option value="B.Sc.Food Service Management and Dietetics">B.Sc.Food Service Management and Dietetics</option>
-                                    <option value="B.A. (Religion, Philosophy and Sociology)">B.A. (Religion, Philosophy and Sociology)</option>
-                                    <option value="B.E.">B.E.</option>
-                                    <option value="B.Tech">B.Tech</option>
-                                    <option value="M.Sc. DATA SCIENCE">M.Sc. DATA SCIENCE</option>
-                                    <option value="B A ENGLISH">B A ENGLISH</option>
-                                    <option value="B TECH FOOD TECHNOLOGY">B TECH FOOD TECHNOLOGY</option>
-                                    <option value="B. A. PSYCHOLOGY">B. A. PSYCHOLOGY</option>
-                                    <option value="BSc Food Science &amp; Nutrition ">BSc Food Science &amp; Nutrition </option>
-                                    <option value="BSc CHEMISTRY, BOTANY, ENVIRONMENTAL SCIENCE">BSc CHEMISTRY, BOTANY, ENVIRONMENTAL SCIENCE</option>
-                                    <option value="B.SC.PSYCHOLOGY">B.SC.PSYCHOLOGY</option>
-                                    <option value="B.COM , PROFESSIONAL ACCOUNTING">B.COM , PROFESSIONAL ACCOUNTING</option>
-                                    <option value="Certificate in food and nutrition (IGNOU)">Certificate in food and nutrition (IGNOU)</option>
-                                    <option value="B.E. AERONAUTICAL ENGINEERING">B.E. AERONAUTICAL ENGINEERING</option>
-                                    <option value="B.SC[FOOD SCIENCE AND NUTRITION]">B.SC[FOOD SCIENCE AND NUTRITION]</option>
-                                    <option value="Bsc. Food Science And Technology ">Bsc. Food Science And Technology </option>
-                                    <option value="B.Sc.,B.Ed.,(Integrated)">B.Sc.,B.Ed.,(Integrated)</option>
-                                    <option value="B. SC. BIOCHEMISTRY">B. SC. BIOCHEMISTRY</option>
-                                    <option value="BSc BOTANY">BSc BOTANY</option>
-                                    <option value="Textiles and Fashion Designing">Textiles and Fashion Designing</option>
-                                    <option value="B.Sc Advanced Zoology and Biotechnology">B.Sc Advanced Zoology and Biotechnology</option>
-                                    <option value="B SC HUMAN DEVELOPMENT (HOME SCIENCE)">B SC HUMAN DEVELOPMENT (HOME SCIENCE)</option>
-                                    <option value="B.Voc Food Processing">B.Voc Food Processing</option>
-                                    <option value="BSC PHYSICS">BSC PHYSICS</option>
-                                    <option value="B. Sc. Psychology">B. Sc. Psychology</option>
-                                    <option value="B.SC. FOOD SCIENCE AND TECHNOLOGY">B.SC. FOOD SCIENCE AND TECHNOLOGY</option>
-                                    <option value="B.SC AGRI">BSC AGRI</option>
-                                    <option value="STATISTICS">STATISTICS</option>
-                                    <option value="-">-</option>
-                                    <option value="B.SC., NUTRITION AND DIETETICS">B.SC., NUTRITION AND DIETETICS</option>
-                                    <option value="B.SC DIALYSIS TECHNOLOGY">B.SC DIALYSIS TECHNOLOGY</option>
-                                    <option value="BSC VISUAL COMMUNICATION">BSC VISUAL COMMUNICATION</option>
-                                    <option value="BSc Applied Microbiology">BSc Applied Microbiology</option>
-                                    <option value="B. VOC. FOOD TESTING AND QUALITY EVALUATION ">B. VOC. FOOD TESTING AND QUALITY EVALUATION </option>
-                                    <option value="B.SC. APPLIED MICROBIOLOGY">B.SC. APPLIED MICROBIOLOGY</option>
-                                    <option value="BSC PSYCHOLOGY ">BSC PSYCHOLOGY </option>
-                                    <option value="B SC FOOD SCIENCE AND TECHNOLOGY">B SC FOOD SCIENCE AND TECHNOLOGY</option>
-                                    <option value="B.VOC ORGANIC AGRICULTURE AND ENTERPRISE DEVELOPMENT">B.VOC ORGANIC AGRICULTURE AND ENTERPRISE DEVELOPMENT</option>
-                                    <option value="MATHS">MATHS</option>
-                                    <option value="B Sc TEXTILES">B Sc TEXTILES</option>
-                                    <option value="BSC FOOD PROCESSING TECNOLOGY AND MANAGEMENT">BSC FOOD PROCESSING TECNOLOGY AND MANAGEMENT</option>
-                                    <option value="B.VOC FOOD SCINECE AND NUTRITION">B.VOC FOOD SCINECE AND NUTRITION</option>
-                                    <option value="M.E">M.E</option>
-                                    <option value="B.Sc  Nutrition &amp; Dietetics">B.Sc  Nutrition &amp; Dietetics</option>
-                                    <option value="BIOTECHNOLOGY CHEMISTRY ZOOLOGY">BIOTECHNOLOGY CHEMISTRY ZOOLOGY</option>
-                                    <option value="BA TAMIL">BA TAMIL</option>
-                                    <option value="BSC BIOCHEMISTRY,ZOOLOGY,GENETICS (TRIPLE MAJOR)">BSC BIOCHEMISTRY,ZOOLOGY,GENETICS (TRIPLE MAJOR)</option>
-                                    <option value="BSC BIOCHEMISTRY,ZOOLOGY,GENETICS(TRIPLE MAJOR)">BSC BIOCHEMISTRY,ZOOLOGY,GENETICS(TRIPLE MAJOR)</option>
-                                    <option value="BBA">BBA</option>
-                                    <option value="B Voc FOOD PROCESSING">B Voc FOOD PROCESSING</option>
-                                    <option value="B.TECH TEXTILE TECHNOLOGY">B.TECH TEXTILE TECHNOLOGY</option>
-                                    <option value="B.E Electrical and Electronics Engineering">B.E Electrical and Electronics Engineering</option>
-                                    <option value="BSC.HUMAN DEVELOPMENT">BSC.HUMAN DEVELOPMENT</option>
-                                    <option value="BACHELOR OF BUSINESS ADMINSTRATION">BACHELOR OF BUSINESS ADMINSTRATION</option>
-                                    <option value="B.Voc. (Apparel made-ups and Home furnishing)">B.Voc. (Apparel made-ups and Home furnishing)</option>
-                                    <option value="Biotechnology ">Biotechnology </option>
-                                    <option value="B.SC. BIOCHEMISTRY AND INDUSTRIAL MICROBIOLOGY">B.SC. BIOCHEMISTRY AND INDUSTRIAL MICROBIOLOGY</option>
-                                    <option value="Commerce">Commerce</option>
-                                    <option value="M.sc. communication and Journalism">M.sc. communication and Journalism</option>
-                                    <option value="B.VOC AR/VR">B.VOC AR/VR</option>
-                                    <option value="+2">+2</option>
-                                    <option value="B.VOC NETWORKING &amp; MOBILE APPLICATION">B.VOC NETWORKING &amp; MOBILE APPLICATION</option>
-                                    <option value="Fire and Industrial Safety ">Fire and Industrial Safety </option>
-                                    <option value="B.sc. IN HOSPITALITY AND HOTEL ADMINISTRATION">B.sc. IN HOSPITALITY AND HOTEL ADMINISTRATION</option>
-                                    <option value="M.A.Sociology">M.A.Sociology</option>
-                                    <option value="BA MULTIMEDIA">BA MULTIMEDIA</option>
-                                    <option value="B.SC. Interior Design &amp; Decor">B.SC. Interior Design &amp; Decor</option>
-                                    <option value="B. A. Sociology ">B. A. Sociology </option>
-                                    <option value="B.A. Religion, Philosophy And Sociology">B.A. Religion, Philosophy And Sociology</option>
-                                    <option value="B.Sc.geology">B.Sc.geology</option>
-                                    <option value="BSC FOOD SERVICE MANAGEMENT AND DIETETICS">BSC FOOD SERVICE MANAGEMENT AND DIETETICS</option>
-                                    <option value="B.Sc - PHYSICS">B.Sc - PHYSICS</option>
-                                    <option value="B.SC. NUTRITION FOOD SERVICE MANAGEMENT AND DIETETICS">B.SC. NUTRITION FOOD SERVICE MANAGEMENT AND DIETETICS</option>
-                                    <option value="BA Religion philosophy sociology ">BA Religion philosophy sociology </option>
-                                    <option value="Sociology">Sociology</option>
-                                    <option value="B.A SOCIOLOGY">B.A SOCIOLOGY</option>
-                                    <option value="HOME SCIENCE">HOME SCIENCE</option>
-                                    <option value="MA HISTORY">MA HISTORY</option>
-                                    <option value="TAMIL">TAMIL</option>
-                                    <option value="B.COM (BUSINESS PROCESS SERVICES)">B.COM (BUSINESS PROCESS SERVICES)</option>
-                                    <option value="B.sc Food Technology">B.sc Food Technology</option>
-                                    <option value="B.Sc Biology">B.Sc Biology</option>
-                                    <option value="B.Tech Biomedical Engineering">B.Tech Biomedical Engineering</option>
-                                    <option value="B.Sc Biophysics">B.Sc Biophysics</option>
-                                    <option value="BA JOURNALISM, PSYCHOLOGY, LITERATURE">BA JOURNALISM, PSYCHOLOGY, LITERATURE</option>
-                                    <option value="B.Sc. Fashion Designing and Apparel Making">B.Sc. Fashion Designing and Apparel Making</option>
-                                    <option value="B.voc Food Testing and Quality Evaluation">B.voc Food Testing and Quality Evaluation</option>
-                                    <option value="M.PHIL">M.PHIL</option>
-                                    <option value="B.Sc FASHION DESIGNING &amp; APPAREL MAKING">B.Sc FASHION DESIGNING &amp; APPAREL MAKING</option>
-                                    <option value="B.Voc AI &amp; ML">B.Voc AI &amp; ML</option>
-                                    <option value="B.Sc (Hons) Biomedical Sciences">B.Sc (Hons) Biomedical Sciences</option>
-                                    <option value="BSC BOTANY AND BIOTECHNOLOGY">BSC BOTANY AND BIOTECHNOLOGY</option>
-                                    <option value="B.SC. FORESTRY">B.SC. FORESTRY</option>
-                                    <option value="B.Sc Food Science And Nutrition">B.Sc Food Science And Nutrition</option>
-                                    <option value="B.E IN ELECTRICAL AND ELECTRONICS ENGINEERING">B.E IN ELECTRICAL AND ELECTRONICS ENGINEERING</option>
-                                    <option value="B.E CSE">B.E CSE</option>
-                                    <option value="B.COM. PROFESSIONAL ACCOUNTING">B.COM. PROFESSIONAL ACCOUNTING</option>
-                                    <option value="B.SC FOOD SCIENCE AND TECHNOLOGY">B.SC FOOD SCIENCE AND TECHNOLOGY</option>
-                                    <option value="B.SC food service management and dietetics ">B.SC food service management and dietetics </option>
-                                    <option value="B.VOC SPORTS NUTRITION AND PHYSIOTHERAPY">B.VOC SPORTS NUTRITION AND PHYSIOTHERAPY</option>
-                                    <option value="CHEMISTRY ">CHEMISTRY </option>
-                                    <option value="B.Sc NUTRITION AND DIETETICS">B.Sc NUTRITION AND DIETETICS</option>
-                                    <option value="MVoc RENEWABLE ENERGY MANAGEMENT">MVoc RENEWABLE ENERGY MANAGEMENT</option>
-                                    <option value="B COM">B COM</option>
-                                    <option value="B.tech - Biotechnology">B.tech - Biotechnology</option>
-                                    <option value="B.SC COMPUTER SCIENCE WITH DATA ANALYTICS">B.SC COMPUTER SCIENCE WITH DATA ANALYTICS</option>
-                                    <option value="B.VOC FOOD TECHNOLOGY AND ANALYSIS">B.VOC FOOD TECHNOLOGY AND ANALYSIS</option>
-                                    <option value="B.SC.FOOD PROCESSING TECHNOLOGY AND MANAGEMENT">B.SC.FOOD PROCESSING TECHNOLOGY AND MANAGEMENT</option>
-                                    <option value="B,SC. BOTANY">B,SC. BOTANY</option>
-                                    <option value="BBA CA">BBA CA</option>
-                                    <option value="BSC.FOOD PROCESSING TECHNOLOGY AND MANAGEMENT">BSC.FOOD PROCESSING TECHNOLOGY AND MANAGEMENT</option>
-                                    <option value="PHYSICS">PHYSICS</option>
-                                    <option value="B,SC,. Zoology ">B,SC,. Zoology </option>
-                                    <option value="B.SC. NUTRITION, FOOD SERVICE MANAGEMENT AND DIETETICS ">B.SC. NUTRITION, FOOD SERVICE MANAGEMENT AND DIETETICS </option>
-                                    <option value="B.SC.B.ED ZOOLOGY">B.SC.B.ED ZOOLOGY</option>
-                                    <option value="B.SC MATHEMATICS WITH COMPUTER APPLICATIONS">BSC MATHEMATICS WITH COMPUTER APPLICATIONS</option>
-                                    <option value="General ">General </option>
-                                    <option value="B.VOC.FOOD PROCESSING">B.VOC.FOOD PROCESSING</option>
-                                    <option value="BA hons Psychology">BA hons Psychology</option>
-                                    <option value="B.Com Banking and Finance">B.Com Banking and Finance</option>
-                                    <option value="B.Sc. B.ED. (4 YEARS INTEGRATED PROGRAMME)">B.Sc. B.ED. (4 YEARS INTEGRATED PROGRAMME)</option>
-                                    <option value="B.SC PSYCHOLOGY">B.SC PSYCHOLOGY</option>
-                                    <option value="B.COM BANKING &amp; FINANCE">B.COM BANKING &amp; FINANCE</option>
-                                    <option value="B.A.SOCIOLOGY ">B.A.SOCIOLOGY </option>
-                                    <option value="B.SC. FOOD AND NUTRITION ">B.SC. FOOD AND NUTRITION </option>
-                                    <option value="B.Com (Banking and Insurance)">B.Com (Banking and Insurance)</option>
-                                    <option value="B.COM">B.COM</option>
-                                    <option value="B. Sc Home Science">B. Sc Home Science</option>
-                                    <option value="B.Sc.Textiles ">B.Sc.Textiles </option>
-                                    <option value="B.sc Biotechnology ">B.sc Biotechnology </option>
-                                    <option value="B.COM. COMMERCE">B.COM. COMMERCE</option>
-                                    <option value="B.Sc, Clinical LABORATORY TECHNOLOGY">B.Sc, Clinical LABORATORY TECHNOLOGY</option>
-                                    <option value="ME">ME</option>
-                                    <option value="B.Sc critical care technology">B.Sc critical care technology</option>
-                                    <option value="BSC APPLIED SCIENCE">BSC APPLIED SCIENCE</option>
-                                    <option value="B.E (COMPUTER SCIENCE AND ENGINEERING)">B.E (COMPUTER SCIENCE AND ENGINEERING)</option>
-                                    <option value="b.sc clinical laboratory technology">b.sc clinical laboratory technology</option>
-                                    <option value="B.SC (MICROBIOLOGY)">B.SC (MICROBIOLOGY)</option>
-                                    <option value="BSC">BSC</option>
-                                    <option value="MA English">MA English</option>
-                                    <option value="B.A HISTORY ">B.A HISTORY </option>
-                                    <option value="BSC ZOOLOGY AND INDUSTRIAL MICROBIOLOGY">BSC ZOOLOGY AND INDUSTRIAL MICROBIOLOGY</option>
-                                    <option value="BSC PHYSICAL EDUCATION ">BSC PHYSICAL EDUCATION </option>
-                                    <option value="B.E Agriculture Engineering">B.E Agriculture Engineering</option>
-                                    <option value="B. Voc., Artificial Intelligence and Machine Learning">B. Voc., Artificial Intelligence and Machine Learning</option>
-                                    <option value="BA (History, Political science, Economics)">BA (History, Political science, Economics)</option>
-                                    <option value="B.Com., Professional Accounting">B.Com., Professional Accounting</option>
-                                    <option value="B.Sc (Medical Lab Technology)">B.Sc (Medical Lab Technology)</option>
-                                    <option value="B.Sc (Health Sciences) in Anaesthesia Technology">B.Sc (Health Sciences) in Anaesthesia Technology</option>
-                                    <option value="B.Sc Fashion Technology and Costume Designing">B.Sc Fashion Technology and Costume Designing</option>
-                                    <option value="B.Sc..Advanced Zoology &amp; Biotech">B.Sc..Advanced Zoology &amp; Biotech</option>
-                                    <option value="B.Sc. Forensic Science">B.Sc. Forensic Science</option>
-                                    <option value="B.com ca">B.com ca</option>
-                                    <option value="B.COM COMMERCE IN PROFESSIONAL ACCOUNTING ">B.COM COMMERCE IN PROFESSIONAL ACCOUNTING </option>
-                                    <option value="MICROBIOLOGY">MICROBIOLOGY</option>
-                                    <option value="B. Sc. (Hons.) Economics">B. Sc. (Hons.) Economics</option>
-                                    <option value="NO">NO</option>
-                                    <option value="B.Sc.FOOD SCIENCE &amp; NUTRITION">B.Sc.FOOD SCIENCE &amp; NUTRITION</option>
-                                    <option value="B.COM PROFESSIONAL ACCOUNTING">B.COM PROFESSIONAL ACCOUNTING</option>
-                                    <option value="BE MECHANICAL">BE MECHANICAL</option>
-                                    <option value="BSC MICROBIOLOGY and CHEMISTRY ">BSC MICROBIOLOGY and CHEMISTRY </option>
-                                    <option value="B.Sc.B.Ed.">B.Sc.B.Ed.</option>
-                                    <option value="b.com commerce">b.com commerce</option>
-                                    <option value="B.VOCATIONAL AUGMENTED REALITY AND VIRTUAL REALITY">B.VOCATIONAL AUGMENTED REALITY AND VIRTUAL REALITY</option>
-                                    <option value="B.SC.HOME SCIENCE">B.SC.HOME SCIENCE</option>
-                                    <option value="B.Sc., FOOD TECHNOLOGY AND QUALITY CONTROL">B.Sc., FOOD TECHNOLOGY AND QUALITY CONTROL</option>
-                                    <option value="B.COM PA">B.COM PA</option>
-                                    <option value="B.Sc.chemistry">B.Sc.chemistry</option>
-                                    <option value="B. VOC FOOD SCIENCE AND NUTRITION">B. VOC FOOD SCIENCE AND NUTRITION</option>
-                                    <option value="B.COM (ACCOUNTING AND FINANCE)">B.COM (ACCOUNTING AND FINANCE)</option>
-                                    <option value="B COM BPO">B COM BPO</option>
-                                    <option value="B.SC. VISUAL COMMUNICATION">B.SC. VISUAL COMMUNICATION</option>
-                                    <option value="BSC APPLIED GEOLOGY">BSC APPLIED GEOLOGY</option>
-                                    <option value="B.SC IN CYBER SECURITY">B.SC IN CYBER SECURITY</option>
-                                    <option value="B.sc Computer Science with Cognitive Systems">B.sc Computer Science with Cognitive Systems</option>
-                                    <option value="B.COM - COMPUTER APPLICATIONS">B.COM - COMPUTER APPLICATIONS</option>
-                                    <option value="B.Sc.B.Ed Mathematics ">B.Sc.B.Ed Mathematics </option>
-                                    <option value="NUTRITION AND DEICTICS">NUTRITION AND DEICTICS</option>
-                                    <option value="B.Sc.B.Ed.,">B.Sc.B.Ed.,</option>
-                                    <option value="FOOD TECHNOLOGY AND QUALITY ASSURANCE">FOOD TECHNOLOGY AND QUALITY ASSURANCE</option>
-                                </select>
-                                <span class="req_symbol" id="qualify_deg_sub_list_span" style="display:none">Qualifying is Required!</span>
-                              </div>
-                            </div>
-                            <div class="col-md-6 mb-3">
-                                <label class="control-label">Add Qualifying Degree (optional)</label>
-                                <input class="form-control req_field" id="qualify_deg_sub" name="qualify_deg_sub" placeholder="Add Qualifying Degree" type="text" />
-                              </div>
-                            </div>
-                        
-                        <div class="form-group ">
+                        <form class="form-inline-custom">
                             <div class="row">
-                            <div class="col-md-6 mb-3">
-                                <label for="passing-date">Month & Year of Passing<span style="color: red;">*</span></label>
-                                <input id="year" class="maxvalue" type="month">
+                                <div class="col-sm-12 col-md-6 mb-3">
+                                    <div class="row">
+                                        <div class="col-sm-4 col-md-4 col-xs-4">
+                                            <label for="collegeName">Name of the College Last Studied <span style="color: red;">*</span></label>
+                                        </div>
+                                        <div class="col-sm-8 col-md-8 col-xs-8">
+                                            <input type="text" class="form-control" id="collegeName" name="College_Last_Studied" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12 col-md-6 mb-3">
+                                    <div class="row">
+                                        <div class="col-sm-4 col-md-4">
+                                            <label for="universityName">Name of the University Last Studied <span style="color: red;">*</span></label>
+                                        </div>
+                                        <div class="col-sm-8 col-md-8">
+                                            <input type="text" class="form-control" id="universityName" name="University_Last_Studied" required>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                            <div class="col-sm-12 col-md-6 mb-3">
+                            <div class="row">
+                                <div class="col-sm-4 col-md-4 col-xs-4">
+                                <label for="qualificationtype">Qualification Type<span style="color: red;">*</span></label>
+                                </div>
+                                <div class="col-sm-8 col-md-8 col-xs-8">
+                                    <select class="select2me form-control" id="qualification_type" name="Qualification_Type" tabindex="1">
+                                        <option value="" disabled selected>Select your type</option>
+                                        <option value="UG Arts &amp; Science">UG Arts &amp; Science</option>
+                                        <option value="B.E / B.Tech Regular">B.E / B.Tech Regular</option>
+                                        <option value="B.E / B.Tech Lateral">B.E / B.Tech Lateral</option>
+                                        <option value="Any P.G Degree">Any P.G Degree</option>
+                                    </select>
+                                    <span class="req_symbol" id="qualification_type_span" style="display:none">Qualification Type is Required!</span>
+                                </div>
+                            </div>
+                            </div>
+                            <div class="col-sm-12 col-md-6 mb-3">
+                                <div class="row"> 
+                                    <div class="col-sm-4 col-md-4 col-xs-4">
+                                        <label for="qualificationdegree">Qualification Degree<span style="color: red;">*</span></label>
+                                    </div>
+                                    <div class="col-sm-8 col-md-8 col-xs-8">
+                                        <!-- Dropdown populated from database based on qualification type -->
+                                        <select class="select2me form-control" id="qualificationdegree" name="qualificationdegree" tabindex="1">
+                                            <option value="" disabled selected>Select your Degree</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                            </div>
+                            
+                            <div class="row">
+                            <div class="col-sm-12 col-md-6 mb-3">
+                            <div class="row">
+                                    <div class="col-sm-4 col-md-4 col-xs-4">
+                                    <label for="passing-date">Month & Year of Passing<span style="color: red;">*</span></label>
+                                    </div> 
+                                    <div class="col-sm-8 col-md-8 col-xs-8">
+                                        <!-- Selection dropdowns -->
+                                        <div class="row">
+                                        <div class="dropdown-container">  
+                                            <select class="select2me form-control month" id="month" name="month_degree">
+                                                <option value="1">January</option>
+                                                <option value="2">February</option>
+                                                <option value="3">March</option>
+                                                <option value="4">April</option>
+                                                <option value="5">May</option>
+                                                <option value="6">June</option>
+                                                <option value="7">July</option>
+                                                <option value="8">August</option>
+                                                <option value="9">September</option>
+                                                <option value="10">October</option>
+                                                <option value="11">November</option>
+                                                <option value="12">December</option>
+                                            </select>     
+                                            <select class="select2me form-control year" id="yaer" name="year_degree"></select>   
+                                        </div>
+                                        </div>
+
+                                    </div>
                                     <span class="req_symbol" id="passing_date_span" style="display:none">Month & Year of passing is Required!</span>
                                 </div>
-                            <div class="col-md-6 mb-3">
-                            <div class="control-label" style="margin-block-end: 8px;">Qualification Type<span style="color: red;">*</span>
-                                <select class="select2me form-control" id="qualification_type" name="qualification_type" tabindex="1">
-                                    <option value="">Select Type</option>
-                                    <option value="UG Arts &amp; Science">UG Arts &amp; Science</option>
-                                    <option value="B.E / B.Tech Regular">B.E / B.Tech Regular</option>
-                                    <option value="B.E / B.Tech Lateral">B.E / B.Tech Lateral</option>
-                                    <option value="Any P.G Degree">Any P.G Degree</option>
-                                </select>
-                                <span class="req_symbol" id="qualification_type_span" style="display:none">Qualification Type is Required!</span>
-                            </div>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="row">
-                                <div class="col-md-6 mb-3">
-                                    <label class="control-label">Semester type<span style="color: red;">*</span></label>
-                                    <select class="select2me form-control mode_req_field" id="semester_type" name="semester_type" tabindex="1">
-                                        <option value="Semester">Semester</option>
-                                        <option value="Non-Semester">Non-Semester</option>
-                                    </select>
-                                    <span class="req_symbol" id="semester_type_span" style="display:none">Semester Type is Required!</span>
                                 </div>
-                                <div class="col-md-6 mb-3">
-                                    <label class="control-label">Total No Of Semesters<span style="color: red;">*</span></label>
-                                    <select class="form-control" id="no-of-sem" name="no-of-sem" tabindex="1">
-                                        <option value="2" selected>2</option>
-                                        <option value="3">3</option>
-                                        <option value="4">4</option>
-                                        <option value="5">5</option>
-                                        <option value="6">6</option>
-                                        <option value="7">7</option>
-                                        <option value="8">8</option>
-                                    </select>
+                                    <div class="col-sm-12 col-md-6 mb-3">
+                                    <div class="row">
+                                        <div class="col-sm-4 col-md-4 col-xs-4">
+                                        <label class="control-label">Semester type<span style="color: red;">*</span></label>
+                                        </div>
+                                        <div class="col-sm-8 col-md-8 col-xs-8">
+                                        <select class="select2me form-control mode_req_field" id="semester_type" name="Semester_Type" tabindex="1">
+                                            <option value="" disabled selected>Select your type</option>
+                                            <option value="Semester">Semester</option>
+                                            <option value="Non-Semester">Non-Semester</option>
+                                        </select>
+                                        </div>
+                                        <span class="req_symbol" id="semester_type_span" style="display:none">Semester Type is Required!</span>
+                                    </div>
+                                    </div>
+                                </div>   
+                            
+                                <div class="row">
+                                    <div class="col-sm-12 col-md-6 mb-3">
+                                    <div class="row">
+                                            <div class="col-sm-4 col-md-4 col-xs-4">
+                                                <label class="control-label">Total No Of Semesters<span style="color: red;">*</span></label>
+                                            </div>
+                                            <div class="col-sm-8 col-md-8 col-xs-8">    
+                                                <select class="select2me form-control" id="no-of-sem" name="Total_No_of_Semesters" tabindex="1">
+                                                    <option value="2" selected>2</option>
+                                                    <option value="3">3</option>
+                                                    <option value="4">4</option>
+                                                    <option value="5">5</option>
+                                                    <option value="6">6</option>
+                                                    <option value="7">7</option>
+                                                    <option value="8">8</option>
+                                                </select>
+                                            </div>
+                                    </div>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                        
+
                         <div class="form-group">
                             <div class="col-md-10" style="margin-block-start:1%">
                                 <div>
@@ -899,7 +575,6 @@
         </table>
       </div>
     </div>
-  </div>
   <div class="form-group">
     <div class="col-md-12">
     <b>DECLARATION :</b> I declare that the information given above are true to the best of my knowledge and that I shall, if admitted abide by the rules of the University.
@@ -921,8 +596,8 @@
                         <div class="error-message" id="others2FileError"></div>
                     </div>-->
                 </div>
-                <input type="submit" class="btn btn-primary float-end " value="Upload & Continue">
-            
+                <input type="submit" class="btn btn-primary float-end" value="Save & Continue">
+                </form>
                             
 
 
@@ -937,21 +612,14 @@
     </div>
     <!-- End Windows Menu-->
       <!--End Menu Side bar-->
-            
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>        
     <script scr = "bootstrap-5.2.3-dist/js/bootstrap.min.js"></script>
     <script src = "bootstrap-5.2.3-dist/js/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Font Awesome -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
-    <script>
-        $(document).ready(function() {
-            var date = new Date();
-            var year = date.getFullYear();
-            var month = (date.getMonth() + 1).toString().padStart(2, '0'); // Add 1 to month and pad with leading zero if necessary
-            $('.maxvalue').attr('max', year + '-' + month);
-        });
-    </script>
-    
+
+        
     <script>
         // Function to generate semester tables based on the selected number of semesters
         function generateSemesterTables(numSemesters) {
@@ -972,8 +640,8 @@
                 <div>
                     <h2>Semester ${semesterId}</h2>
                     <div class="form-group">
-                        <label for="no-of-subjects-sem${semesterId}">Number of Subjects:</label>
-                        <select class="form-control no-of-subjects-select" id="no-of-subjects-sem${semesterId}" data-semester-id="${semesterId}">
+                        <label for="no-of-subjects-sem${semesterId}" style="display: inline-block; margin-right: 10px;">Number of Subjects:</label>
+                        <select class="select2me form-control form-control no-of-subjects-select" id="no-of-subjects-sem${semesterId}" data-semester-id="${semesterId}" style="display: inline-block; width:200px;">
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
@@ -986,7 +654,7 @@
                             <option value="10">10</option>
                         </select>
                     </div>
-                    <table class="table table-bordered" style="margin-top: 20px;"><!-- Added margin-top of the student table here -->
+                    <table class="table table-bordered" style="margin-top: 20px;">
                         <thead>
                             <tr>
                                 <th>Subject / Course Name</th>
@@ -1030,6 +698,12 @@
             // Generate rows based on the number of subjects
             for (var j = 1; j <= numSubjects; j++) {
                 var rowData = storedData[`Row_${semesterId}_${j - 1}`] || {};
+                var currentYear = new Date().getFullYear();
+                var yearOptions = '';
+                for (var year = currentYear; year >= currentYear - 20; year--) {
+                    yearOptions += `<option value="${year}" ${rowData.year === year ? 'selected' : ''}>${year}</option>`;
+                }
+        
                 tbody.append(`
                     <tr>
                         <td><input type="text" class="form-control" name="Sub_${semesterId}_${j}" value="${rowData.subject || ''}" /></td>
@@ -1045,7 +719,25 @@
                         </td>
                         <td><input type="number" class="form-control" name="Maxi_${semesterId}_${j}" value="${rowData.maximumMarks || ''}" /></td>
                         <td><input type="number" class="form-control" name="Obt_${semesterId}_${j}" value="${rowData.obtainedMarks || ''}" /></td>
-                        <td><input id="year" class="maxvalue" type="month" ></td>
+                        <td><div class="dropdown-container">
+                                <select class="select2me form-control month">
+                                    <option value="1" ${rowData.month === 1 ? 'selected' : ''}>January</option>
+                                    <option value="2" ${rowData.month === 2 ? 'selected' : ''}>February</option>
+                                    <option value="3" ${rowData.month === 3 ? 'selected' : ''}>March</option>
+                                    <option value="4" ${rowData.month === 4 ? 'selected' : ''}>April</option>
+                                    <option value="5" ${rowData.month === 5 ? 'selected' : ''}>May</option>
+                                    <option value="6" ${rowData.month === 6 ? 'selected' : ''}>June</option>
+                                    <option value="7" ${rowData.month === 7 ? 'selected' : ''}>July</option>
+                                    <option value="8" ${rowData.month === 8 ? 'selected' : ''}>August</option>
+                                    <option value="9" ${rowData.month === 9 ? 'selected' : ''}>September</option>
+                                    <option value="10" ${rowData.month === 10 ? 'selected' : ''}>October</option>
+                                    <option value="11" ${rowData.month === 11 ? 'selected' : ''}>November</option>
+                                    <option value="12" ${rowData.month === 12 ? 'selected' : ''}>December</option>
+                                </select>
+                                <select class="select2me form-control year">
+                                    ${yearOptions}
+                                </select>
+                            </div></td>
                     </tr>
                 `);
             }
@@ -1053,113 +745,143 @@
         
         // Event listener for changes in the number of semesters dropdown
         $('#no-of-sem').on('change', function() {
-        var numSemesters = parseInt($(this).val());
-        generateSemesterTables(numSemesters);
-    });
-    
-    // Function to store the data of each row
-    function storeTableData() {
-        var storedData = {};
-    
-        // Loop through each semester table
-        $('#tables_container').find('div').each(function() {
-            var semesterId = $(this).find('.no-of-subjects-select').data('semester-id');
-            storedData[`no_of_subjects_sem${semesterId}`] = $(this).find('.no-of-subjects-select').val();
-    
-            // Loop through each row in the semester table
-            $(this).find('tbody tr').each(function(index) {
-                var rowData = {
-                    subject: $(this).find('input[name^="Sub"]').val(),
-                    category: $(this).find('select[name^="Cat"]').val(),
-                    maximumMarks: $(this).find('input[name^="Maxi"]').val(),
-                    obtainedMarks: $(this).find('input[name^="Obt"]').val(),
-                    dateOfPassing: $(this).find('input[name^="DateOfPassing"]').val()
-                };
-                storedData[`Row_${semesterId}_${index}`] = rowData;
+            var numSemesters = parseInt($(this).val());
+            generateSemesterTables(numSemesters);
+        });
+        
+        // Function to store the data of each row
+        function storeTableData() {
+            var storedData = {};
+        
+            // Loop through each semester table
+            $('#tables_container').find('div').each(function() {
+                var semesterId = $(this).find('.no-of-subjects-select').data('semester-id');
+                storedData[`no_of_subjects_sem${semesterId}`] = $(this).find('.no-of-subjects-select').val();
+        
+                // Loop through each row in the semester table
+                $(this).find('tbody tr').each(function(index) {
+                    var rowData = {
+                        subject: $(this).find('input[name^="Sub"]').val(),
+                        category: $(this).find('select[name^="Cat"]').val(),
+                        maximumMarks: $(this).find('input[name^="Maxi"]').val(),
+                        obtainedMarks: $(this).find('input[name^="Obt"]').val(),
+                        month: parseInt($(this).find('.month').val()),
+                        year: parseInt($(this).find('.year').val())
+                    };
+                    storedData[`Row_${semesterId}_${index}`] = rowData;
+                });
+            });
+        
+            // Return the stored data
+            return storedData;
+        }
+        
+        // Retrieve stored data when the page loads
+        $(document).ready(function() {
+            var storedData = JSON.parse(localStorage.getItem('storedData')) || {}; // Retrieve stored data from local storage
+            var numSemesters = parseInt($('#no-of-sem').val()); // Get the initial number of semesters
+            generateSemesterTables(numSemesters); // Generate tables based on the initial number of semesters
+            $('#no-of-sem').trigger('change'); // Trigger the change event to generate rows for initial semesters
+        
+            // Event listener for changes in the number of semesters dropdown
+            $('#no-of-sem').on('change', function() {
+                var numSemesters = parseInt($(this).val());
+                generateSemesterTables(numSemesters); // Generate tables based on the selected number of semesters
+                storeTableData(); // Store the data whenever there's a change in the number of semesters
+            });
+        
+            // Event listener for changes in the number of subjects dropdown
+            $(document).on('change', '.no-of-subjects-select', function() {
+                storeTableData(); // Store the data whenever there's a change in the number of subjects
+            });
+        
+            // Store the data whenever the user leaves the page
+            $(window).on('beforeunload', function() {
+                var storedData = storeTableData(); // Store the data
+                localStorage.setItem('storedData', JSON.stringify(storedData)); // Save the data to local storage
             });
         });
-    
-        // Return the stored data
-        return storedData;
-    }
-    
-    // Retrieve stored data when the page loads
-    $(document).ready(function() {
-        var storedData = JSON.parse(localStorage.getItem('storedData')) || {}; // Retrieve stored data from local storage
-        var numSemesters = parseInt($('#no-of-sem').val()); // Get the initial number of semesters
-        generateSemesterTables(numSemesters); // Generate tables based on the initial number of semesters
-        $('#no-of-sem').trigger('change'); // Trigger the change event to generate rows for initial semesters
-    
-        // Event listener for changes in the number of semesters dropdown
-        $('#no-of-sem').on('change', function() {
-            var numSemesters = parseInt($(this).val());
-            generateSemesterTables(numSemesters); // Generate tables based on the selected number of semesters
-            storeTableData(); // Store the data whenever there's a change in the number of semesters
+        
+        // Function to calculate and update the total marks and percentage
+        function calculateMarks() {
+            var totalMaxMarks = 0;
+            var totalObtMarks = 0;
+            var totalMaxMarksPartIII = 0;
+            var totalObtMarksPartIII = 0;
+            var totalSubjectsPartIII = 0;
+        
+            // Loop through each semester table
+            $('#tables_container').find('div').each(function() {
+                $(this).find('tbody tr').each(function() {
+                    var maxMarks = parseInt($(this).find('input[name^="Maxi"]').val()) || 0;
+                    var obtMarks = parseInt($(this).find('input[name^="Obt"]').val()) || 0;
+                    var category = $(this).find('select[name^="Cat"]').val() || '';
+        
+                    // Calculate total maximum and obtained marks
+                    totalMaxMarks += maxMarks;
+                    totalObtMarks += obtMarks;
+        
+                    // Calculate total maximum and obtained marks for Part III
+                    if (category === 'Part III') {
+                        totalMaxMarksPartIII += maxMarks;
+                        totalObtMarksPartIII += obtMarks;
+                        totalSubjectsPartIII++;
+                    }
+                });
+            });
+        
+            // Update the input fields with the calculated values
+            $('#max_mark_disp').val(totalMaxMarks);
+            $('#max_mark').val(totalMaxMarks);
+        
+            $('#mark_obt_disp').val(totalObtMarks);
+            $('#mark_obt').val(totalObtMarks);
+        
+            // Calculate percentage of marks for Part III
+            var percMarksPartIII = (totalObtMarksPartIII / totalMaxMarksPartIII) * 100 || 0;
+            $('#perc_mark_disp').val(percMarksPartIII.toFixed(3));
+            $('#perc_mark').val(percMarksPartIII.toFixed(3));
+        }
+        
+        // Call the calculateMarks function initially and whenever there's a change in the marks
+        $(document).ready(function() {
+            calculateMarks(); // Initial calculation
+        
+            // Event listener for changes in the marks
+            $('#tables_container, #no-of-sem').on('change', function() {
+                calculateMarks(); // Recalculate marks whenever there's a change
+            });
         });
+        </script>
+        
     
-        // Event listener for changes in the number of subjects dropdown
-        $(document).on('change', '.no-of-subjects-select', function() {
-            storeTableData(); // Store the data whenever there's a change in the number of subjects
-        });
-    
-        // Store the data whenever the user leaves the page
-        $(window).on('beforeunload', function() {
-            var storedData = storeTableData(); // Store the data
-            localStorage.setItem('storedData', JSON.stringify(storedData)); // Save the data to local storage
-        });
-    });
+    <script>
+        $(document).ready(function() {
+            // Get current year
+            const currentYear = (new Date()).getFullYear();
 
-    // Function to calculate and update the total marks and percentage
-function calculateMarks() {
-    var totalMaxMarks = 0;
-    var totalObtMarks = 0;
-    var totalMaxMarksPartIII = 0;
-    var totalObtMarksPartIII = 0;
-    var totalSubjectsPartIII = 0;
+            // Function to populate year dropdown
+            function populateYearDropdown(yearDropdown) {
+                // Clear any existing options
+                yearDropdown.empty();
 
-    // Loop through each semester table
-    $('#tables_container').find('div').each(function() {
-        $(this).find('tbody tr').each(function() {
-            var maxMarks = parseInt($(this).find('input[name^="Maxi"]').val()) || 0;
-            var obtMarks = parseInt($(this).find('input[name^="Obt"]').val()) || 0;
-            var category = $(this).find('select[name^="Cat"]').val() || '';
+                // Populate year dropdown
+                for (let i = currentYear - 30; i <= currentYear; i++) {
+                    yearDropdown.append($('<option>', {
+                        value: i,
+                        text: i
+                    }));
+                }
 
-            // Calculate total maximum and obtained marks
-            totalMaxMarks += maxMarks;
-            totalObtMarks += obtMarks;
-
-            // Calculate total maximum and obtained marks for Part III
-            if (category === 'Part III') {
-                totalMaxMarksPartIII += maxMarks;
-                totalObtMarksPartIII += obtMarks;
-                totalSubjectsPartIII++;
+                // Set default value to current year
+                yearDropdown.val(currentYear);
             }
+
+            // Call the function for each set of dropdowns
+            $('.dropdown-container').each(function() {
+                populateYearDropdown($(this).find('.year'));
+            });
         });
-    });
-
-    // Update the input fields with the calculated values
-    $('#max_mark_disp').val(totalMaxMarks);
-    $('#max_mark').val(totalMaxMarks);
-
-    $('#mark_obt_disp').val(totalObtMarks);
-    $('#mark_obt').val(totalObtMarks);
-
-    // Calculate percentage of marks for Part III
-    var percMarksPartIII = (totalObtMarksPartIII / totalMaxMarksPartIII) * 100 || 0;
-    $('#perc_mark_disp').val(percMarksPartIII.toFixed(3));
-    $('#perc_mark').val(percMarksPartIII.toFixed(3));
-}
-
-// Call the calculateMarks function initially and whenever there's a change in the marks
-$(document).ready(function() {
-    calculateMarks(); // Initial calculation
-
-    // Event listener for changes in the marks
-    $('#tables_container, #no-of-sem').on('change', function() {
-        calculateMarks(); // Recalculate marks whenever there's a change
-    });
-});
-
     </script>
     <script>
         $(document).ready(function(){

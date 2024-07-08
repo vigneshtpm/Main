@@ -1,6 +1,7 @@
 <?php
 // Start output buffering
 ob_start();
+session_start();
 /*
 // Database connection
 $conn = new mysqli("localhost", "root", "", "student");
@@ -10,6 +11,9 @@ if ($conn->connect_error) {
 */
 // Include the FPDF library
 require('fpdf186/fpdf.php');
+include 'connection.php';
+
+header('Content-Type: application/json');
 
 class PDF extends FPDF
 {
@@ -33,7 +37,7 @@ $pdf->AddPage();
 
 $pdf->SetFont('Arial', 'B', 16);
 
-
+/*
 $pdf->Image('assets\images\download 2.jpg', 10, 10, 30, 25, 'jpg');
 
 // Header 
@@ -49,6 +53,36 @@ $pdf->ln(4);
 
 // Add another image
 $pdf->Image('assets\images\periyar.jpg', 175, 9, 25, 25, 'jpg');
+*/
+$id = 1;
+$stmt = $conn->prepare('SELECT  `headerLine3`, `headerLine4`, `logoImage1`, `logoImage2` FROM `header` WHERE id = ?');
+$stmt->bind_param('i', $id);  // 'i' for integer
+$stmt->execute();
+$result = $stmt->get_result();
+$row = $result->fetch_assoc();
+$stmt->close();
+
+
+// Create instance of FPDF
+$pdf = new FPDF();
+$pdf->AddPage();
+
+// Set colors and font for the header
+$pdf->SetTextColor(0, 0, 100);
+$pdf->SetFont('Arial', 'B', 14);
+$pdf->Cell(180, 10, 'PERIYAR UNIVERSITY', 0, 1, 'C');
+
+// Reset color and font for the subheader
+$pdf->SetTextColor(0, 0, 0);
+$pdf->SetFont('Arial', 'B', 11);
+$pdf->Cell(180, 4, 'Salem-636 011, Tamil Nadu, India', 0, 1, 'C');
+$pdf->Cell(180, 4, $row['headerLine4'], 0, 1, 'C');
+$pdf->Cell(180, 4, $row['headerLine3'], 0, 1, 'C');
+$pdf->Ln(4);
+
+// Add images
+$pdf->Image($row['logoImage1'], 10, 10, 30, 25, 'jpg');
+$pdf->Image($row['logoImage2'], 175, 9, 25, 25, 'jpg');
 
 $pdf->SetLineWidth(0.3);
 // Line 
@@ -87,23 +121,32 @@ $pdf->MultiCell(80, 5, 'Master of Computer Application - Computer Application', 
 //Applicant Image 
 $pdf->Image("D:\Vicky\Photo\photo.jpg", 173, 60, 27, 30, 'jpg'); 
 
+$email = $_SESSION['email'];
+$stmt = $conn->prepare('SELECT `dof`, `applicant_name`, `mobile`, `father_name`, `mother_name` FROM `registration` WHERE e_mail = ?');
+$stmt->bind_param("s", $email);
+$stmt->execute();
+$result = $stmt->get_result();
+$row = $result->fetch_assoc();
+$stmt->close();
+$conn->close();
+
 //Applicant Name
 $pdf->Cell(5, 8, '2.', 0, 0);
 $pdf->Cell(40, 8, 'Name of the Applicant', 0, 0);
 $pdf->Cell(40, 8, ':', 0, 0, 'R');
-$pdf->Cell(75, 8, 'VIGNESHWARAN K',0,1, 'L');
+$pdf->Cell(75, 8, $row['applicant_name'],0,1, 'L');
 
 //Applicant DOB
 $pdf->Cell(5, 8, '3.', 0, 0);
 $pdf->Cell(40, 8, 'Date of Birth ', 0, 0);
 $pdf->Cell(40, 8, ':', 0, 0, 'R');
-$pdf->Cell(75, 8, '19/11/2002',0,1, 'L');
+$pdf->Cell(75, 8,  $row['dof'],0,1, 'L');
 
 //Applicant Father & Mother Name
 $pdf->Cell(5, 8, '4.', 0, 0);
 $pdf->Cell(40, 8, 'Name of the Father & Mother ', 0, 0);
 $pdf->Cell(40, 8, ':', 0, 0, 'R');
-$pdf->Cell(75, 8, 'KRISHNAMOORTHY R & VALLIAMMAL',0,1, 'L');
+$pdf->Cell(75, 8,  $row['father_name'].'&' .$row['mother_name'],0,1, 'L');
 
 //Applicant Guardian Name
 $pdf->Cell(5, 8, '', 0, 0);
@@ -115,7 +158,7 @@ $pdf->Cell(75, 8, 'Guardian Name',0,1, 'L');
 $pdf->Cell(5, 8, '5.', 0, 0);
 $pdf->Cell(40, 8, "Father's & Mother's Occupation  ", 0, 0);
 $pdf->Cell(40, 8, ':', 0, 0, 'R');
-$pdf->Cell(75, 8, 'FARMER & HOUSE WIFE',0,1, 'L');
+$pdf->Cell(75, 9, 'FARMER & HOUSE WIFE',0,1, 'L');
 
 //Applicant Gender
 $pdf->Cell(5, 8, '6.', 0, 0);
@@ -196,7 +239,7 @@ $pdf->Cell(75, 8, 'INDIA',0,1, 'L');
 $pdf->Cell(5, 8, '12.', 0, 0);
 $pdf->Cell(40, 8, "Mobile No.", 0, 0);
 $pdf->Cell(40, 8, ':', 0, 0, 'R');
-$pdf->Cell(75, 8, '8248084792',0,1, 'L');
+$pdf->Cell(75, 8,  $row['mobile'],0,1, 'L');
 
 //Applicant Telephone No.
 $pdf->Cell(5, 8, '13.', 0, 0);
@@ -208,7 +251,7 @@ $pdf->Cell(75, 8, '',0,1, 'L');
 $pdf->Cell(5, 8, '14.', 0, 0);
 $pdf->Cell(40, 8, "E-Mail ID", 0, 0);
 $pdf->Cell(40, 8, ':', 0, 0, 'R');
-$pdf->Cell(75, 8, 'vigneshwaranrk2@gmail.com',0,1, 'L');
+$pdf->Cell(75, 8, $email,0,1, 'L');
 
 //Applicant Aahaar Card No. 
 $pdf->Cell(5, 8, '15.', 0, 0);
