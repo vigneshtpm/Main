@@ -23,9 +23,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmt->bind_param("ssss", $name, $email, $mobile, $password);
         $stmt->execute();
 
+        $stmt1=$conn->prepare("SELECT id FROM registration WHERE e_mail = ?");
+        $stmt1->bind_param("s",$email);
+        $stmt1->execute();
+        $result1=$stmt1->get_result();
+        $id = $result1->fetch_assoc()["id"]; 
+
+        $stmt2=$conn->prepare("INSERT INTO personal(id) VALUES(?)");
+        $stmt2->bind_param("s",$id);
+        $stmt2->execute();
+
+       
+        
         echo json_encode(['success' => true, 'message' => 'Registration successful. Please log in to complete your profile.']);
 
         $stmt->close();
+        $stmt1->close();
+        $stmt2->close();
+
     }
 
     $check_stmt->close();

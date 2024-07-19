@@ -14,6 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->execute();
     $result = $stmt->get_result();
 
+
     if ($result->num_rows > 0) {
         $user = $result->fetch_assoc();
         $db_password = $user['app_password']; // Retrieve password from database
@@ -21,7 +22,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Directly compare passwords
         if ($password === $db_password) { // Assuming plain text comparison
             $_SESSION['email'] = $email;
-            echo json_encode(['success' => true, 'message' => 'Login successful']);
+            
+            $current_stage = $user['current_stage']; 
+            echo json_encode(['success' => true, 'message' => 'Login successful', 'stage' => $current_stage]);
         } else {
             echo json_encode(['success' => false, 'message' => 'Invalid password']);
         }

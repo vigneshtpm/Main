@@ -75,15 +75,15 @@
                     success: function(response) {
                         if (response.success) {
                             Swal.fire({
+                                toast:true,
+                                position: 'top-end',
                                 title: 'Login Successful!',
                                 text: 'You have been successfully Login.',
                                 icon: 'success',
                                 confirmButtonText: 'OK'
                             }).then((result) => {
-                                if (result.isConfirmed) {
-                                    // Redirect to login page
-                                    window.location.href = 'Personal.html';
-                                }
+                               window.location.href = 'Personal.html';
+                                    
                             });
                             
                            

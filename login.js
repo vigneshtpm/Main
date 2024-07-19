@@ -12,6 +12,7 @@ $(document).ready(function() {
        if (userid === "" && passwd === "") {
          // Display warning message for both empty fields using SweetAlert2
          Swal.fire({
+             
              icon: 'warning',
              title: 'Please Enter the User Id and Password',
              timer: 3000, 

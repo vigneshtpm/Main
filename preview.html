@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,19 +11,15 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
     <style>
-       
-                @media (min-width: 768px) {
-        .navbar-toggler {
-            display: none;
+        @media (min-width: 768px) {
+            .navbar-toggler {
+                display: none;
+            }
         }
-        }
-       
         .form-control[disabled] {
             border: none;
             background-color: transparent; /* Optional: To make the background transparent */
-            
         }
-   
     </style>
 </head>
 <body>
@@ -30,12 +27,12 @@
     <div id="header"></div>
     <div id="navigation"></div>
       
-      <!--End Navigation bar-->
-      <!--Menu Side bar-->
-      <!--Mobile Menu-->
-      <div class="offcanvas offcanvas-start 
-                  d-md-block" 
-        tabindex="-1" id="sidebar"style="background-color: #000064;"
+    <!--End Navigation bar-->
+    <!--Menu Side bar-->
+    <!--Mobile Menu-->
+    <div class="offcanvas offcanvas-start 
+                d-md-block" 
+        tabindex="-1" id="sidebar" style="background-color: #000064;"
         aria-labelledby="sidebarLabel">
         <div class="offcanvas-header">
             <h5 class="offcanvas-title text-white "
@@ -47,59 +44,55 @@
             </button>
         </div>
         <div class="offcanvas-body">
-            <ul class="nav flex-column navFix" >
-              
+            <ul class="nav flex-column navFix">
                 <li class="nav-item">
-                    <a class="nav-link  text-white"
-                    href="Personal.html">
-                    <i class="fa-solid fa-user"></i> &emsp;
-                        Personal Information
-                    </a>
-                </li>
-            
-                <li class="nav-item">
-                    <a class="nav-link  text-white"
-                    href="education.html"><i class="fa-solid fa-user-graduate"></i> &emsp;
-                        Education Details
+                    <a class="nav-link text-white"
+                       href="Personal.html">
+                        <i class="fa-solid fa-user"></i> &emsp;
+                        Personal Information<i class=" ms-3 fa-solid fa-circle-check"></i>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link  text-white"
-                    href="Certificate.html"><i class="fa-solid fa-cloud-arrow-up"></i> &ensp;
-                        Certificate Upload
+                    <a class="nav-link text-white"
+                       href="education.html"><i class="fa-solid fa-user-graduate"></i> &emsp;
+                        Education Details<i class=" ms-3 fa-solid fa-circle-check"></i>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link  text-white"
-                    href="preview.html"><i class="fa-regular fa-eye"></i> &ensp;
+                    <a class="nav-link text-white"
+                       href="Certificate.html"><i class="fa-solid fa-cloud-arrow-up"></i> &ensp;
+                        Certificate Upload<i class=" ms-3 fa-solid fa-circle-check"></i>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white"
+                       href="preview.html"><i class="fa-regular fa-eye"></i> &ensp;
                         Preview Details
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link  text-white"
-                    href="#"><i class="fa-solid fa-indian-rupee-sign"></i> &emsp;
-                        Payment 
+                    <a class="nav-link text-white"
+                       href="#"><i class="fa-solid fa-indian-rupee-sign"></i> &emsp;
+                        Payment
                     </a>
                 </li>
-                
                 <li class="nav-item">
-                    <a class="nav-link  text-white"
-                    href="download.html"><i class="fa-solid fa-file-pdf"></i> &emsp;
+                    <a class="nav-link text-white"
+                       href="download.html"><i class="fa-solid fa-file-pdf"></i> &emsp;
                         Download Application
                     </a>
                 </li>
-               
             </ul>
-           
         </div>
     </div>
     <!--End Mobile Menu-->
-<!--Windows Menu-->
+
+    <!--Windows Menu-->
     <div class="container-fluid" style="margin-top: 5px;">
         <div class="row">
             <nav id="sidebarMenu"
                 class="col-md-4 col-lg-3 col-xxl-2 d-none 
-                        d-md-block  sidebar" style="background-color: #000064;">
+                        d-md-block sidebar" style="background-color: #000064;">
                 <div class="position-sticky 
                              vh-100" style="background-color: #000064;">
                     <div class="pt-3">
@@ -107,84 +100,157 @@
                                 justify-content-between 
                                 align-items-center px-3 
                                 mt-4 mb-1 text-muted">
-                            <span class=" text-white" style="margin-bottom: 15px;">
+                            <span class="text-white" style="margin-bottom: 15px;">
                                 Menu
                             </span>
                         </h4>
-                        <ul class="nav flex-column navFix" >
-                           
+                        <ul class="nav flex-column navFix">
                             <li class="nav-item">
-                                <a class="nav-link  text-white"
-                                href="Personal.html">
-                                <i class="fa-solid fa-user"></i> &emsp;
-                                    Personal Information
-                                </a>
-                            </li>
-                        
-                            <li class="nav-item">
-                                <a class="nav-link  text-white"
-                                href="education.html"><i class="fa-solid fa-user-graduate"></i>&emsp;
-                                    Education Details
+                                <a class="nav-link text-white"
+                                   href="Personal.html">
+                                    <i class="fa-solid fa-user"></i> &emsp;
+                                    Personal Information<i class=" ms-3 fa-solid fa-circle-check"></i>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link  text-white"
-                                href="Certificate.html"><i class="fa-solid fa-cloud-arrow-up"></i> &ensp;
-                                    Certificate Upload
+                                <a class="nav-link text-white"
+                                   href="education.html"><i class="fa-solid fa-user-graduate"></i>&emsp;
+                                    Education Details<i class=" ms-3 fa-solid fa-circle-check"></i>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link  text-white"
-                                href="preview.html"><i class="fa-regular fa-eye"></i> &ensp;
+                                <a class="nav-link text-white"
+                                   href="Certificate.html"><i class="fa-solid fa-cloud-arrow-up"></i> &ensp;
+                                    Certificate Upload<i class=" ms-3 fa-solid fa-circle-check"></i>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white"
+                                   href="preview.html"><i class="fa-regular fa-eye"></i> &ensp;
                                     Preview Details
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link  text-white"
-                                href="#"><i class="fa-solid fa-indian-rupee-sign"></i></i> &emsp;
+                                <a class="nav-link text-white"
+                                   href="#"><i class="fa-solid fa-indian-rupee-sign"></i>&emsp;
                                     Payment
                                 </a>
                             </li>
-                            
                             <li class="nav-item">
-                                <a class="nav-link  text-white"
-                                href="download.html"><i class="fa-solid fa-file-pdf"></i> &emsp;
+                                <a class="nav-link text-white"
+                                   href="download.html"><i class="fa-solid fa-file-pdf"></i> &emsp;
                                     Download Application
                                 </a>
                             </li>
-                           
                         </ul>
                     </div>
                 </div>
             </nav>
             <!--Starting Main Page-->
-            <main class="col-md-8 ms-sm-auto col-xxl-10 col-lg-9 px-md-4  ">
-                <div class="pt-3 " style="margin-bottom: 10%;">
+            <main class="col-md-8 ms-sm-auto col-xxl-10 col-lg-9 px-md-4">
+                <div class="pt-3" style="margin-bottom: 10%;">
                     <h2 class="text-color text-center" style="color: #000064;">Preview Applicant</h2><br>
-                    
-                       
+                    <form id="preview_info">
+                        <div class="row">
+                            <div class="col-sm-12 col-lg-5 col-md-12 mb-3">
+                                <div class="row">
+                                    <div class="col-6 col-sm-4 col-md-4 col-xs-4">
+                                        <label for="applicant_name">Name of Applicant:<span style="color: red;">*</span></label> 
+                                    </div>
+                                    <div class="col-6 col-sm-8 col-md-8 col-xs-8 mb-3">
+                                        <input type="text" id="applicant_name" name="applicant_name" class="form-control" disabled>
+                                    </div>
+                                    <div class="col-6 col-sm-4 col-md-4 col-xs-4">
+                                        <label for="father-name">Name of Father:<span style="color: red;">*</span></label>
+                                    </div>
+                                    <div class="col-6 col-sm-8 col-md-8 col-xs-8 mb-3">
+                                        <input type="text" id="father-name" name="father-name" class="form-control" disabled>
+                                    </div>
+                                    <div class="col-6 col-sm-4 col-md-4">
+                                        <label for="father-occupation">Father's Occupation:<span style="color: red;">*</span></label>
+                                    </div>
+                                    <div class="col-6 col-sm-8 col-md-8">
+                                        <input type="text" id="father-occupation" name="father-occupation" class="form-control" disabled>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-12 col-lg-5 col-md-12 mb-3">
+                                <div class="row">
+                                    <div class="col-6 col-sm-4 col-md-4 ">
+                                        <label for="dob">Date of Birth:<span style="color: red;">*</span></label>
+                                    </div>
+                                    <div class="col-6 col-sm-8 col-md-8 mb-3">
+                                        <input type="date" id="dob" name="dob" class="form-control" disabled>
+
+                                    </div>
+                                    <div class="col-6 col-sm-4 col-md-4">
+                                        <label for="mother-name">Name of Mother:<span style="color: red;">*</span></label>
+                                    </div>
+                                    <div class="col-6 col-sm-8 col-md-8 mb-3">
+                                        <input type="text" id="mother-name" name="mother-name" class="form-control" disabled>
+                                    </div>
+                                    <div class="col-6 col-sm-4 col-md-4 col-xs-4">
+                                        <label for="guardian-name">Name of Guardian:</label>
+                                    </div>
+                                    <div class="col-6 col-sm-8 col-md-8 col-xs-8">
+                                        <input type="text" id="guardian-name" name="guardian-name" class="form-control" disabled>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-12 col-lg-2 col-md-12 center-content">
+                                <div class="text-center">
+                                    <img src="assets/images/Periyar_University_logo.png" class="applicant_image" alt="Applicant image" style="border: 5px solid #555;">
+                                </div>      
+                            </div> 
+                        </div>
+                        <div>
+                            <input type="submit" class="btn btn-primary float-end mb-5" value="Save & Continue">
+                        </div>
+                    </form>  
                 </div>
-                
             </main>
             <!--End Main Page-->
-            
-          
         </div>
     </div>
     <!-- End Windows Menu-->
-      <!--End Menu Side bar-->
-            
-    <script scr = "bootstrap-5.2.3-dist/js/bootstrap.min.js"></script>
-    <script src = "bootstrap-5.2.3-dist/js/jquery.min.js"></script>
+    <!--End Menu Side bar-->
+
+    <script src="bootstrap-5.2.3-dist/js/bootstrap.min.js"></script>
+    <script src="bootstrap-5.2.3-dist/js/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Font Awesome -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>    
     <script>
         $(document).ready(function(){
             $("#header").load("header.html");
-            $("#navigation").load("navigation.html")
-        });
+            $("#navigation").load("navigation.html");
+
         
+
+            // Retrieve user data on page load
+            $.ajax({
+                type: 'GET',
+                url: 'preview_retrive.php',
+                success: function(response) {
+                    console.log(response.data.dof); 
+                    if (response.success) {
+                        $('#applicant_name').val(response.data.applicant_name);
+                        $('#dob').val(response.data.dof);
+                        $('#mother-name').val(response.data.mother_name);
+                        $('#father-name').val(response.data.father_name);
+                        $('#father-occupation').val(response.data.father_occupation);
+                        $('#guardian-name').val(response.data.guardian_name);
+                    } else {
+                        alert(response.message);
+                    }
+                },
+                error: function() {
+                    alert('An error occurred. Please try again.');
+                }
+            });
+
+            
+        });
     </script>
 </body>
 </html>
+

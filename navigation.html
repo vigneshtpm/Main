@@ -7,12 +7,34 @@
         <a class="navbar-brand text-white" href="#">Student Application</a>
         
         <div class="dropdown">
-            <button class="dropbtn" >
-                <i class="fa-solid fa-user text-white"></i>
-                <h5 class=" text-white text-end">Mothish</h5>
+            <button class="dropbtn">
+                <i class="fa-solid fa-user text-white me-3" ></i>
+                <div class="responsive-text text-center " id="applicant_name_nav" style=" color:white;"></div>
             </button>
+            
+            <style>
+              .dropbtn {
+                display: flex;
+                align-items: center;
+              }
+            
+              .dropbtn i {
+                margin-right: 8px; /* Adjust the spacing as needed */
+              }
+            
+              .dropbtn div {
+                display: inline-block; /* Ensure div is inline with the icon */
+              }
+               #logout-link{
+                color:#000064;
+               }
+                #logout-link:hover{
+                  color:grey;
+                }
+            </style>
+            
             <div class="dropdown-content">
-                <a href="#" id="logout-link">Logout</a>
+                <a href="#" class="  fw-bold"  id="logout-link"><i class="fa-solid fa-right-from-bracket me-3" ></i>Logout</a>
             </div>
         </div>
     </div>
@@ -20,6 +42,23 @@
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="assets/js/navigation.js">
    
+</script>
+<script>
+     $.ajax({
+                        type: 'GET',
+                        url: 'php/retrieve.php',
+                        success: function(response) {
+                            if (response.success) {
+                                $('#applicant_name_nav').text(response.data.applicant_name);
+                            } else {
+                                alert(response.message);
+                                window.location.href = 'login.html';
+                            }
+                        },
+                        error: function(){
+                            alert("Error");
+                        }
+                    });
 </script>
 
 <!--End Navigation bar-->

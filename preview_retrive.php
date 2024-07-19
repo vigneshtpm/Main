@@ -8,7 +8,7 @@ if (isset($_SESSION['email'])) {
     $email = $_SESSION['email'];
 
     // Retrieve user data
-    $stmt = $conn->prepare("SELECT applicant_name, e_mail, mobile  FROM registration  WHERE e_mail = ?");
+    $stmt = $conn->prepare("SELECT applicant_name, dof,  father_name, mother_name FROM registration  WHERE e_mail = ?");
     $stmt->bind_param("s", $email);
     $stmt->execute();
     $result = $stmt->get_result();
@@ -25,3 +25,4 @@ if (isset($_SESSION['email'])) {
 } else {
     echo json_encode(['success' => false, 'message' => 'Not logged in']);
 }
+?>
