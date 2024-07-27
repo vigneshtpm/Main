@@ -1,0 +1,43 @@
+
+
+ $mother_tongue = $_POST["mother-tongue"];
+        $nationality = $_POST["nationality"];
+        $religion = $_POST["religion"];
+        $community = $_POST["community"];
+        $aadhar = $_POST["aadhar"];
+        $abc = $_POST["abc"];
+        $telephone = $_POST["telephone"];
+        $communication_address_1 = $_POST["communication-address-1"];
+        $communication_address_2 = $_POST["communication-address-2"];
+        $communication_address_3 = $_POST["communication-address-3"];
+        $Communication_country = $_POST["Communication-country"];
+        $Communication_state = $_POST["Communication-state"];
+        $communication_district = $_POST["communication_district"];
+        $communication_pincode = $_POST["communication_pincode"];
+        $permanent_address_1 = $_POST["permanent-address-1"];
+        $permanent_address_2 = $_POST["permanent-address-2"];
+        $permanent_address_3 = $_POST["permanent-address-3"];
+        $same_as_communication_address = $_POST["same-as-communication-address"];
+        $permanent_country = $_POST["permanent-country"];
+        $permanent_state = $_POST["permanent-state"];
+        $permanent_district = $_POST["permanent-district"];
+        $permanent_pincode = $_POST["permanent-pincode"];
+        $ex_servicemen = $_POST["ex_servicemen"];
+        $differently_abled = $_POST["differently-abled"];
+        $percentage_disability = $_POST["percentage-disability"];
+        $sportsquota = $_POST["sportsquota"];
+        $others = $_POST["others"];
+
+mother_tongue = ?, nationality = ?, religion = ?, community = ?, aadhar = ?, abc = ?, telephone = ?,
+            communication_address_1 = ?, communication_address_2 = ?, communication_address_3 = ?, Communication_country = ?,
+            Communication_state = ?, communication_district = ?, communication_pincode = ?, permanent_address_1 = ?,
+            permanent_address_2 = ?, permanent_address_3 = ?, same_as_communication_address = ?, permanent_country = ?,
+            permanent_state = ?, permanent_district = ?, permanent_pincode = ?, ex_servicemen = ?, differently_abled = ?,
+            percentage_disability = ?, sportsquota = ?, others = ?
+            
+         $mother_tongue, $nationality, $religion, $community, $aadhar, $abc, $telephone,
+            $communication_address_1, $communication_address_2, $communication_address_3, $Communication_country,
+            $Communication_state, $communication_district, $communication_pincode, $permanent_address_1,
+            $permanent_address_2, $permanent_address_3, $same_as_communication_address, $permanent_country,
+            $permanent_state, $permanent_district, $permanent_pincode, $ex_servicemen, $differently_abled,
+            $percentage_disability, $sportsquota, $others

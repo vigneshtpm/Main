@@ -1,0 +1,91 @@
+
+@media (min-width: 768px) {
+    .navbar-toggler {
+        display: none;
+    }
+}
+
+    thead {
+        background-color: #1a237e; /* Dark blue color */
+        color: #fff; /* White text for contrast */
+        text-align: center;
+    }
+    
+    thead th {
+        padding: 10px;
+        border: 1px solid #fff; /* White border for better separation */
+    }
+    
+    .mid-center {
+        vertical-align: middle; /* Aligns content vertically in the center */
+        text-align: center; /* Aligns content horizontally in the center */
+    }
+    
+            .form-inline-custom .form-group {
+                display: flex;
+                align-items: center;
+            }
+            .form-inline-custom .form-group label {
+                margin-right: 10px;
+                white-space: nowrap;
+            }
+            .form-inline-custom .form-control {
+                flex: 1;
+                min-width: 0;
+            }
+            .form-inline-custom .col-md-6 {
+                display: flex;
+                align-items: center;
+                flex-wrap: nowrap;
+            }
+    
+            .table th, .table td {
+                vertical-align: middle;
+                text-align: center;
+                padding: 5px;
+            }
+            .table thead th {
+                text-align: center;
+            }
+            .form-control, .form-select {
+                width: 100%;
+                padding: 5px;
+                box-sizing: border-box;
+            }
+            .select2me {
+                display: flex;
+                gap: 0.5rem;
+            }
+            .dropdown-container {
+                display: flex;
+                gap: 10px;
+            }
+    
+            .dropdown-container .form-control {
+                width: auto;
+                flex: 1;
+            }
+            
+            /* (A) BASICS - HIDE DEFAULT + SHOW CUSTOM ARROW */
+    .select2me {
+        appearance: none;
+        -moz-appearance: none;
+        -webkit-appearance: none;
+        background-image: url('data:image/svg+xml;utf8,<svg fill="black" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>'); /* Custom arrow SVG */
+        background-repeat: no-repeat;
+        background-position: right 10px center; /* Position of the arrow */
+        background-color: white; /* Background color of the select */
+        padding-right: 30px; /* Space for the arrow */
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        height: 35px; /* Adjust height as needed */
+        width: 100%; /* Full width */
+        font-size: 16px;
+        color: #333;
+    }
+    
+    /* (B) HOVER EFFECT */
+    .select2me:hover {
+        background-color: #f0f0f0; /* Change background color on hover */
+    }
+    

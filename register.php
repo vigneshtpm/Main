@@ -33,13 +33,30 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmt2->bind_param("s",$id);
         $stmt2->execute();
 
+        $stmt5=$conn->prepare("INSERT INTO education_school(id) VALUES(?)");
+        $stmt5->bind_param("s",$id);
+        $stmt5->execute();
+
+        $stmt6=$conn->prepare("INSERT INTO education_college(id) VALUES(?)");
+        $stmt6->bind_param("s",$id);
+        $stmt6->execute();
+
+        $stmt3=$conn->prepare("INSERT INTO college_sem_1(id) VALUES(?)");
+        $stmt3->bind_param("s",$id);
+        $stmt3->execute();
+
+        $stmt4=$conn->prepare("INSERT INTO education_de(id) VALUES(?)");
+        $stmt4->bind_param("s",$id);
+        $stmt4->execute();
        
         
         echo json_encode(['success' => true, 'message' => 'Registration successful. Please log in to complete your profile.']);
 
         $stmt->close();
         $stmt1->close();
-        $stmt2->close();
+        $stmt2->close(); 
+        $stmt4->close();
+        $stmt5->close();
 
     }
 
