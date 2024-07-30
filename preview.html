@@ -10,17 +10,12 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
-    <style>
-        @media (min-width: 768px) {
-            .navbar-toggler {
-                display: none;
-            }
-        }
-        .form-control[disabled] {
-            border: none;
-            background-color: transparent; /* Optional: To make the background transparent */
-        }
-    </style>
+    <link rel="stylesheet" href="assets/css/preview.css">
+    <script src="bootstrap-5.2.3-dist/js/bootstrap.min.js"></script>
+    <script src="bootstrap-5.2.3-dist/js/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>  
+    <script src="assets/js/preview.js"></script>  
 </head>
 <body>
     <!--Start Header-->
@@ -149,63 +144,680 @@
             <!--Starting Main Page-->
             <main class="col-md-8 ms-sm-auto col-xxl-10 col-lg-9 px-md-4">
                 <div class="pt-3" style="margin-bottom: 10%;">
+                    
                     <h2 class="text-color text-center" style="color: #000064;">Preview Applicant</h2><br>
-                    <form id="preview_info">
-                        <div class="row">
-                            <div class="col-sm-12 col-lg-5 col-md-12 mb-3">
+                    <!-- Title Box -->
+<div class="box title-box">
+    <h3>Personal Details</h3>
+</div>
+
+<!-- Content Box -->
+<div class="box content-box">
+    <form id="preview_info">
+        <div class="row">
+            <!-- Column for Name and Father's Details -->
+            <div class="col-sm-12 col-lg-5 col-md-12 mb-3">
+                <div class="row">
+                    <div class="col-6 col-sm-4 col-md-4">
+                        <label for="applicant_name">Name of Applicant</label> 
+                    </div>
+                    <div class="col-6 col-sm-8 col-md-8 mb-3">
+                        <input type="text" id="applicant_name" name="applicant_name" class="form-control" disabled>
+                    </div>
+                    <div class="col-6 col-sm-4 col-md-4">
+                        <label for="father-name">Name of Father</label>
+                    </div>
+                    <div class="col-6 col-sm-8 col-md-8 mb-3">
+                        <input type="text" id="father-name" name="father-name" class="form-control" disabled>
+                    </div>
+                    <div class="col-6 col-sm-4 col-md-4">
+                        <label for="father-occupation">Father's Occupation</label>
+                    </div>
+                    <div class="col-6 col-sm-8 col-md-8">
+                        <input type="text" id="father-occupation" name="father-occupation" class="form-control" disabled>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Column for DOB and Mother's Details -->
+            <div class="col-sm-12 col-lg-5 col-md-12 mb-3">
+                <div class="row">
+                    <div class="col-6 col-sm-4 col-md-4">
+                        <label for="dob">Date of Birth</label>
+                    </div>
+                    <div class="col-6 col-sm-8 col-md-8 mb-3">
+                        <input type="date" id="dob" name="dob" class="form-control" disabled>
+                    </div>
+                    <div class="col-6 col-sm-4 col-md-4">
+                        <label for="mother-name">Name of Mother</label>
+                    </div>
+                    <div class="col-6 col-sm-8 col-md-8 mb-3">
+                        <input type="text" id="mother-name" name="mother-name" class="form-control" disabled>
+                    </div>
+                    <div class="col-6 col-sm-4 col-md-4">
+                        <label for="mother-occupation">Mother's Occupation</label>
+                    </div>
+                    <div class="col-6 col-sm-8 col-md-8">
+                        <input type="text" id="mother-occupation" name="mother-occupation" class="form-control" disabled>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Column for Image -->
+            <div class="col-sm-12 col-lg-2 col-md-12 mb-3 text-center">
+                <img src="assets/images/Periyar_University_logo.png" class="applicant_image" alt="Applicant image" style="border: 5px solid #555;">
+            </div>
+        </div>
+
+        <!-- Guardian and Gender Details -->
+        <div class="row">
+            <div class="col-sm-12 col-lg-6 col-md-12 mb-3">
+                <div class="row">
+                    <div class="col-sm-4 col  col-md-4">
+                        <label for="guardian-name">Name of Guardian</label>
+                    </div>
+                    <div class="col-sm-8 col  col-md-8">
+                        <input type="text" id="guardian-name" name="guardian-name" class="form-control" disabled>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-lg-6 col-md-12 mb-3">
+                <div class="row">
+                    <div class="col-sm-4 col  col-md-4">
+                        <label for="gender">Gender</label>
+                    </div>
+                    <div class="col-sm-8  col col-md-8">
+                        <input type="text" id="gender" name="gender" class="form-control" disabled>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mother Tongue and Nationality Details -->
+        <div class="row">
+            <div class="col-sm-12 col-lg-6 col-md-12 mb-3">
+                <div class="row">
+                    <div class="col-sm-4 col  col-md-4">
+                        <label for="mother-tongue">Mother Tongue</label>
+                    </div>
+                    <div class="col-sm-8 col  col-md-8">
+                        <input type="text" id="mother-tongue" name="mother-tongue" class="form-control" disabled>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-lg-6 col-md-12 mb-3">
+                <div class="row">
+                    <div class="col-sm-4 col  col-md-4">
+                        <label for="nationality">Nationality</label>
+                    </div>
+                    <div class="col-sm-8  col col-md-8">
+                        <input type="text" id="nationality" name="nationality" class="form-control" disabled>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Religion and Community Details -->
+        <div class="row">
+            <div class="col-sm-12 col-lg-6 col-md-12 mb-3">
+                <div class="row">
+                    <div class="col-sm-4 col  col-md-4">
+                        <label for="religion">Religion</label>
+                    </div>
+                    <div class="col-sm-8 col  col-md-8">
+                        <input type="text" id="religion" name="religion" class="form-control" disabled>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-lg-6 col-md-12 mb-3">
+                <div class="row">
+                    <div class="col-sm-4 col  col-md-4">
+                        <label for="community">Community</label>
+                    </div>
+                    <div class="col-sm-8 col  col-md-8">
+                        <input type="text" id="community" name="community" class="form-control" disabled>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Email, Aadhar, and Contact Numbers -->
+        <div class="row">
+            <div class="col-sm-12 col-lg-6 col-md-12 mb-3">
+                <div class="row">
+                    <div class="col-sm-4 col  col-md-4">
+                        <label for="email">Email ID</label>
+                    </div>
+                    <div class="col-sm-8 col  col-md-8">
+                        <input type="email" id="email" name="email" class="form-control" disabled>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-lg-6 col-md-12 mb-3">
+                <div class="row">
+                    <div class="col-sm-4 col  col-md-4">
+                        <label for="aadhar">Aadhar Number</label>
+                    </div>
+                    <div class="col-sm-8 col  col-md-8">
+                        <input type="text" id="aadhar" name="aadhar" class="form-control" disabled>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ABC ID and Telephone/Mobile Numbers -->
+        <div class="row">
+            <div class="col-sm-12 col-lg-6 col-md-12 mb-3">
+                <div class="row">
+                    <div class="col-sm-4 col  col-md-4">
+                        <label for="abc">ABC ID</label>
+                    </div>
+                    <div class="col-sm-8  col col-md-8">
+                        <input type="text" id="abc" name="abc" class="form-control" disabled>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-lg-6 col-md-12 mb-3">
+                <div class="row">
+                    <div class="col-sm-4 col  col-md-4">
+                        <label for="telephone">Telephone Number</label>
+                    </div>
+                    <div class="col-sm-8 col  col-md-8">
+                        <input type="tel" id="telephone" name="telephone" class="form-control" disabled>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Number -->
+        <div class="row">
+            <div class="col-sm-12 col-lg-6 col-md-12 mb-3">
+                <div class="row">
+                    <div class="col-sm-4 col  col-md-4">
+                        <label for="mobile">Mobile Number</label>
+                    </div>
+                    <div class="col-sm-8 col  col-md-8">
+                        <input type="tel" id="mobile" name="mobile" class="form-control" disabled>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+                            <!-- Title Box -->
+                                <div class="box title-box">
+                                    <h3>Communication Address:</h3>
+                                </div>
+
+                                <!-- Content Box -->
+                                <div class="box content-box">
+                                    <div class="form-group row">
+                                        <label for="communication-address-1" class="col-md-4  col col-form-label">Communication Address Line 1:</label>
+                                        <div class="col-md-8  col mb-3">
+                                            <input type="text" id="communication-address-1" name="communication-address-1" class="form-control" disabled>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-group row">
+                                        <label for="communication-address-2" class="col-md-4 col  col-form-label">Communication Address Line 2:</label>
+                                        <div class="col-md-8  col mb-3">
+                                            <input type="text" id="communication-address-2" name="communication-address-2" class="form-control" disabled>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-group row">
+                                        <label for="communication-address-3" class="col-md-4 col  col-form-label">Communication Address Line 3:</label>
+                                        <div class="col-md-8 col  mb-3">
+                                            <input type="text" id="communication-address-3" name="communication-address-3" class="form-control" disabled>
+                                        </div>
+                                    </div>
+
+                                    <!-- Country and State -->
+                                    <div class="row">
+                                        <div class="col-sm-12 col-lg-6 col-md-12 mb-3">
+                                            <div class="row">
+                                                <div class="col-sm-4 col-md-4 col  col-form-label">
+                                                    <label for="Communication-country">Country:</label>
+                                                </div>
+                                                <div class="col-sm-8 col  col-md-8">
+                                                    <input type="text" id="Communication-country" name="Communication-country" class="form-control" disabled>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-12 col-lg-6 col-md-12 mb-3">
+                                            <div class="row">
+                                                <div class="col-sm-4 col  col-md-4 col-form-label">
+                                                    <label for="Communication-state">State:</label>
+                                                </div>
+                                                <div class="col-sm-8 col  col-md-8">
+                                                    <input type="text" id="Communication-state" name="Communication-state" class="form-control" disabled>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- District and Pincode -->
+                                    <div class="row">
+                                        <div class="col-sm-12 col-lg-6 col-md-12 mb-3">
+                                            <div class="row">
+                                                <div class="col-sm-4 col  col-md-4 col-form-label">
+                                                    <label for="communication-district">District:</label>
+                                                </div>
+                                                <div class="col-sm-8  col col-md-8">
+                                                    <input type="text" id="communication-district" name="communication-district" class="form-control" disabled>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-12 col-lg-6 col-md-12 mb-3">
+                                            <div class="row">
+                                                <div class="col-sm-4 col-md-4 col  col-form-label">
+                                                    <label for="communication-pincode">Pincode:</label>
+                                                </div>
+                                                <div class="col-sm-8  col col-md-8">
+                                                    <input type="text" id="communication-pincode" name="communication-pincode" class="form-control" disabled>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="box title-box">
+                                    <h3>Permanent Address</h3>
+                                </div>
+                                <div class="box content-box">
+                                <div class="form-group row">
+                                    <label for="permanent-address-1" class="col-md-4 col  col-form-label">Permanent Address Line 1 :</label>
+                                    <div class="col-md-8 col mb-3">
+                                      <input type="text" id="permanent-address-1" name="permanent-address-1" class="form-control" disabled>
+                                    </div>
+                                  </div>
+                                  <div class="form-group row">
+                                    <label for="permanent-address-2" class="col-md-4 col  col-form-label">Permanent Address Line 2 :</label>
+                                    <div class="col-md-8 col  mb-3">
+                                      <input type="text" id="permanent-address-2" name="permanent-address-2" class="form-control" disabled>
+                                    </div>
+                                  </div>
+                                  <div class="form-group row">
+                                    <label for="permanent-address-3" class="col-md-4 col  col-form-label">Permanent Address Line 3:</label>
+                                    <div class="col-md-8 col  mb-3">
+                                      <input type="text" id="permanent-address-3" name="permanent-address-3" class="form-control" disabled>
+                                    </div>
+                                  </div>
+                                  
+                                  <div class="row">
+                                    <div class="col-sm-12 col-lg-6 col-md-12 mb-3">
+                                        <div class="row">
+                                            <div class="col-sm-4 col  col-md-4">
+                                                <label for="permanent-country">Country:</label>
+                                            </div>
+                                            <div class="col-sm-8  col col-md-8">
+                                                <input type="text" id="permanent-country" name="permanent-country" class="form-control" disabled >
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12 col-lg-6 col-md-12 mb-3">
+                                        <div class="row">
+                                            <div class="col-sm-4 col  col-md-4 col-xs-4">
+                                                <label for="permanent-state">State:</label>
+                                            </div>
+                                            <div class="col-sm-8 col  col-md-8 col-xs-8">
+                                                <input type="text" id="permanent-state" name="permanent-state" class="form-control" disabled>
+
+                                            </div>
+                                        
+                                        </div>
+                                    </div>
+                                </div>
+                              
                                 <div class="row">
-                                    <div class="col-6 col-sm-4 col-md-4 col-xs-4">
-                                        <label for="applicant_name">Name of Applicant:<span style="color: red;">*</span></label> 
+                                    <div class="col-sm-12 col-lg-6 col-md-12 mb-3">
+                                        <div class="row">
+                                            <div class="col-sm-4 col  col-md-4">
+                                                <label for="permanent-district">District:</label>
+                                            </div>
+                                            <div class="col-sm-8 col  col-md-8">
+                                                <input type="text" id="permanent-district" name="permanent-district" class="form-control" disabled>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="col-6 col-sm-8 col-md-8 col-xs-8 mb-3">
-                                        <input type="text" id="applicant_name" name="applicant_name" class="form-control" disabled>
-                                    </div>
-                                    <div class="col-6 col-sm-4 col-md-4 col-xs-4">
-                                        <label for="father-name">Name of Father:<span style="color: red;">*</span></label>
-                                    </div>
-                                    <div class="col-6 col-sm-8 col-md-8 col-xs-8 mb-3">
-                                        <input type="text" id="father-name" name="father-name" class="form-control" disabled>
-                                    </div>
-                                    <div class="col-6 col-sm-4 col-md-4">
-                                        <label for="father-occupation">Father's Occupation:<span style="color: red;">*</span></label>
-                                    </div>
-                                    <div class="col-6 col-sm-8 col-md-8">
-                                        <input type="text" id="father-occupation" name="father-occupation" class="form-control" disabled>
+                                    <div class="col-sm-12 col-lg-6 col-md-12 mb-3">
+                                        <div class="row">
+                                            <div class="col-sm-4  col col-md-4 col-xs-4">
+                                                <label for="permanent-pincode">Pincode:</label>
+                                            </div>
+                                            <div class="col-sm-8 col  col-md-8 col-xs-8">
+                                                <input type="text" id="permanent-pincode" name="permanent-pincode" class="form-control" disabled>
+                                            </div>
+                                         
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-sm-12 col-lg-5 col-md-12 mb-3">
+                            <!-- Title Box -->
+                            <div class="box title-box">
+                                <h3>Special Quota</h3>
+                            </div>
+
+                            <!-- Content Box -->
+                            <div class="box content-box">
                                 <div class="row">
-                                    <div class="col-6 col-sm-4 col-md-4 ">
-                                        <label for="dob">Date of Birth:<span style="color: red;">*</span></label>
+                                    <div class="col-sm-12 col-lg-6 col-md-12 mb-3">
+                                        <div class="row">
+                                            <div class="col-sm-4 col  col-md-4 col-xs-4">
+                                                <label for="ex_servicemen">Ex-serviceman:</label>
+                                            </div>
+                                            <div class="col-sm-8  col col-md-8 col-xs-8">
+                                                <input type="text" id="ex_servicemen" name="ex_servicemen" class="form-control" disabled>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="col-6 col-sm-8 col-md-8 mb-3">
-                                        <input type="date" id="dob" name="dob" class="form-control" disabled>
+                                    <div class="col-sm-12 col-lg-6 col-md-12 mb-3">
+                                        <div class="row">
+                                            <div class="col-sm-4  col col-md-4">
+                                                <label for="differently-abled">Differently Abled:</label>
+                                            </div>
+                                            <div class="col-sm-8 col  col-md-8">
+                                                <input type="text" id="differently-abled" name="differently-abled" class="form-control" disabled>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-sm-12 col-lg-6 col-md-12 mb-3">
+                                        <div class="row">
+                                            <div class="col-sm-4 col  col-md-4 col-xs-4">
+                                                <label for="percentage-disability">Percentage of Disability:</label>
+                                            </div>
+                                            <div class="col-sm-8 col  col-md-8 col-xs-8">
+                                                <input type="text" id="percentage-disability" name="percentage-disability" class="form-control" disabled>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12 col-lg-6 col-md-12 mb-3">
+                                        <div class="row">
+                                            <div class="col-sm-4 col  col-md-4">
+                                                <label for="sportsquota">Sports quota:</label>
+                                            </div>
+                                            <div class="col-sm-8  col col-md-8">
+                                                <input type="text" id="sportsquota" name="sportsquota" class="form-control" disabled>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-sm-12 col-lg-6 col-md-12 mb-3">
+                                        <div class="row">
+                                            <div class="col-sm-4  col col-md-4 col-xs-4">
+                                                <label for="others">Others:</label>
+                                            </div>
+                                            <div class="col-sm-8  col col-md-8 col-xs-8">
+                                                <input type="text" id="others" name="others" class="form-control" disabled>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="box title-box">
+                                <h3>School Details</h3>
+                           </div>  
+                           <div class="box content-box">
+                           <div class="col-md-12">
+                            <div class="table-responsive">
+                            <table class="table table-bordered form-table">
+                                <col style="inline-size:10%;"/>
+                                <col style="inline-size:10%;"/>
+                                <col style="inline-size:10%;"/>
+                                <col style="inline-size:10%;"/>
+                                <col style="inline-size:10%;"/>
+                                <col style="inline-size:10%;"/>
+                                <col style="inline-size:15%;"/>
+                                <col style="inline-size:10%;"/>
+                                <thead>
+                                    <tr>
+                                        <th class="mid-center">Course</th>
+                                        <th class="mid-center">Institution</th>
+                                        <th class="mid-center">Board</th>
+                                        <th class="mid-center">Subject<br/>Studied</th>
+                                        <th class="mid-center">Register No.</th>
+                                        <th class="mid-center">Mark obtained<br/>in Percentage</th>
+                                        <th class="mid-center">Month &amp; Year<br/>of Passing</th>
+                                        <th class="mid-center">Regular / Private<br/>Other Mode</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            S.S.L.C. (X Std.)
+                                            <input class="form-control" id="sslc_course" name="sslc_course" type="hidden" value="S.S.L.C. (X Std.)">
+                                        </td>
+                                        <td>
+                                            <input class="form-control req_field" id="sslc_ins" name="sslc_ins" type="text" value="" disabled>
+                                        </td>
+                                        <td>
+                                            <input class="form-control req_field" id="sslc_board" name="sslc_board" type="text" value="" disabled>
+                                        </td>
+                                        <td>
+                                            <input class="form-control req_field" id="sslc_sub" name="sslc_sub" type="text" value="" disabled>
+                                        </td>
+                                        <td>
+                                            <input class="form-control req_field" id="sslc_reg_no" name="sslc_reg_no" type="text" value="" disabled>
+                                        </td>
+                                        <td>
+                                            <input class="form-control req_field number_dot_only number_only_100" id="sslc_perc" name="sslc_perc" type="text" disabled>
+                                        </td>
+                                        <td>
+                                            <div class="dropdown-container">
+                                               
+                                                <input class="form-control req_field" id="sslc_month" name="sslc_month" type="text" disabled/>
+                                               
+                                              
+                                            </div>
+                                            <span class="req_symbol" id="passing_date_span" style="display:none">Month & Year of passing is Required!</span>
+                                        </td>
+                                        <td>
+                                            <input class="form-control req_field" id="sslc_mode" name="sslc_mode" type="text" disabled/>
+                                            
+                                        </td>                                    
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            
+                                            <input class="form-control req_field" id="hsc_course" name="hsc_course" type="text" disabled/>
+                                        </td>
+                                        <td>
+                                            <input class="form-control req_field" id="hsc_ins" name="hsc_ins" type="text" disabled/>
+                                        </td>
+                                        <td>
+                                            <input class="form-control req_field" id="hsc_board" name="hsc_board" type="text" disabled/>
+                                        </td>
+                                        <td>
+                                            <input class="form-control req_field" id="hsc_sub" name="hsc_sub" type="text" disabled/>
+                                        </td>
+                                        <td>
+                                            <input class="form-control req_field" id="hsc_reg_no" name="hsc_reg_no" type="text" disabled/>
+                                        </td>
+                                        <td>
+                                            <input class="form-control req_field number_dot_only number_only_100" id="hsc_perc"name="hsc_perc" type="text" disabled/>
+                                        </td>
+                                        <td>
+                                            <div class="dropdown-container">
+                                                <input class="form-control req_field" id="hsc_month" name="hsc_month" type="text" disabled/>
+                                    
+                                              
+                                            </div>
+                                            <span class="req_symbol" id="passing_date_span" style="display:none">Month & Year of passing is Required!</span>
+                                        </td>
+                                        <td>
+                                           
+                                            <input class="form-control req_field" id="hsc_mode" name="hsc_mode" type="text" disabled/>
+                                           
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="box title-box"> 
+                         <h3>College Details</h3>
+                     </div> 
+                     <div class="content-box box">
+                        <div class="form-group">
+                        
+                            <div class="row">
+                                <div class="col-sm-12 col-md-6 mb-3">
+                                    <div class="row">
+                                        <div class="col-sm-4 col  col-md-4 col-xs-4">
+                                            <label for="collegeName">Name of the College Last Studied </label>
+                                        </div>
+                                        <div class="col-sm-8  col col-md-8 col-xs-8">
+                                            <input type="text" class="form-control" id="collegeName" name="collegeName" disabled>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12 col-md-6 mb-3">
+                                    <div class="row">
+                                        <div class="col-sm-4 col  col-md-4">
+                                            <label for="universityName">Name of the University Last Studied </label>
+                                        </div>
+                                        <div class="col-sm-8 col  col-md-8">
+                                            <input type="text" class="form-control" id="universityName" name="universityName" disabled>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                            <div class="col-sm-12 col-md-6 mb-3">
+                            <div class="row">
+                                <div class="col-sm-4 col  col-md-4 col-xs-4">
+                                <label for="qualification_type">Qualification Type </label>
+                                </div>
+                                <div class="col-sm-8 col  col-md-8 col-xs-8">
+                            
+                                    <input type="text" class="form-control" id="qualification_type" name="qualification_type" disabled>   
+                                </div>
+                            </div>
+                            </div>
+                            <div class="col-sm-12 col-md-6 mb-3">
+                                <div class="row"> 
+                                    <div class="col-sm-4  col col-md-4 col-xs-4">
+                                        <label for="qualificationdegree">Qualification Degree</label>
+                                    </div>
+                                    <div class="col-sm-8  col col-md-8 col-xs-8">
+                                        
+                                        <input type="text" class="form-control" id="qualificationdegree" name="qualificationdegree" disabled>   
 
                                     </div>
-                                    <div class="col-6 col-sm-4 col-md-4">
-                                        <label for="mother-name">Name of Mother:<span style="color: red;">*</span></label>
+                                </div>
+                            </div>
+                            </div>
+                            </div>
+                            
+                            <div class="row">
+                            <div class="col-sm-12 col-md-6 mb-3">
+                            <div class="row">
+                                    <div class="col-sm-4  col col-md-4 col-xs-4">
+                                    <label for="month_degree">Month & Year of Passing</label>
+                                    </div> 
+                                    <div class="col-sm-8  col col-md-8 col-xs-8">
+                                        <!-- Selection dropdowns -->
+                                        <div class="row">
+                                        <div class="dropdown-container">  
+                                           
+                                            <input type="text" class="form-control" id="month_degree" name="month_degree" disabled>   
+                                            <input type="text" class="form-control" id="year_degree" name="year_degree" disabled>   
+  
+                                        </div>
+                                        </div>
+
                                     </div>
-                                    <div class="col-6 col-sm-8 col-md-8 mb-3">
-                                        <input type="text" id="mother-name" name="mother-name" class="form-control" disabled>
+                                   
+                                </div>
+                                </div>
+                                    <div class="col-sm-12 col-md-6 mb-3">
+                                    <div class="row">
+                                        <div class="col-sm-4  col col-md-4 col-xs-4">
+                                        <label class="control-label" for="semester_type">Semester type</label>
+                                        </div>
+                                        <div class="col-sm-8 col  col-md-8 col-xs-8">
+                                        
+                                        <input type="text" class="form-control" id="semester_type" name="semester_type" disabled>   
+
+                                        </div>
+                                        
                                     </div>
-                                    <div class="col-6 col-sm-4 col-md-4 col-xs-4">
-                                        <label for="guardian-name">Name of Guardian:</label>
                                     </div>
-                                    <div class="col-6 col-sm-8 col-md-8 col-xs-8">
-                                        <input type="text" id="guardian-name" name="guardian-name" class="form-control" disabled>
+                                </div>   
+                            
+                                <div class="row">
+                                    <div class="col-sm-12 col-md-6 mb-3">
+                                    <div class="row">
+                                            <div class="col-sm-4 col  col-md-4 col-xs-4">
+                                                <label class="control-label" for="no-of-sem">Total No Of Semesters</label>
+                                            </div>
+                                            <div class="col-sm-8 col  col-md-8 col-xs-8">    
+                                                
+                                                <input type="text" class="form-control" id="no-of-sem" name="no-of-sem" disabled>   
+
+                                            </div>
+                                    </div>
+                                    </div>
+                                </div>
+
+                            <!--<div class="form-group">
+                            <div class="col-md-10" style="margin-block-start:1%">
+                                <div>
+                                    Are you awaiting for Final Semester Marksheet? 
+                                    <input type="radio" id="awaiting_for_marksheet" name="awaiting_for_marksheet" value="yes" style="margin-left: 20px;"> Yes
+                                    <input type="radio" id="awaiting_for_marksheet" name="awaiting_for_marksheet" value="no" style="margin-left: 20px;"> No
+                                </div>
+                            </div>
+                        </div>-->
+                        <h3 class="mt-3">Select Program</h3>
+                        <div class="row mt-4">
+                            <div class="col-sm-12 col-lg-6 col-md-12 mb-3">
+                                <div class="row">
+                                    <div class="col-sm-4  col col-md-4 col-xs-4">
+                                        <label for="programme-applied">Programme Applied:</label> 
+                                    </div>
+                                    <div class="col-sm-8  col col-md-8 col-xs-8">
+                                      
+                                        <input type="text" class="form-control" id="programme-applied" name="programme-applied" disabled>   
+
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-sm-12 col-lg-2 col-md-12 center-content">
-                                <div class="text-center">
-                                    <img src="assets/images/Periyar_University_logo.png" class="applicant_image" alt="Applicant image" style="border: 5px solid #555;">
-                                </div>      
-                            </div> 
+                            <div class="col-sm-12 col-lg-6 col-md-12 mb-3">
+                                <div class="row">
+                                    <div class="col-sm-4 col  col-md-4">
+                                        <label for="select-programme">Select Programme:</label>
+                                    </div>
+                                    <div class="col-sm-8 col  col-md-8">
+                                        
+                                        <input type="text" class="form-control" id="select-programme" name="select-programme" disabled>   
+
+                                    </div>
+                                </div>
+                            </div>
                         </div>
+
+                     </div>
+                     <h3>Semester Marks</h3>
+                            <div id="tables_container">
+                                <!-- Semester Tables will be generated here -->
+                            </div>
+                           <!-- Last Div -->
+                      
+                        
+
+                        <br>
                         <div>
                             <input type="submit" class="btn btn-primary float-end mb-5" value="Save & Continue">
                         </div>
+                        
                     </form>  
                 </div>
             </main>
@@ -214,43 +826,6 @@
     </div>
     <!-- End Windows Menu-->
     <!--End Menu Side bar-->
-
-    <script src="bootstrap-5.2.3-dist/js/bootstrap.min.js"></script>
-    <script src="bootstrap-5.2.3-dist/js/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>    
-    <script>
-        $(document).ready(function(){
-            $("#header").load("header.html");
-            $("#navigation").load("navigation.html");
-
-        
-
-            // Retrieve user data on page load
-            $.ajax({
-                type: 'GET',
-                url: 'preview_retrive.php',
-                success: function(response) {
-                    console.log(response.data.dof); 
-                    if (response.success) {
-                        $('#applicant_name').val(response.data.applicant_name);
-                        $('#dob').val(response.data.dof);
-                        $('#mother-name').val(response.data.mother_name);
-                        $('#father-name').val(response.data.father_name);
-                        $('#father-occupation').val(response.data.father_occupation);
-                        $('#guardian-name').val(response.data.guardian_name);
-                    } else {
-                        alert(response.message);
-                    }
-                },
-                error: function() {
-                    alert('An error occurred. Please try again.');
-                }
-            });
-
-            
-        });
-    </script>
 </body>
 </html>
 

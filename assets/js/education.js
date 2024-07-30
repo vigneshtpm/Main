@@ -274,13 +274,38 @@ $(document).ready(function() {
 $(document).ready(function() {
     $('#education_details').on('submit', function(e) {
         e.preventDefault(); // Prevent the default form submission
-        
+        // Basic client-side validation example
+        if (!$('#sslc_ins').val()) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Please fill in all required fields',
+                timer: 5000, // Automatically close after 5 seconds
+                showConfirmButton: false, // Remove the confirm button
+                timerProgressBar: true, // Enable timer progress bar
+            });
+            return;
+        }
+
+        // Add a loading indicator
+        let loadingIndicator = Swal.fire({
+            toast: true,
+            position: 'top-end',
+            title: 'Updating...',
+            text: 'Please wait...',
+            showConfirmButton: false,
+            didOpen: () => {
+                Swal.showLoading();
+            }
+        });
+     
         $.ajax({
             type: 'POST',
             url: 'php/education_update.php',
-            data: $(this).serialize(), // Serialize the form data
+            data: $(this).serialize(),
             dataType: 'json', // Expect a JSON response from the server
             success: function(response) {
+                loadingIndicator.close();
                 if (response.success) {
                     Swal.fire({
                       toast: true,
@@ -288,7 +313,7 @@ $(document).ready(function() {
                       title: 'Personal Information',
                       text: 'You have been successfully submitted.',
                       icon: 'success',
-                      timer: 3000, // Automatically close after 3 seconds
+                      timer: 2000, // Automatically close after 3 seconds
                       showConfirmButton: false, // Remove the confirm button
                       timerProgressBar: true, 
                     }).then(() => {
@@ -306,13 +331,14 @@ $(document).ready(function() {
                   }
             },
             error: function(jqXHR, textStatus, errorThrown) {
+                loadingIndicator.close();
+            
                 console.error('AJAX Error: ' + textStatus + ': ' + errorThrown); // Log error to console
-                //alert('An error occurred. Please try again.');
+                /*alert('An error occurred. Please try again.');*/
             }
         });
     });
 });
-
 
 $(document).ready(function() {
     // Retrieve user data on page load
@@ -348,9 +374,9 @@ $(document).ready(function() {
                 var numSemesters = parseInt(response.data.no_of_sem);
                 $('#no-of-sem').val(numSemesters);
                 generateSemesterTables(numSemesters);
-                $('#awaiting_for_marksheet').val(response.data.awaiting_for_marksheet);
-                var value = response.data.awaiting_for_marksheet;
-                $('input[name=awaiting_for_marksheet][value=' + value + ']').prop('checked', true);
+                //$('#awaiting_for_marksheet').val(response.data.awaiting_for_marksheet);
+                //var value = response.data.awaiting_for_marksheet;
+                //$('input[name=awaiting_for_marksheet][value=' + value + ']').prop('checked', true);
                 $('#programme-applied').val(response.data.programme_applied);
                 $('#select-programme').val(response.data.selected_programme);
                 var value_1=parseInt(response.data.no_of_subjects_sem1);

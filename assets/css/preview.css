@@ -1,0 +1,28 @@
+
+@media (min-width: 768px) {
+    .navbar-toggler {
+        display: none;
+    }
+}
+.form-control[disabled] {
+    border: none;
+    background-color: transparent; /* Optional: To make the background transparent */
+}
+label{
+    font-weight: bold;
+}
+
+.box {
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+}
+
+.title-box {
+    background-color: #f9f9f9;
+}
+
+.content-box {
+    background-color: #ffffff;
+}

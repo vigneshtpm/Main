@@ -154,7 +154,7 @@
             <!--Starting Main Page-->
             
             <main class="col-md-8 ms-sm-auto col-lg-9 col-xxl-10 col-md-4">
-                <form method="post" action="eduinsert.php">
+                <form id="education_details">
                 <div class="pt-3 " style="margin-bottom: 10%;">
                     <h2 class="text-color text-center" style="color: #000064;">Education Qualification</h2><br>
                     <!-- Write code Here-->
@@ -189,103 +189,105 @@
                                         <input class="form-control" id="sslc_course" name="sslc_course" type="hidden" value="S.S.L.C. (X Std.)">
                                     </td>
                                     <td>
-                                        <input class="form-control req_field" id="sslc_ins" name="Institution_SSLC" type="text" value="">
+                                        <input class="form-control req_field" id="sslc_ins" name="sslc_ins" type="text" value="">
                                     </td>
                                     <td>
-                                        <input class="form-control req_field" id="sslc_board" name="Board_SSLC" type="text" value="">
+                                        <input class="form-control req_field" id="sslc_board" name="sslc_board" type="text" value="">
                                     </td>
                                     <td>
-                                        <input class="form-control req_field" id="sslc_sub" name="Subject_Studied_SSLC" type="text" value="">
+                                        <input class="form-control req_field" id="sslc_sub" name="sslc_sub" type="text" value="">
                                     </td>
                                     <td>
-                                        <input class="form-control req_field" id="sslc_reg_no" name="Register_No_SSLC" type="text" value="">
+                                        <input class="form-control req_field" id="sslc_reg_no" name="sslc_reg_no" type="text" value="">
                                     </td>
                                     <td>
-                                        <input class="form-control req_field number_dot_only number_only_100" id="sslc_perc" max="100" maxlength="5" name="Percentage_SSLC" type="text" value="">
+                                        <input class="form-control req_field number_dot_only number_only_100" id="sslc_perc" max="100" maxlength="5" name="sslc_perc" type="text" value="">
                                     </td>
                                     <td>
                                         <div class="dropdown-container">
-                                            <select class="select2me form-control month" id="month" name="month_SSLC">
-                                                <option value="1">January</option>
-                                                <option value="2">February</option>
-                                                <option value="3">March</option>
-                                                <option value="4">April</option>
-                                                <option value="5">May</option>
-                                                <option value="6">June</option>
-                                                <option value="7">July</option>
-                                                <option value="8">August</option>
-                                                <option value="9">September</option>
-                                                <option value="10">October</option>
-                                                <option value="11">November</option>
-                                                <option value="12">December</option>
+                                            <select class="select2me form-control month" id="sslc_month" name="sslc_month">
+                                                <option value="">Select Month</option>
+                                                <option value="January">January</option>
+                                                <option value="February">February</option>
+                                                <option value="March">March</option>
+                                                <option value="April">April</option>
+                                                <option value="May">May</option>
+                                                <option value="June">June</option>
+                                                <option value="July">July</option>
+                                                <option value="August">August</option>
+                                                <option value="September">September</option>
+                                                <option value="October">October</option>
+                                                <option value="November">November</option>
+                                                <option value="December">December</option>
                                             </select>
                                     
-                                            <select class="select2me form-control year" id="year" name="year_SSLC"></select>
+                                            <select class="select2me form-control year" id="sslc_year" name="sslc_year"></select>
                                         </div>
                                         <span class="req_symbol" id="passing_date_span" style="display:none">Month & Year of passing is Required!</span>
                                     </td>
                                     <td>
-                                        <select class="select2me form-control mode_req_field" id="sslc_mode" name="Regular_Private_SSLC" tabindex="1">
+                                        <select class="select2me form-control mode_req_field" id="sslc_mode" name="sslc_mode" tabindex="1">
                                             <option value="">Select</option>
                                             <option value="Regular">Regular</option>
                                             <option value="Private">Private</option>
                                             <option value="Other Mode">Other Mode</option>
-                                        </select><br/>
+                                        </select>
                                         <span class="req_symbol" id="sslc_mode_span" style="display:none">SSLC Regular / Private / Other Study is Required!</span>
                                     </td>                                    
                                 </tr>
                                 <tr>
                                     <td>
-                                        <select class="select2me form-control mode_req_field" id="hsc_course" name="Hsc_diploma" tabindex="1">
+                                        <select class="select2me form-control mode_req_field" id="hsc_course" name="hsc_course" tabindex="1">
                                             <option value="">Select HSC(+2) / Diploma</option>
                                             <option selected="" value="HSC">HSC(+2)</option>
                                             <option value="Diploma">Diploma</option>
-                                        </select><br/>
+                                        </select>
                                         <span class="req_symbol" id="hsc_course_span" style="display:none">HSC Course is Required!</span>
                                     </td>
                                     <td>
-                                        <input class="form-control req_field" id="hsc_ins" name="Institution_HSC" type="text" value=""/>
+                                        <input class="form-control req_field" id="hsc_ins" name="hsc_ins" type="text" value=""/>
                                     </td>
                                     <td>
-                                        <input class="form-control req_field" id="hsc_board" name="Board_HSC" type="text" value=""/>
+                                        <input class="form-control req_field" id="hsc_board" name="hsc_board" type="text" value=""/>
                                     </td>
                                     <td>
-                                        <input class="form-control req_field" id="hsc_sub" name="Subject_Studied_HSC" type="text" value=""/>
+                                        <input class="form-control req_field" id="hsc_sub" name="hsc_sub" type="text" value=""/>
                                     </td>
                                     <td>
-                                        <input class="form-control req_field" id="hsc_reg_no" name="Register_No_HSC" type="text" value=""/>
+                                        <input class="form-control req_field" id="hsc_reg_no" name="hsc_reg_no" type="text" value=""/>
                                     </td>
                                     <td>
-                                        <input class="form-control req_field number_dot_only number_only_100" id="hsc_perc" maxlength="5" name="Percentage_HSC" type="text" value=""/>
+                                        <input class="form-control req_field number_dot_only number_only_100" id="hsc_perc" maxlength="5" name="hsc_perc" type="text" value=""/>
                                     </td>
                                     <td>
                                         <div class="dropdown-container">
-                                            <select class="select2me form-control month" id="month" name="month_HSC">
-                                                <option value="1">January</option>
-                                                <option value="2">February</option>
-                                                <option value="3">March</option>
-                                                <option value="4">April</option>
-                                                <option value="5">May</option>
-                                                <option value="6">June</option>
-                                                <option value="7">July</option>
-                                                <option value="8">August</option>
-                                                <option value="9">September</option>
-                                                <option value="10">October</option>
-                                                <option value="11">November</option>
-                                                <option value="12">December</option>
+                                            <select class="select2me form-control month" id="hsc_month" name="hsc_month">
+                                                <option value="">Select Month</option>
+                                                <option value="January">January</option>
+                                                <option value="February">February</option>
+                                                <option value="March">March</option>
+                                                <option value="April">April</option>
+                                                <option value="May">May</option>
+                                                <option value="June">June</option>
+                                                <option value="July">July</option>
+                                                <option value="August">August</option>
+                                                <option value="September">September</option>
+                                                <option value="October">October</option>
+                                                <option value="November">November</option>
+                                                <option value="December">December</option>
                                             </select>
                                 
-                                            <select class="select2me form-control year" id="year" name="year_HSC"></select>
+                                            <select class="select2me form-control year" id="hsc_year" name="hsc_year"></select>
                                         </div>
                                         <span class="req_symbol" id="passing_date_span" style="display:none">Month & Year of passing is Required!</span>
                                     </td>
                                     <td>
-                                        <select class="select2me form-control mode_req_field" id="hsc_mode" name="Regular_Private_HSC" tabindex="1">
+                                        <select class="select2me form-control mode_req_field" id="hsc_mode" name="hsc_mode" tabindex="1">
                                             <option value="">Select</option>
                                             <option value="Regular">Regular</option>
                                             <option value="Private">Private</option>
                                             <option value="Other Mode">Other Mode</option>
-                                        </select><br/>
+                                        </select>
                                         <span class="req_symbol" id="hsc_mode_span" style="display:none">HSC Regular / Private / Other Study is Required!</span>
                                     </td>
                                 </tr>
@@ -297,7 +299,7 @@
                     <!--school ends-->
                     <h3>College Details</h3>
                     <div class="form-group">
-                        <form class="form-inline-custom">
+                        
                             <div class="row">
                                 <div class="col-sm-12 col-md-6 mb-3">
                                     <div class="row">
@@ -305,7 +307,7 @@
                                             <label for="collegeName">Name of the College Last Studied <span style="color: red;">*</span></label>
                                         </div>
                                         <div class="col-sm-8 col-md-8 col-xs-8">
-                                            <input type="text" class="form-control" id="collegeName" name="College_Last_Studied" required>
+                                            <input type="text" class="form-control" id="collegeName" name="collegeName" required>
                                         </div>
                                     </div>
                                 </div>
@@ -315,7 +317,7 @@
                                             <label for="universityName">Name of the University Last Studied <span style="color: red;">*</span></label>
                                         </div>
                                         <div class="col-sm-8 col-md-8">
-                                            <input type="text" class="form-control" id="universityName" name="University_Last_Studied" required>
+                                            <input type="text" class="form-control" id="universityName" name="universityName" required>
                                         </div>
                                     </div>
                                 </div>
@@ -325,11 +327,11 @@
                             <div class="col-sm-12 col-md-6 mb-3">
                             <div class="row">
                                 <div class="col-sm-4 col-md-4 col-xs-4">
-                                <label for="qualificationtype">Qualification Type<span style="color: red;">*</span></label>
+                                <label for="qualification_type">Qualification Type<span style="color: red;">*</span></label>
                                 </div>
                                 <div class="col-sm-8 col-md-8 col-xs-8">
-                                    <select class="select2me form-control" id="qualification_type" name="Qualification_Type" tabindex="1">
-                                        <option value="" disabled selected>Select your type</option>
+                                    <select class="select2me form-control" id="qualification_type" name="qualification_type" tabindex="1">
+                                        <option value="" selected>Select your type</option>
                                         <option value="UG Arts &amp; Science">UG Arts &amp; Science</option>
                                         <option value="B.E / B.Tech Regular">B.E / B.Tech Regular</option>
                                         <option value="B.E / B.Tech Lateral">B.E / B.Tech Lateral</option>
@@ -345,9 +347,9 @@
                                         <label for="qualificationdegree">Qualification Degree<span style="color: red;">*</span></label>
                                     </div>
                                     <div class="col-sm-8 col-md-8 col-xs-8">
-                                        <!-- Dropdown populated from database based on qualification type -->
                                         <select class="select2me form-control" id="qualificationdegree" name="qualificationdegree" tabindex="1">
                                             <option value="" disabled selected>Select your Degree</option>
+                                            <option value="BCA">BCA</option>
                                         </select>
                                     </div>
                                 </div>
@@ -359,15 +361,15 @@
                             <div class="col-sm-12 col-md-6 mb-3">
                             <div class="row">
                                     <div class="col-sm-4 col-md-4 col-xs-4">
-                                    <label for="passing-date">Month & Year of Passing<span style="color: red;">*</span></label>
+                                    <label for="month_degree">Month & Year of Passing<span style="color: red;">*</span></label>
                                     </div> 
                                     <div class="col-sm-8 col-md-8 col-xs-8">
                                         <!-- Selection dropdowns -->
                                         <div class="row">
                                         <div class="dropdown-container">  
-                                            <select class="select2me form-control month" id="month" name="month_degree">
-                                                <option value="1">January</option>
-                                                <option value="2">February</option>
+                                            <select class="select2me form-control month" id="month_degree" name="month_degree">
+                                                <option value="January">January</option>
+                                                <option value="February">February</option>
                                                 <option value="3">March</option>
                                                 <option value="4">April</option>
                                                 <option value="5">May</option>
@@ -379,7 +381,7 @@
                                                 <option value="11">November</option>
                                                 <option value="12">December</option>
                                             </select>     
-                                            <select class="select2me form-control year" id="yaer" name="year_degree"></select>   
+                                            <select class="select2me form-control year" id="year_degree" name="year_degree"></select>   
                                         </div>
                                         </div>
 
@@ -390,11 +392,11 @@
                                     <div class="col-sm-12 col-md-6 mb-3">
                                     <div class="row">
                                         <div class="col-sm-4 col-md-4 col-xs-4">
-                                        <label class="control-label">Semester type<span style="color: red;">*</span></label>
+                                        <label class="control-label" for="semester_type">Semester type<span style="color: red;">*</span></label>
                                         </div>
                                         <div class="col-sm-8 col-md-8 col-xs-8">
-                                        <select class="select2me form-control mode_req_field" id="semester_type" name="Semester_Type" tabindex="1">
-                                            <option value="" disabled selected>Select your type</option>
+                                        <select class="select2me form-control mode_req_field" id="semester_type" name="semester_type" tabindex="1">
+                                            <option value="" selected>Select your type</option>
                                             <option value="Semester">Semester</option>
                                             <option value="Non-Semester">Non-Semester</option>
                                         </select>
@@ -408,11 +410,12 @@
                                     <div class="col-sm-12 col-md-6 mb-3">
                                     <div class="row">
                                             <div class="col-sm-4 col-md-4 col-xs-4">
-                                                <label class="control-label">Total No Of Semesters<span style="color: red;">*</span></label>
+                                                <label class="control-label" for="no-of-sem">Total No Of Semesters<span style="color: red;">*</span></label>
                                             </div>
                                             <div class="col-sm-8 col-md-8 col-xs-8">    
-                                                <select class="select2me form-control" id="no-of-sem" name="Total_No_of_Semesters" tabindex="1">
-                                                    <option value="2" selected>2</option>
+                                                <select class="select2me form-control" id="no-of-sem" name="no-of-sem" tabindex="1">
+                                                    <option value="" >Select No of Semester</option> 
+                                                    <option value="2">2</option>
                                                     <option value="3">3</option>
                                                     <option value="4">4</option>
                                                     <option value="5">5</option>
@@ -425,15 +428,46 @@
                                     </div>
                                 </div>
 
-                        <div class="form-group">
+                            <!--<div class="form-group">
                             <div class="col-md-10" style="margin-block-start:1%">
                                 <div>
                                     Are you awaiting for Final Semester Marksheet? 
-                                    <input type="radio" id="awaiting_yes" name="awaiting_for_marksheet" value="yes" style="margin-left: 20px;"> Yes
-                                    <input type="radio" id="awaiting_no" name="awaiting_for_marksheet" value="no" style="margin-left: 20px;"> No
+                                    <input type="radio" id="awaiting_for_marksheet" name="awaiting_for_marksheet" value="yes" style="margin-left: 20px;"> Yes
+                                    <input type="radio" id="awaiting_for_marksheet" name="awaiting_for_marksheet" value="no" style="margin-left: 20px;"> No
+                                </div>
+                            </div>
+                        </div>-->
+                        <h3 class="mt-3">Select Program</h3>
+                        <div class="row mt-4">
+                            <div class="col-sm-12 col-lg-6 col-md-12 mb-3">
+                                <div class="row">
+                                    <div class="col-sm-4 col-md-4 col-xs-4">
+                                        <label for="programme-applied">Programme Applied:<span style="color: red;">*</span></label> 
+                                    </div>
+                                    <div class="col-sm-8 col-md-8 col-xs-8">
+                                        <select id="programme-applied" name="programme-applied" class="form-control">
+                                            <option value="">Select Programme Applied</option>
+                                            <option value="Computer Science">Computer Science</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-12 col-lg-6 col-md-12 mb-3">
+                                <div class="row">
+                                    <div class="col-sm-4 col-md-4">
+                                        <label for="select-programme">Select Programme:<span style="color: red;">*</span></label>
+                                    </div>
+                                    <div class="col-sm-8 col-md-8">
+                                        <select id="select-programme" name="select-programme" class="form-control">
+                                            <option value="">Select Programme</option>
+                                            <option value="MCA">MCA</option>
+                                        </select>
+                                    
+                                    </div>
                                 </div>
                             </div>
                         </div>
+
                             <br>
                             <div class="form-group">
                                 <div class="col-md-12" style="color:orange">
@@ -491,31 +525,17 @@
   <div class="form-group">
     <div class="col-md-12">
     <b>DECLARATION :</b> I declare that the information given above are true to the best of my knowledge and that I shall, if admitted abide by the rules of the University.
-                                    </div>
+  </div>
     </div>
     <div class="form-group">
-    <div class="col-md-1">
-    </div>
+    
     <div class="col-md-11">
-    <input id="dec_agree" name="dec_agree" type="checkbox" value="agree"><span id="agree_alert">I agree to the declaration</span>
-    </input></div>
+    <input id="dec_agree" name="dec_agree" type="checkbox" value="agree"><span id="agree_alert">I agree to the declaration</span></input></div>
     </div>
-     <!--
-                    <div class="mb-3">
-                        <h5>Others</h5>
-                        <input class="form-control" type="file" name="others2File" id="others2File" style="min-width:30% ; max-width: 50%;">
-                        <button type="button" class="btn btn-primary view-button" id="others2ViewButton"><i class="fas fa-eye"></i> View</button>
-                        <div class="file-preview" id="others2Preview"></div>
-                        <div class="error-message" id="others2FileError"></div>
-                    </div>-->
-                </div>
-                <input type="submit" class="btn btn-primary float-end" value="Save & Continue">
-                </form>
-                            
-
-
-
-
+     
+    </div>
+    <input type="submit" class="btn mb-5 btn-primary float-end" value="Save & Continue">
+    </form>
                 </div>
             </main>
             <!--End Main Page-->

@@ -1282,3 +1282,16 @@ education.sslc_inst,
 ALTER TABLE `education` CHANGE `maxi_1_4` `maxi_1_4` VARCHAR(11) NULL DEFAULT NULL;
 ALTER TABLE `education` CHANGE `obt_1_4` `obt_1_4` VARCHAR(11) NULL DEFAULT NULL;
 ALTER TABLE `education` CHANGE `year_1_4` `year_1_4` VARCHAR(11) NULL DEFAULT NULL;
+
+
+        $stmt10 = $conn->prepare("UPDATE education_result
+        SET max_mark_disp= ?,mark_obt_disp= ?,perc_mark_disp= ?,cls_obt=?,cgpa= ?,grade= ?
+        WHERE id = (SELECT id FROM registration WHERE e_mail = ?);
+        ");
+
+        $stmt10->bind_param("sssssss",
+        $max_mark_disp,$mark_obt_disp,$perc_mark_disp,$cls_obt,$cgpa,$grade,
+        $email);
+        $stmt10->execute();
+
+        echo json_encode(['success' => true,'message' => 'Profile updated successfully ']);
