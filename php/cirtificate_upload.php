@@ -48,7 +48,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             } else {
                 // Check if the file already exists in the database
                 $dbField = $fileInfo['dbField'];
-                $sql = "SELECT $dbField FROM cirtificate WHERE email = ?";
+                $sql = "SELECT $dbField FROM cirtificate WHERE id = (SELECT id FROM registration WHERE e_mail = ?)";
                 $stmt = $conn->prepare($sql);
                 $stmt->bind_param('s', $email);
                 $stmt->execute();
@@ -60,7 +60,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     $response[$fieldName] = $row[$dbField];
                     unlink($row[$dbField]);
                     move_uploaded_file($fileTmpPath, $dest_path);
-                    $sql = "UPDATE cirtificate SET $dbField = ? WHERE email = ?";
+                    $sql = "UPDATE cirtificate SET $dbField = ? WHERE id = (SELECT id FROM registration WHERE e_mail = ?)";
                     $stmt = $conn->prepare($sql);
                     $stmt->bind_param('ss', $dest_path, $email);
                     if ($stmt->execute()) {
@@ -70,7 +70,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     }
                 } elseif (move_uploaded_file($fileTmpPath, $dest_path)) {
                     // Update the database with the file path
-                    $sql = "UPDATE cirtificate SET $dbField = ? WHERE email = ?";
+                    $sql = "UPDATE cirtificate SET $dbField = ? WHERE id = (SELECT id FROM registration WHERE e_mail = ?)";
                     $stmt = $conn->prepare($sql);
                     $stmt->bind_param('ss', $dest_path, $email);
                     if ($stmt->execute()) {

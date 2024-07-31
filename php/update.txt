@@ -25,6 +25,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $hsc_month=$_POST["hsc_month"];
         $hsc_year=$_POST["hsc_year"];
         $hsc_mode=$_POST["hsc_mode"];
+ 
+        
 
         $stmt = $conn->prepare("UPDATE education_school
         SET sslc_inst= ?,sslc_board=?,sslc_sub= ?,sslc_reg=?,sslc_per=?,sslc_month=?,sslc_year= ?,
@@ -38,19 +40,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $hsc_month,$hsc_year,$hsc_mode,
         $email);
         $stmt->execute();
-       
-        echo json_encode(['success' => true,'message' => 'Profile updated successfully ']);
 
-        $stmt->close();    
-        $conn->close();
         
-    } else {
-        echo json_encode(['success' => false, 'message' => 'All fields are required']);
-    }
-}
-?>
-/*
-        
+
         $collegeName=$_POST["collegeName"];
         $universityName=$_POST["universityName"];
         $qualification_type=$_POST["qualification_type"];
@@ -59,27 +51,28 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $year_degree=$_POST["year_degree"];
         $semester_type=$_POST["semester_type"];
         $no_of_sem=$_POST["no-of-sem"];
-        $awaiting_for_marksheet=$_POST["awaiting_for_marksheet"];
+        
         $programme_applied=$_POST["programme-applied"];
         $select_programme=$_POST["select-programme"];
 
-
+ 
 
         $stmt1 = $conn->prepare("UPDATE education_college
         SET college_Name= ?,university_Name= ?,qualification_type= ?,qualification_degree= ?,month_degree= ?,
-        year_degree= ?,semester_type= ?,no_of_sem= ?,awaiting_for_marksheet= ?,
+        year_degree= ?,semester_type= ?,no_of_sem= ?,
         programme_applied= ?,selected_programme = ?
         
         WHERE id = (SELECT id FROM registration WHERE e_mail = ?);
         ");
 
-        $stmt1->bind_param("ssssssssssss",$collegeName,$universityName,$qualification_type,$qualificationdegree,
-        $month_degree,$year_degree,$semester_type,$no_of_sem,$awaiting_for_marksheet,
+        $stmt1->bind_param("sssssssssss",$collegeName,$universityName,$qualification_type,$qualificationdegree,
+        $month_degree,$year_degree,$semester_type,$no_of_sem,
         $programme_applied,$select_programme,
        
         $email);
         $stmt1->execute();
-
+ 
+        
         $sub_1_1=$_POST["Sub_1_1"];
         $cat_1_1=$_POST["Cat_1_1"];
         $maxi_1_1=$_POST["Maxi_1_1"];
@@ -171,388 +164,741 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $email);
         $stmt2->execute();
 
- */
+        $sub_2_1=$_POST["Sub_2_1"];
+        $cat_2_1=$_POST["Cat_2_1"];
+        $maxi_2_1=$_POST["Maxi_2_1"];
+        $obt_2_1=$_POST["Obt_2_1"];
+        $mon_2_1=$_POST["Mon_2_1"];
+        $year_2_1=$_POST["Year_2_1"];
+
+        $sub_2_2=$_POST["Sub_2_2"];
+        $cat_2_2=$_POST["Cat_2_2"];
+        $maxi_2_2=$_POST["Maxi_2_2"];
+        $obt_2_2=$_POST["Obt_2_2"];
+        $mon_2_2=$_POST["Mon_2_2"];
+        $year_2_2=$_POST["Year_2_2"];
+
+        $sub_2_3=$_POST["Sub_2_3"];
+        $cat_2_3=$_POST["Cat_2_3"];
+        $maxi_2_3=$_POST["Maxi_2_3"];
+        $obt_2_3=$_POST["Obt_2_3"];
+        $mon_2_3=$_POST["Mon_2_3"];
+        $year_2_3=$_POST["Year_2_3"];
+
+        $sub_2_4=$_POST["Sub_2_4"];
+        $cat_2_4=$_POST["Cat_2_4"];
+        $maxi_2_4=$_POST["Maxi_2_4"];
+        $obt_2_4=$_POST["Obt_2_4"];
+        $mon_2_4=$_POST["Mon_2_4"];
+        $year_2_4=$_POST["Year_2_4"];
+
+        $sub_2_5=$_POST["Sub_2_5"];
+        $cat_2_5=$_POST["Cat_2_5"];
+        $maxi_2_5=$_POST["Maxi_2_5"];
+        $obt_2_5=$_POST["Obt_2_5"];
+        $mon_2_5=$_POST["Mon_2_5"];
+        $year_2_5=$_POST["Year_2_5"];
+
+        $sub_2_6=$_POST["Sub_2_6"];
+        $cat_2_6=$_POST["Cat_2_6"];
+        $maxi_2_6=$_POST["Maxi_2_6"];
+        $obt_2_6=$_POST["Obt_2_6"];
+        $mon_2_6=$_POST["Mon_2_6"];
+        $year_2_6=$_POST["Year_2_6"];
+
+        $sub_2_7=$_POST["Sub_2_7"];
+        $cat_2_7=$_POST["Cat_2_7"];
+        $maxi_2_7=$_POST["Maxi_2_7"];
+        $obt_2_7=$_POST["Obt_2_7"];
+        $mon_2_7=$_POST["Mon_2_7"];
+        $year_2_7=$_POST["Year_2_7"];
+
+        $sub_2_8=$_POST["Sub_2_8"];
+        $cat_2_8=$_POST["Cat_2_8"];
+        $maxi_2_8=$_POST["Maxi_2_8"];
+        $obt_2_8=$_POST["Obt_2_8"];
+        $mon_2_8=$_POST["Mon_2_8"];
+        $year_2_8=$_POST["Year_2_8"];
+
+        $sub_2_9=$_POST["Sub_2_9"];
+        $cat_2_9=$_POST["Cat_2_9"];
+        $maxi_2_9=$_POST["Maxi_2_9"];
+        $obt_2_9=$_POST["Obt_2_9"];
+        $mon_2_9=$_POST["Mon_2_9"];
+        $year_2_9=$_POST["Year_2_9"];
+
+        $sub_2_10=$_POST["Sub_2_10"];
+        $cat_2_10=$_POST["Cat_2_10"];
+        $maxi_2_10=$_POST["Maxi_2_10"];
+        $obt_2_10=$_POST["Obt_2_10"];
+        $mon_2_10=$_POST["Mon_2_10"];
+        $year_2_10=$_POST["Year_2_10"];
 
 
- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>  
+        $stmt3 = $conn->prepare("UPDATE college_sem_2
+        SET sub_2_1= ?,cat_2_1= ?,maxi_2_1= ?,obt_2_1= ?,mon_2_1= ?,year_2_1= ?,
+        sub_2_2= ?,cat_2_2= ?,maxi_2_2= ?,obt_2_2= ?,mon_2_2= ?,year_2_2= ?,
+        sub_2_3= ?,cat_2_3= ?,maxi_2_3= ?,obt_2_3= ?,mon_2_3= ?,year_2_3= ?,
+        sub_2_4= ?,cat_2_4= ?,maxi_2_4= ?,obt_2_4= ?,mon_2_4= ?,year_2_4= ?,
+        sub_2_5= ?,cat_2_5= ?,maxi_2_5= ?,obt_2_5= ?,mon_2_5= ?,year_2_5= ?,
+        sub_2_6= ?,cat_2_6= ?,maxi_2_6= ?,obt_2_6= ?,mon_2_6= ?,year_2_6= ?,
+        sub_2_7= ?,cat_2_7= ?,maxi_2_7= ?,obt_2_7= ?,mon_2_7= ?,year_2_7= ?,
+        sub_2_8= ?,cat_2_8= ?,maxi_2_8= ?,obt_2_8= ?,mon_2_8= ?,year_2_8= ?,
+        sub_2_9= ?,cat_2_9= ?,maxi_2_9= ?,obt_2_9= ?,mon_2_9= ?,year_2_9= ?,
+        sub_2_10= ?,cat_2_10= ?,maxi_2_10= ?,obt_2_10= ?,mon_2_10= ?,year_2_10= ?
+        
+        WHERE id = (SELECT id FROM registration WHERE e_mail = ?);
+        "); 
 
-  $(document).ready(function(){
-    $("#header").load("header.html");
-    $("#navigation").load("navigation.html")
-});
+        $stmt3->bind_param("sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss",
+        $sub_2_1,$cat_2_1,$maxi_2_1,$obt_2_1,$mon_2_1,$year_2_1,
+        $sub_2_2,$cat_2_2,$maxi_2_2,$obt_2_2,$mon_2_2,$year_2_2,
+        $sub_2_3,$cat_2_3,$maxi_2_3,$obt_2_3,$mon_2_3,$year_2_3 ,
+        $sub_2_4,$cat_2_4,$maxi_2_4,$obt_2_4,$mon_2_4,$year_2_4 ,
+        $sub_2_5,$cat_2_5,$maxi_2_5,$obt_2_5,$mon_2_5,$year_2_5 ,
+        $sub_2_6,$cat_2_6,$maxi_2_6,$obt_2_6,$mon_2_6,$year_2_6 ,
+        $sub_2_7,$cat_2_7,$maxi_2_7,$obt_2_7,$mon_2_7,$year_2_7 ,
+        $sub_2_8,$cat_2_8,$maxi_2_8,$obt_2_8,$mon_2_8,$year_2_8 ,
+        $sub_2_9,$cat_2_9,$maxi_2_9,$obt_2_9,$mon_2_9,$year_2_9,
+        $sub_2_10,$cat_2_10,$maxi_2_10,$obt_2_10,$mon_2_10,$year_2_10,
+        $email);
+        $stmt3->execute(); 
 
-$(document).ready(function() {
-    // Get current year
-    const currentYear = (new Date()).getFullYear();
+        $sub_3_1=$_POST["Sub_3_1"];
+        $cat_3_1=$_POST["Cat_3_1"];
+        $maxi_3_1=$_POST["Maxi_3_1"];
+        $obt_3_1=$_POST["Obt_3_1"];
+        $mon_3_1=$_POST["Mon_3_1"];
+        $year_3_1=$_POST["Year_3_1"];
 
-    // Function to populate year dropdown
-    function populateYearDropdown(yearDropdown) {
-        // Clear any existing options
-        yearDropdown.empty();
+        $sub_3_2=$_POST["Sub_3_2"];
+        $cat_3_2=$_POST["Cat_3_2"];
+        $maxi_3_2=$_POST["Maxi_3_2"];
+        $obt_3_2=$_POST["Obt_3_2"];
+        $mon_3_2=$_POST["Mon_3_2"];
+        $year_3_2=$_POST["Year_3_2"];
 
-        // Populate year dropdown
-        yearDropdown.append($('<option>', {
-            value: "",
-            text: "Select Year"
-        }));
-        for (let i = currentYear - 10; i <= currentYear; i++) {
-            yearDropdown.append($('<option>', {
-                value: i,
-                text: i
-            }));
-        }
+        $sub_3_3=$_POST["Sub_3_3"];
+        $cat_3_3=$_POST["Cat_3_3"];
+        $maxi_3_3=$_POST["Maxi_3_3"];
+        $obt_3_3=$_POST["Obt_3_3"];
+        $mon_3_3=$_POST["Mon_3_3"];
+        $year_3_3=$_POST["Year_3_3"];
+
+        $sub_3_4=$_POST["Sub_3_4"];
+        $cat_3_4=$_POST["Cat_3_4"];
+        $maxi_3_4=$_POST["Maxi_3_4"];
+        $obt_3_4=$_POST["Obt_3_4"];
+        $mon_3_4=$_POST["Mon_3_4"];
+        $year_3_4=$_POST["Year_3_4"];
+
+        $sub_3_5=$_POST["Sub_3_5"];
+        $cat_3_5=$_POST["Cat_3_5"];
+        $maxi_3_5=$_POST["Maxi_3_5"];
+        $obt_3_5=$_POST["Obt_3_5"];
+        $mon_3_5=$_POST["Mon_3_5"];
+        $year_3_5=$_POST["Year_3_5"];
+
+        $sub_3_6=$_POST["Sub_3_6"];
+        $cat_3_6=$_POST["Cat_3_6"];
+        $maxi_3_6=$_POST["Maxi_3_6"];
+        $obt_3_6=$_POST["Obt_3_6"];
+        $mon_3_6=$_POST["Mon_3_6"];
+        $year_3_6=$_POST["Year_3_6"];
+
+        $sub_3_7=$_POST["Sub_3_7"];
+        $cat_3_7=$_POST["Cat_3_7"];
+        $maxi_3_7=$_POST["Maxi_3_7"];
+        $obt_3_7=$_POST["Obt_3_7"];
+        $mon_3_7=$_POST["Mon_3_7"];
+        $year_3_7=$_POST["Year_3_7"];
+
+        $sub_3_8=$_POST["Sub_3_8"];
+        $cat_3_8=$_POST["Cat_3_8"];
+        $maxi_3_8=$_POST["Maxi_3_8"];
+        $obt_3_8=$_POST["Obt_3_8"];
+        $mon_3_8=$_POST["Mon_3_8"];
+        $year_3_8=$_POST["Year_3_8"];
+
+        $sub_3_9=$_POST["Sub_3_9"];
+        $cat_3_9=$_POST["Cat_3_9"];
+        $maxi_3_9=$_POST["Maxi_3_9"];
+        $obt_3_9=$_POST["Obt_3_9"];
+        $mon_3_9=$_POST["Mon_3_9"];
+        $year_3_9=$_POST["Year_3_9"];
+
+        $sub_3_10=$_POST["Sub_3_10"];
+        $cat_3_10=$_POST["Cat_3_10"];
+        $maxi_3_10=$_POST["Maxi_3_10"];
+        $obt_3_10=$_POST["Obt_3_10"];
+        $mon_3_10=$_POST["Mon_3_10"];
+        $year_3_10=$_POST["Year_3_10"];
+
+
+        $stmt4 = $conn->prepare("UPDATE college_sem_3
+        SET sub_3_1= ?,cat_3_1= ?,maxi_3_1= ?,obt_3_1= ?,mon_3_1= ?,year_3_1= ?,
+        sub_3_2= ?,cat_3_2= ?,maxi_3_2= ?,obt_3_2= ?,mon_3_2= ?,year_3_2= ?,
+        sub_3_3= ?,cat_3_3= ?,maxi_3_3= ?,obt_3_3= ?,mon_3_3= ?,year_3_3= ?,
+        sub_3_4= ?,cat_3_4= ?,maxi_3_4= ?,obt_3_4= ?,mon_3_4= ?,year_3_4= ?,
+        sub_3_5= ?,cat_3_5= ?,maxi_3_5= ?,obt_3_5= ?,mon_3_5= ?,year_3_5= ?,
+        sub_3_6= ?,cat_3_6= ?,maxi_3_6= ?,obt_3_6= ?,mon_3_6= ?,year_3_6= ?,
+        sub_3_7= ?,cat_3_7= ?,maxi_3_7= ?,obt_3_7= ?,mon_3_7= ?,year_3_7= ?,
+        sub_3_8= ?,cat_3_8= ?,maxi_3_8= ?,obt_3_8= ?,mon_3_8= ?,year_3_8= ?,
+        sub_3_9= ?,cat_3_9= ?,maxi_3_9= ?,obt_3_9= ?,mon_3_9= ?,year_3_9= ?,
+        sub_3_10= ?,cat_3_10= ?,maxi_3_10= ?,obt_3_10= ?,mon_3_10= ?,year_3_10= ?
+        
+        WHERE id = (SELECT id FROM registration WHERE e_mail = ?);
+        ");
+
+        $stmt4->bind_param("sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss",
+        $sub_3_1,$cat_3_1,$maxi_3_1,$obt_3_1,$mon_3_1,$year_3_1,
+        $sub_3_2,$cat_3_2,$maxi_3_2,$obt_3_2,$mon_3_2,$year_3_2,
+        $sub_3_3,$cat_3_3,$maxi_3_3,$obt_3_3,$mon_3_3,$year_3_3,
+        $sub_3_4,$cat_3_4,$maxi_3_4,$obt_3_4,$mon_3_4,$year_3_4,
+        $sub_3_5,$cat_3_5,$maxi_3_5,$obt_3_5,$mon_3_5,$year_3_5,
+        $sub_3_6,$cat_3_6,$maxi_3_6,$obt_3_6,$mon_3_6,$year_3_6,
+        $sub_3_7,$cat_3_7,$maxi_3_7,$obt_3_7,$mon_3_7,$year_3_7,
+        $sub_3_8,$cat_3_8,$maxi_3_8,$obt_3_8,$mon_3_8,$year_3_8,
+        $sub_3_9,$cat_3_9,$maxi_3_9,$obt_3_9,$mon_3_9,$year_3_9,
+        $sub_3_10,$cat_3_10,$maxi_3_10,$obt_3_10,$mon_3_10,$year_3_10,
+        $email);
+
+        $stmt4->execute();
+
+        // Semester 4
+        $sub_4_1 = $_POST["Sub_4_1"];
+        $cat_4_1 = $_POST["Cat_4_1"];
+        $maxi_4_1 = $_POST["Maxi_4_1"];
+        $obt_4_1 = $_POST["Obt_4_1"];
+        $mon_4_1 = $_POST["Mon_4_1"];
+        $year_4_1 = $_POST["Year_4_1"];
+
+        $sub_4_2 = $_POST["Sub_4_2"];
+        $cat_4_2 = $_POST["Cat_4_2"];
+        $maxi_4_2 = $_POST["Maxi_4_2"];
+        $obt_4_2 = $_POST["Obt_4_2"];
+        $mon_4_2 = $_POST["Mon_4_2"];
+        $year_4_2 = $_POST["Year_4_2"];
+
+        $sub_4_3 = $_POST["Sub_4_3"];
+        $cat_4_3 = $_POST["Cat_4_3"];
+        $maxi_4_3 = $_POST["Maxi_4_3"];
+        $obt_4_3 = $_POST["Obt_4_3"];
+        $mon_4_3 = $_POST["Mon_4_3"];
+        $year_4_3 = $_POST["Year_4_3"];
+
+        $sub_4_4 = $_POST["Sub_4_4"];
+        $cat_4_4 = $_POST["Cat_4_4"];
+        $maxi_4_4 = $_POST["Maxi_4_4"];
+        $obt_4_4 = $_POST["Obt_4_4"];
+        $mon_4_4 = $_POST["Mon_4_4"];
+        $year_4_4 = $_POST["Year_4_4"];
+
+        $sub_4_5 = $_POST["Sub_4_5"];
+        $cat_4_5 = $_POST["Cat_4_5"];
+        $maxi_4_5 = $_POST["Maxi_4_5"];
+        $obt_4_5 = $_POST["Obt_4_5"];
+        $mon_4_5 = $_POST["Mon_4_5"];
+        $year_4_5 = $_POST["Year_4_5"];
+
+        $sub_4_6 = $_POST["Sub_4_6"];
+        $cat_4_6 = $_POST["Cat_4_6"];
+        $maxi_4_6 = $_POST["Maxi_4_6"];
+        $obt_4_6 = $_POST["Obt_4_6"];
+        $mon_4_6 = $_POST["Mon_4_6"];
+        $year_4_6 = $_POST["Year_4_6"];
+
+        $sub_4_7 = $_POST["Sub_4_7"];
+        $cat_4_7 = $_POST["Cat_4_7"];
+        $maxi_4_7 = $_POST["Maxi_4_7"];
+        $obt_4_7 = $_POST["Obt_4_7"];
+        $mon_4_7 = $_POST["Mon_4_7"];
+        $year_4_7 = $_POST["Year_4_7"];
+
+        $sub_4_8 = $_POST["Sub_4_8"];
+        $cat_4_8 = $_POST["Cat_4_8"];
+        $maxi_4_8 = $_POST["Maxi_4_8"];
+        $obt_4_8 = $_POST["Obt_4_8"];
+        $mon_4_8 = $_POST["Mon_4_8"];
+        $year_4_8 = $_POST["Year_4_8"];
+
+        $sub_4_9 = $_POST["Sub_4_9"];
+        $cat_4_9 = $_POST["Cat_4_9"];
+        $maxi_4_9 = $_POST["Maxi_4_9"];
+        $obt_4_9 = $_POST["Obt_4_9"];
+        $mon_4_9 = $_POST["Mon_4_9"];
+        $year_4_9 = $_POST["Year_4_9"];
+
+        $sub_4_10 = $_POST["Sub_4_10"];
+        $cat_4_10 = $_POST["Cat_4_10"];
+        $maxi_4_10 = $_POST["Maxi_4_10"];
+        $obt_4_10 = $_POST["Obt_4_10"];
+        $mon_4_10 = $_POST["Mon_4_10"];
+        $year_4_10 = $_POST["Year_4_10"];
+
+        $stmt5 = $conn->prepare("UPDATE college_sem_4
+        SET sub_4_1= ?,cat_4_1= ?,maxi_4_1= ?,obt_4_1= ?,mon_4_1= ?,year_4_1= ?,
+        sub_4_2= ?,cat_4_2= ?,maxi_4_2= ?,obt_4_2= ?,mon_4_2= ?,year_4_2= ?,
+        sub_4_3= ?,cat_4_3= ?,maxi_4_3= ?,obt_4_3= ?,mon_4_3= ?,year_4_3= ?,
+        sub_4_4= ?,cat_4_4= ?,maxi_4_4= ?,obt_4_4= ?,mon_4_4= ?,year_4_4= ?,
+        sub_4_5= ?,cat_4_5= ?,maxi_4_5= ?,obt_4_5= ?,mon_4_5= ?,year_4_5= ?,
+        sub_4_6= ?,cat_4_6= ?,maxi_4_6= ?,obt_4_6= ?,mon_4_6= ?,year_4_6= ?,
+        sub_4_7= ?,cat_4_7= ?,maxi_4_7= ?,obt_4_7= ?,mon_4_7= ?,year_4_7= ?,
+        sub_4_8= ?,cat_4_8= ?,maxi_4_8= ?,obt_4_8= ?,mon_4_8= ?,year_4_8= ?,
+        sub_4_9= ?,cat_4_9= ?,maxi_4_9= ?,obt_4_9= ?,mon_4_9= ?,year_4_9= ?,
+        sub_4_10= ?,cat_4_10= ?,maxi_4_10= ?,obt_4_10= ?,mon_4_10= ?,year_4_10= ?
+        
+        WHERE id = (SELECT id FROM registration WHERE e_mail = ?);
+        ");
+
+        $stmt5->bind_param("sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss",
+        $sub_4_1,$cat_4_1,$maxi_4_1,$obt_4_1,$mon_4_1,$year_4_1,
+        $sub_4_2,$cat_4_2,$maxi_4_2,$obt_4_2,$mon_4_2,$year_4_2,
+        $sub_4_3,$cat_4_3,$maxi_4_3,$obt_4_3,$mon_4_3,$year_4_3,
+        $sub_4_4,$cat_4_4,$maxi_4_4,$obt_4_4,$mon_4_4,$year_4_4,
+        $sub_4_5,$cat_4_5,$maxi_4_5,$obt_4_5,$mon_4_5,$year_4_5,
+        $sub_4_6,$cat_4_6,$maxi_4_6,$obt_4_6,$mon_4_6,$year_4_6,
+        $sub_4_7,$cat_4_7,$maxi_4_7,$obt_4_7,$mon_4_7,$year_4_7,
+        $sub_4_8,$cat_4_8,$maxi_4_8,$obt_4_8,$mon_4_8,$year_4_8,
+        $sub_4_9,$cat_4_9,$maxi_4_9,$obt_4_9,$mon_4_9,$year_4_9,
+        $sub_4_10,$cat_4_10,$maxi_4_10,$obt_4_10,$mon_4_10,$year_4_10,
+        $email);
+        $stmt5->execute();
+
+        $sub_5_1 = $_POST["Sub_5_1"];
+        $cat_5_1 = $_POST["Cat_5_1"];
+        $maxi_5_1 = $_POST["Maxi_5_1"];
+        $obt_5_1 = $_POST["Obt_5_1"];
+        $mon_5_1 = $_POST["Mon_5_1"];
+        $year_5_1 = $_POST["Year_5_1"];
+
+        $sub_5_2 = $_POST["Sub_5_2"];
+        $cat_5_2 = $_POST["Cat_5_2"];
+        $maxi_5_2 = $_POST["Maxi_5_2"];
+        $obt_5_2 = $_POST["Obt_5_2"];
+        $mon_5_2 = $_POST["Mon_5_2"];
+        $year_5_2 = $_POST["Year_5_2"];
+
+        $sub_5_3 = $_POST["Sub_5_3"];
+        $cat_5_3 = $_POST["Cat_5_3"];
+        $maxi_5_3 = $_POST["Maxi_5_3"];
+        $obt_5_3 = $_POST["Obt_5_3"];
+        $mon_5_3 = $_POST["Mon_5_3"];
+        $year_5_3 = $_POST["Year_5_3"];
+
+        $sub_5_4 = $_POST["Sub_5_4"];
+        $cat_5_4 = $_POST["Cat_5_4"];
+        $maxi_5_4 = $_POST["Maxi_5_4"];
+        $obt_5_4 = $_POST["Obt_5_4"];
+        $mon_5_4 = $_POST["Mon_5_4"];
+        $year_5_4 = $_POST["Year_5_4"];
+
+        $sub_5_5 = $_POST["Sub_5_5"];
+        $cat_5_5 = $_POST["Cat_5_5"];
+        $maxi_5_5 = $_POST["Maxi_5_5"];
+        $obt_5_5 = $_POST["Obt_5_5"];
+        $mon_5_5 = $_POST["Mon_5_5"];
+        $year_5_5 = $_POST["Year_5_5"];
+
+        $sub_5_6 = $_POST["Sub_5_6"];
+        $cat_5_6 = $_POST["Cat_5_6"];
+        $maxi_5_6 = $_POST["Maxi_5_6"];
+        $obt_5_6 = $_POST["Obt_5_6"];
+        $mon_5_6 = $_POST["Mon_5_6"];
+        $year_5_6 = $_POST["Year_5_6"];
+
+        $sub_5_7 = $_POST["Sub_5_7"];
+        $cat_5_7 = $_POST["Cat_5_7"];
+        $maxi_5_7 = $_POST["Maxi_5_7"];
+        $obt_5_7 = $_POST["Obt_5_7"];
+        $mon_5_7 = $_POST["Mon_5_7"];
+        $year_5_7 = $_POST["Year_5_7"];
+
+        $sub_5_8 = $_POST["Sub_5_8"];
+        $cat_5_8 = $_POST["Cat_5_8"];
+        $maxi_5_8 = $_POST["Maxi_5_8"];
+        $obt_5_8 = $_POST["Obt_5_8"];
+        $mon_5_8 = $_POST["Mon_5_8"];
+        $year_5_8 = $_POST["Year_5_8"];
+
+        $sub_5_9 = $_POST["Sub_5_9"];
+        $cat_5_9 = $_POST["Cat_5_9"];
+        $maxi_5_9 = $_POST["Maxi_5_9"];
+        $obt_5_9 = $_POST["Obt_5_9"];
+        $mon_5_9 = $_POST["Mon_5_9"];
+        $year_5_9 = $_POST["Year_5_9"];
+
+        $sub_5_10 = $_POST["Sub_5_10"];
+        $cat_5_10 = $_POST["Cat_5_10"];
+        $maxi_5_10 = $_POST["Maxi_5_10"];
+        $obt_5_10 = $_POST["Obt_5_10"];
+        $mon_5_10 = $_POST["Mon_5_10"];
+        $year_5_10 = $_POST["Year_5_10"];
+
+        $stmt6 = $conn->prepare("UPDATE college_sem_5
+        SET sub_5_1= ?,cat_5_1= ?,maxi_5_1= ?,obt_5_1= ?,mon_5_1= ?,year_5_1= ?,
+        sub_5_2= ?,cat_5_2= ?,maxi_5_2= ?,obt_5_2= ?,mon_5_2= ?,year_5_2= ?,
+        sub_5_3= ?,cat_5_3= ?,maxi_5_3= ?,obt_5_3= ?,mon_5_3= ?,year_5_3= ?,
+        sub_5_4= ?,cat_5_4= ?,maxi_5_4= ?,obt_5_4= ?,mon_5_4= ?,year_5_4= ?,
+        sub_5_5= ?,cat_5_5= ?,maxi_5_5= ?,obt_5_5= ?,mon_5_5= ?,year_5_5= ?,
+        sub_5_6= ?,cat_5_6= ?,maxi_5_6= ?,obt_5_6= ?,mon_5_6= ?,year_5_6= ?,
+        sub_5_7= ?,cat_5_7= ?,maxi_5_7= ?,obt_5_7= ?,mon_5_7= ?,year_5_7= ?,
+        sub_5_8= ?,cat_5_8= ?,maxi_5_8= ?,obt_5_8= ?,mon_5_8= ?,year_5_8= ?,
+        sub_5_9= ?,cat_5_9= ?,maxi_5_9= ?,obt_5_9= ?,mon_5_9= ?,year_5_9= ?,
+        sub_5_10= ?,cat_5_10= ?,maxi_5_10= ?,obt_5_10= ?,mon_5_10= ?,year_5_10= ?
+        
+        WHERE id = (SELECT id FROM registration WHERE e_mail = ?);
+        ");
+
+        $stmt6->bind_param("sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss",
+        $sub_5_1, $cat_5_1, $maxi_5_1, $obt_5_1, $mon_5_1, $year_5_1,
+        $sub_5_2, $cat_5_2, $maxi_5_2, $obt_5_2, $mon_5_2, $year_5_2,
+        $sub_5_3, $cat_5_3, $maxi_5_3, $obt_5_3, $mon_5_3, $year_5_3,
+        $sub_5_4, $cat_5_4, $maxi_5_4, $obt_5_4, $mon_5_4, $year_5_4,
+        $sub_5_5, $cat_5_5, $maxi_5_5, $obt_5_5, $mon_5_5, $year_5_5,
+        $sub_5_6, $cat_5_6, $maxi_5_6, $obt_5_6, $mon_5_6, $year_5_6,
+        $sub_5_7, $cat_5_7, $maxi_5_7, $obt_5_7, $mon_5_7, $year_5_7,
+        $sub_5_8, $cat_5_8, $maxi_5_8, $obt_5_8, $mon_5_8, $year_5_8,
+        $sub_5_9, $cat_5_9, $maxi_5_9, $obt_5_9, $mon_5_9, $year_5_9,
+        $sub_5_10, $cat_5_10, $maxi_5_10, $obt_5_10, $mon_5_10, $year_5_10,
+        $email);
+        $stmt6->execute();
+
+        // Semester 6
+        $sub_6_1 = $_POST["Sub_6_1"];
+        $cat_6_1 = $_POST["Cat_6_1"];
+        $maxi_6_1 = $_POST["Maxi_6_1"];
+        $obt_6_1 = $_POST["Obt_6_1"];
+        $mon_6_1 = $_POST["Mon_6_1"];
+        $year_6_1 = $_POST["Year_6_1"];
+
+        $sub_6_2 = $_POST["Sub_6_2"];
+        $cat_6_2 = $_POST["Cat_6_2"];
+        $maxi_6_2 = $_POST["Maxi_6_2"];
+        $obt_6_2 = $_POST["Obt_6_2"];
+        $mon_6_2 = $_POST["Mon_6_2"];
+        $year_6_2 = $_POST["Year_6_2"];
+
+        $sub_6_3 = $_POST["Sub_6_3"];
+        $cat_6_3 = $_POST["Cat_6_3"];
+        $maxi_6_3 = $_POST["Maxi_6_3"];
+        $obt_6_3 = $_POST["Obt_6_3"];
+        $mon_6_3 = $_POST["Mon_6_3"];
+        $year_6_3 = $_POST["Year_6_3"];
+
+        $sub_6_4 = $_POST["Sub_6_4"];
+        $cat_6_4 = $_POST["Cat_6_4"];
+        $maxi_6_4 = $_POST["Maxi_6_4"];
+        $obt_6_4 = $_POST["Obt_6_4"];
+        $mon_6_4 = $_POST["Mon_6_4"];
+        $year_6_4 = $_POST["Year_6_4"];
+
+        $sub_6_5 = $_POST["Sub_6_5"];
+        $cat_6_5 = $_POST["Cat_6_5"];
+        $maxi_6_5 = $_POST["Maxi_6_5"];
+        $obt_6_5 = $_POST["Obt_6_5"];
+        $mon_6_5 = $_POST["Mon_6_5"];
+        $year_6_5 = $_POST["Year_6_5"];
+
+        $sub_6_6 = $_POST["Sub_6_6"];
+        $cat_6_6 = $_POST["Cat_6_6"];
+        $maxi_6_6 = $_POST["Maxi_6_6"];
+        $obt_6_6 = $_POST["Obt_6_6"];
+        $mon_6_6 = $_POST["Mon_6_6"];
+        $year_6_6 = $_POST["Year_6_6"];
+
+        $sub_6_7 = $_POST["Sub_6_7"];
+        $cat_6_7 = $_POST["Cat_6_7"];
+        $maxi_6_7 = $_POST["Maxi_6_7"];
+        $obt_6_7 = $_POST["Obt_6_7"];
+        $mon_6_7 = $_POST["Mon_6_7"];
+        $year_6_7 = $_POST["Year_6_7"];
+
+        $sub_6_8 = $_POST["Sub_6_8"];
+        $cat_6_8 = $_POST["Cat_6_8"];
+        $maxi_6_8 = $_POST["Maxi_6_8"];
+        $obt_6_8 = $_POST["Obt_6_8"];
+        $mon_6_8 = $_POST["Mon_6_8"];
+        $year_6_8 = $_POST["Year_6_8"];
+
+        $sub_6_9 = $_POST["Sub_6_9"];
+        $cat_6_9 = $_POST["Cat_6_9"];
+        $maxi_6_9 = $_POST["Maxi_6_9"];
+        $obt_6_9 = $_POST["Obt_6_9"];
+        $mon_6_9 = $_POST["Mon_6_9"];
+        $year_6_9 = $_POST["Year_6_9"];
+
+        $sub_6_10 = $_POST["Sub_6_10"];
+        $cat_6_10 = $_POST["Cat_6_10"];
+        $maxi_6_10 = $_POST["Maxi_6_10"];
+        $obt_6_10 = $_POST["Obt_6_10"];
+        $mon_6_10 = $_POST["Mon_6_10"];
+        $year_6_10 = $_POST["Year_6_10"];
+
+        $stmt7 = $conn->prepare("UPDATE college_sem_6
+        SET sub_6_1= ?,cat_6_1= ?,maxi_6_1= ?,obt_6_1= ?,mon_6_1= ?,year_6_1= ?,
+        sub_6_2= ?,cat_6_2= ?,maxi_6_2= ?,obt_6_2= ?,mon_6_2= ?,year_6_2= ?,
+        sub_6_3= ?,cat_6_3= ?,maxi_6_3= ?,obt_6_3= ?,mon_6_3= ?,year_6_3= ?,
+        sub_6_4= ?,cat_6_4= ?,maxi_6_4= ?,obt_6_4= ?,mon_6_4= ?,year_6_4= ?,
+        sub_6_5= ?,cat_6_5= ?,maxi_6_5= ?,obt_6_5= ?,mon_6_5= ?,year_6_5= ?,
+        sub_6_6= ?,cat_6_6= ?,maxi_6_6= ?,obt_6_6= ?,mon_6_6= ?,year_6_6= ?,
+        sub_6_7= ?,cat_6_7= ?,maxi_6_7= ?,obt_6_7= ?,mon_6_7= ?,year_6_7= ?,
+        sub_6_8= ?,cat_6_8= ?,maxi_6_8= ?,obt_6_8= ?,mon_6_8= ?,year_6_8= ?,
+        sub_6_9= ?,cat_6_9= ?,maxi_6_9= ?,obt_6_9= ?,mon_6_9= ?,year_6_9= ?,
+        sub_6_10= ?,cat_6_10= ?,maxi_6_10= ?,obt_6_10= ?,mon_6_10= ?,year_6_10= ?
+        
+        WHERE id = (SELECT id FROM registration WHERE e_mail = ?);
+        ");
+
+        $stmt7->bind_param("sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss",
+        $sub_6_1, $cat_6_1, $maxi_6_1, $obt_6_1, $mon_6_1, $year_6_1,
+        $sub_6_2, $cat_6_2, $maxi_6_2, $obt_6_2, $mon_6_2, $year_6_2,
+        $sub_6_3, $cat_6_3, $maxi_6_3, $obt_6_3, $mon_6_3, $year_6_3,
+        $sub_6_4, $cat_6_4, $maxi_6_4, $obt_6_4, $mon_6_4, $year_6_4,
+        $sub_6_5, $cat_6_5, $maxi_6_5, $obt_6_5, $mon_6_5, $year_6_5,
+        $sub_6_6, $cat_6_6, $maxi_6_6, $obt_6_6, $mon_6_6, $year_6_6,
+        $sub_6_7, $cat_6_7, $maxi_6_7, $obt_6_7, $mon_6_7, $year_6_7,
+        $sub_6_8, $cat_6_8, $maxi_6_8, $obt_6_8, $mon_6_8, $year_6_8,
+        $sub_6_9, $cat_6_9, $maxi_6_9, $obt_6_9, $mon_6_9, $year_6_9,
+        $sub_6_10, $cat_6_10, $maxi_6_10, $obt_6_10, $mon_6_10, $year_6_10,
+        $email);
+        $stmt7->execute();
+
+        $sub_7_1 = $_POST["Sub_7_1"];
+        $cat_7_1 = $_POST["Cat_7_1"];
+        $maxi_7_1 = $_POST["Maxi_7_1"];
+        $obt_7_1 = $_POST["Obt_7_1"];
+        $mon_7_1 = $_POST["Mon_7_1"];
+        $year_7_1 = $_POST["Year_7_1"];
+
+        $sub_7_2 = $_POST["Sub_7_2"];
+        $cat_7_2 = $_POST["Cat_7_2"];
+        $maxi_7_2 = $_POST["Maxi_7_2"];
+        $obt_7_2 = $_POST["Obt_7_2"];
+        $mon_7_2 = $_POST["Mon_7_2"];
+        $year_7_2 = $_POST["Year_7_2"];
+
+        $sub_7_3 = $_POST["Sub_7_3"];
+        $cat_7_3 = $_POST["Cat_7_3"];
+        $maxi_7_3 = $_POST["Maxi_7_3"];
+        $obt_7_3 = $_POST["Obt_7_3"];
+        $mon_7_3 = $_POST["Mon_7_3"];
+        $year_7_3 = $_POST["Year_7_3"];
+
+        $sub_7_4 = $_POST["Sub_7_4"];
+        $cat_7_4 = $_POST["Cat_7_4"];
+        $maxi_7_4 = $_POST["Maxi_7_4"];
+        $obt_7_4 = $_POST["Obt_7_4"];
+        $mon_7_4 = $_POST["Mon_7_4"];
+        $year_7_4 = $_POST["Year_7_4"];
+
+        $sub_7_5 = $_POST["Sub_7_5"];
+        $cat_7_5 = $_POST["Cat_7_5"];
+        $maxi_7_5 = $_POST["Maxi_7_5"];
+        $obt_7_5 = $_POST["Obt_7_5"];
+        $mon_7_5 = $_POST["Mon_7_5"];
+        $year_7_5 = $_POST["Year_7_5"];
+
+        $sub_7_6 = $_POST["Sub_7_6"];
+        $cat_7_6 = $_POST["Cat_7_6"];
+        $maxi_7_6 = $_POST["Maxi_7_6"];
+        $obt_7_6 = $_POST["Obt_7_6"];
+        $mon_7_6 = $_POST["Mon_7_6"];
+        $year_7_6 = $_POST["Year_7_6"];
+
+        $sub_7_7 = $_POST["Sub_7_7"];
+        $cat_7_7 = $_POST["Cat_7_7"];
+        $maxi_7_7 = $_POST["Maxi_7_7"];
+        $obt_7_7 = $_POST["Obt_7_7"];
+        $mon_7_7 = $_POST["Mon_7_7"];
+        $year_7_7 = $_POST["Year_7_7"];
+
+        $sub_7_8 = $_POST["Sub_7_8"];
+        $cat_7_8 = $_POST["Cat_7_8"];
+        $maxi_7_8 = $_POST["Maxi_7_8"];
+        $obt_7_8 = $_POST["Obt_7_8"];
+        $mon_7_8 = $_POST["Mon_7_8"];
+        $year_7_8 = $_POST["Year_7_8"];
+
+        $sub_7_9 = $_POST["Sub_7_9"];
+        $cat_7_9 = $_POST["Cat_7_9"];
+        $maxi_7_9 = $_POST["Maxi_7_9"];
+        $obt_7_9 = $_POST["Obt_7_9"];
+        $mon_7_9 = $_POST["Mon_7_9"];
+        $year_7_9 = $_POST["Year_7_9"];
+
+        $sub_7_10 = $_POST["Sub_7_10"];
+        $cat_7_10 = $_POST["Cat_7_10"];
+        $maxi_7_10 = $_POST["Maxi_7_10"];
+        $obt_7_10 = $_POST["Obt_7_10"];
+        $mon_7_10 = $_POST["Mon_7_10"];
+        $year_7_10 = $_POST["Year_7_10"];
+
+        $stmt8 = $conn->prepare("UPDATE college_sem_7
+        SET sub_7_1= ?,cat_7_1= ?,maxi_7_1= ?,obt_7_1= ?,mon_7_1= ?,year_7_1= ?,
+        sub_7_2= ?,cat_7_2= ?,maxi_7_2= ?,obt_7_2= ?,mon_7_2= ?,year_7_2= ?,
+        sub_7_3= ?,cat_7_3= ?,maxi_7_3= ?,obt_7_3= ?,mon_7_3= ?,year_7_3= ?,
+        sub_7_4= ?,cat_7_4= ?,maxi_7_4= ?,obt_7_4= ?,mon_7_4= ?,year_7_4= ?,
+        sub_7_5= ?,cat_7_5= ?,maxi_7_5= ?,obt_7_5= ?,mon_7_5= ?,year_7_5= ?,
+        sub_7_6= ?,cat_7_6= ?,maxi_7_6= ?,obt_7_6= ?,mon_7_6= ?,year_7_6= ?,
+        sub_7_7= ?,cat_7_7= ?,maxi_7_7= ?,obt_7_7= ?,mon_7_7= ?,year_7_7= ?,
+        sub_7_8= ?,cat_7_8= ?,maxi_7_8= ?,obt_7_8= ?,mon_7_8= ?,year_7_8= ?,
+        sub_7_9= ?,cat_7_9= ?,maxi_7_9= ?,obt_7_9= ?,mon_7_9= ?,year_7_9= ?,
+        sub_7_10= ?,cat_7_10= ?,maxi_7_10= ?,obt_7_10= ?,mon_7_10= ?,year_7_10= ?
+        
+        WHERE id = (SELECT id FROM registration WHERE e_mail = ?);
+        ");
+
+        $stmt8->bind_param("sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss",
+        $sub_7_1, $cat_7_1, $maxi_7_1, $obt_7_1, $mon_7_1, $year_7_1,
+        $sub_7_2, $cat_7_2, $maxi_7_2, $obt_7_2, $mon_7_2, $year_7_2,
+        $sub_7_3, $cat_7_3, $maxi_7_3, $obt_7_3, $mon_7_3, $year_7_3,
+        $sub_7_4, $cat_7_4, $maxi_7_4, $obt_7_4, $mon_7_4, $year_7_4,
+        $sub_7_5, $cat_7_5, $maxi_7_5, $obt_7_5, $mon_7_5, $year_7_5,
+        $sub_7_6, $cat_7_6, $maxi_7_6, $obt_7_6, $mon_7_6, $year_7_6,
+        $sub_7_7, $cat_7_7, $maxi_7_7, $obt_7_7, $mon_7_7, $year_7_7,
+        $sub_7_8, $cat_7_8, $maxi_7_8, $obt_7_8, $mon_7_8, $year_7_8,
+        $sub_7_9, $cat_7_9, $maxi_7_9, $obt_7_9, $mon_7_9, $year_7_9,
+        $sub_7_10, $cat_7_10, $maxi_7_10, $obt_7_10, $mon_7_10, $year_7_10,
+        $email);
+        $stmt8->execute();
+
+        // Semester 8
+        $sub_8_1 = $_POST["Sub_8_1"];
+        $cat_8_1 = $_POST["Cat_8_1"];
+        $maxi_8_1 = $_POST["Maxi_8_1"];
+        $obt_8_1 = $_POST["Obt_8_1"];
+        $mon_8_1 = $_POST["Mon_8_1"];
+        $year_8_1 = $_POST["Year_8_1"];
+
+        $sub_8_2 = $_POST["Sub_8_2"];
+        $cat_8_2 = $_POST["Cat_8_2"];
+        $maxi_8_2 = $_POST["Maxi_8_2"];
+        $obt_8_2 = $_POST["Obt_8_2"];
+        $mon_8_2 = $_POST["Mon_8_2"];
+        $year_8_2 = $_POST["Year_8_2"];
+
+        $sub_8_3 = $_POST["Sub_8_3"];
+        $cat_8_3 = $_POST["Cat_8_3"];
+        $maxi_8_3 = $_POST["Maxi_8_3"];
+        $obt_8_3 = $_POST["Obt_8_3"];
+        $mon_8_3 = $_POST["Mon_8_3"];
+        $year_8_3 = $_POST["Year_8_3"];
+
+        $sub_8_4 = $_POST["Sub_8_4"];
+        $cat_8_4 = $_POST["Cat_8_4"];
+        $maxi_8_4 = $_POST["Maxi_8_4"];
+        $obt_8_4 = $_POST["Obt_8_4"];
+        $mon_8_4 = $_POST["Mon_8_4"];
+        $year_8_4 = $_POST["Year_8_4"];
+
+        $sub_8_5 = $_POST["Sub_8_5"];
+        $cat_8_5 = $_POST["Cat_8_5"];
+        $maxi_8_5 = $_POST["Maxi_8_5"];
+        $obt_8_5 = $_POST["Obt_8_5"];
+        $mon_8_5 = $_POST["Mon_8_5"];
+        $year_8_5 = $_POST["Year_8_5"];
+
+        $sub_8_6 = $_POST["Sub_8_6"];
+        $cat_8_6 = $_POST["Cat_8_6"];
+        $maxi_8_6 = $_POST["Maxi_8_6"];
+        $obt_8_6 = $_POST["Obt_8_6"];
+        $mon_8_6 = $_POST["Mon_8_6"];
+        $year_8_6 = $_POST["Year_8_6"];
+
+        $sub_8_7 = $_POST["Sub_8_7"];
+        $cat_8_7 = $_POST["Cat_8_7"];
+        $maxi_8_7 = $_POST["Maxi_8_7"];
+        $obt_8_7 = $_POST["Obt_8_7"];
+        $mon_8_7 = $_POST["Mon_8_7"];
+        $year_8_7 = $_POST["Year_8_7"];
+
+        $sub_8_8 = $_POST["Sub_8_8"];
+        $cat_8_8 = $_POST["Cat_8_8"];
+        $maxi_8_8 = $_POST["Maxi_8_8"];
+        $obt_8_8 = $_POST["Obt_8_8"];
+        $mon_8_8 = $_POST["Mon_8_8"];
+        $year_8_8 = $_POST["Year_8_8"];
+
+        $sub_8_9 = $_POST["Sub_8_9"];
+        $cat_8_9 = $_POST["Cat_8_9"];
+        $maxi_8_9 = $_POST["Maxi_8_9"];
+        $obt_8_9 = $_POST["Obt_8_9"];
+        $mon_8_9 = $_POST["Mon_8_9"];
+        $year_8_9 = $_POST["Year_8_9"];
+
+        $sub_8_10 = $_POST["Sub_8_10"];
+        $cat_8_10 = $_POST["Cat_8_10"];
+        $maxi_8_10 = $_POST["Maxi_8_10"];
+        $obt_8_10 = $_POST["Obt_8_10"];
+        $mon_8_10 = $_POST["Mon_8_10"];
+        $year_8_10 = $_POST["Year_8_10"];
+
+        $stmt9 = $conn->prepare("UPDATE college_sem_8
+        SET sub_8_1= ?,cat_8_1= ?,maxi_8_1= ?,obt_8_1= ?,mon_8_1= ?,year_8_1= ?,
+        sub_8_2= ?,cat_8_2= ?,maxi_8_2= ?,obt_8_2= ?,mon_8_2= ?,year_8_2= ?,
+        sub_8_3= ?,cat_8_3= ?,maxi_8_3= ?,obt_8_3= ?,mon_8_3= ?,year_8_3= ?,
+        sub_8_4= ?,cat_8_4= ?,maxi_8_4= ?,obt_8_4= ?,mon_8_4= ?,year_8_4= ?,
+        sub_8_5= ?,cat_8_5= ?,maxi_8_5= ?,obt_8_5= ?,mon_8_5= ?,year_8_5= ?,
+        sub_8_6= ?,cat_8_6= ?,maxi_8_6= ?,obt_8_6= ?,mon_8_6= ?,year_8_6= ?,
+        sub_8_7= ?,cat_8_7= ?,maxi_8_7= ?,obt_8_7= ?,mon_8_7= ?,year_8_7= ?,
+        sub_8_8= ?,cat_8_8= ?,maxi_8_8= ?,obt_8_8= ?,mon_8_8= ?,year_8_8= ?,
+        sub_8_9= ?,cat_8_9= ?,maxi_8_9= ?,obt_8_9= ?,mon_8_9= ?,year_8_9= ?,
+        sub_8_10= ?,cat_8_10= ?,maxi_8_10= ?,obt_8_10= ?,mon_8_10= ?,year_8_10= ?
+        
+        WHERE id = (SELECT id FROM registration WHERE e_mail = ?);
+        ");
+
+        $stmt9->bind_param("sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss",
+        $sub_8_1, $cat_8_1, $maxi_8_1, $obt_8_1, $mon_8_1, $year_8_1,
+        $sub_8_2, $cat_8_2, $maxi_8_2, $obt_8_2, $mon_8_2, $year_8_2,
+        $sub_8_3, $cat_8_3, $maxi_8_3, $obt_8_3, $mon_8_3, $year_8_3,
+        $sub_8_4, $cat_8_4, $maxi_8_4, $obt_8_4, $mon_8_4, $year_8_4,
+        $sub_8_5, $cat_8_5, $maxi_8_5, $obt_8_5, $mon_8_5, $year_8_5,
+        $sub_8_6, $cat_8_6, $maxi_8_6, $obt_8_6, $mon_8_6, $year_8_6,
+        $sub_8_7, $cat_8_7, $maxi_8_7, $obt_8_7, $mon_8_7, $year_8_7,
+        $sub_8_8, $cat_8_8, $maxi_8_8, $obt_8_8, $mon_8_8, $year_8_8,
+        $sub_8_9, $cat_8_9, $maxi_8_9, $obt_8_9, $mon_8_9, $year_8_9,
+        $sub_8_10, $cat_8_10, $maxi_8_10, $obt_8_10, $mon_8_10, $year_8_10,
+        $email);
+        $stmt9->execute();
 
         
-    }
+        $max_mark_disp = $_POST["max_mark_disp"];
+        $mark_obt_disp = $_POST["mark_obt_disp"];
+        $perc_mark_disp = $_POST["perc_mark_disp"];
+        $cls_obt = $_POST["cls_obt"];
+        $cgpa = $_POST["cgpa"];
+        $grade = $_POST["grade"];
 
-    // Call the function for each set of dropdowns
-    $('.dropdown-container').each(function() {
-        populateYearDropdown($(this).find('.year'));
-    });
-});
 
+        $stmt10 = $conn->prepare("UPDATE education_result
+        SET max_mark_disp= ?,mark_obt_disp= ?,perc_mark_disp= ?,cls_obt=?,cgpa= ?,grade= ?
+        WHERE id = (SELECT id FROM registration WHERE e_mail = ?);
+        ");
 
-// Function to generate semester tables based on the selected number of semesters
-function generateSemesterTables(numSemesters) {
-    var storedData = {}; // Initialize stored data object
+        $stmt10->bind_param("sssssss",
+        $max_mark_disp,$mark_obt_disp,$perc_mark_disp,$cls_obt,$cgpa,$grade,
+        $email);
+        $stmt10->execute();
 
-    // Clear existing tables
-    $('#tables_container').empty();
-
-    // Generate tables for each semester
-    for (var i = 1; i <= numSemesters; i++) {
-        generateSemesterTable(i, 1, storedData); // Generate table for each semester with default of 1 subject
-    }
-}
-
-// Function to generate semester table with specified ID and number of subjects
-function generateSemesterTable(semesterId, numSubjects, storedData) {
-    var tableHTML = `
-        <div class="table-responsive">
-            <h2>Semester ${semesterId}</h2>
-            <div class="form-group">
-                <label for="no-of-subjects-sem${semesterId}" style="display: none; margin-right: 10px;">Number of Subjects:</label>
-                <select class="select2me form-control form-control no-of-subjects-select" id="no-of-subjects-sem${semesterId}" name="no-of-subjects-sem${semesterId}" data-semester-id="${semesterId}" style="display: none; width:200px;">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                    <option value="7">7</option>
-                    <option value="8">8</option>
-                    <option value="9">9</option>
-                    <option value="10">10</option>
-                </select>
-            </div>
-            <table class="table table-bordered" style="margin-top: 20px;">
-                <thead>
-                    <tr>
-                        <th>Subject / Course Name</th>
-                        <th>Category</th>
-                        <th>Maximum Marks</th>
-                        <th>Obtained Marks</th>
-                        <th>Month & Year of Passing</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <!-- Rows will be dynamically added here -->
-                </tbody>
-            </table>
+        echo json_encode(['success' => true,'message' => 'Profile updated successfully ']);
     
-        </div>
-        <br>
-    `;
-
-    $('#tables_container').append(tableHTML);
-
-    // Set the selected value for number of subjects if data exists
-    if (storedData && storedData[`no_of_subjects_sem${semesterId}`]) {
-        $(`#no-of-subjects-sem${semesterId}`).val(storedData[`no_of_subjects_sem${semesterId}`]);
-    }
-
-    // Generate rows based on the number of subjects
-    generateRows(semesterId, numSubjects, storedData);
-
-    // Event listener for changes in the number of subjects dropdown
-    $(`#no-of-subjects-sem${semesterId}`).on('change',function(){
-        var numSubjects = parseInt($(this).val());
-        var semesterId = $(this).data('semester-id');
-        generateRows(semesterId, numSubjects, storedData);
-        storeTableData(); // Store the data whenever there's a change
-    });
-}
-
-// Function to generate rows within a table
-function generateRows(semesterId, numSubjects, storedData) {
-    var tbody = $(`#no-of-subjects-sem${semesterId}`).closest('div').next('table').find('tbody');
-   
-
-    // Generate rows based on the number of subjects
-    for (var j = 1; j <= 10; j++) {
-        var rowData = storedData[`Row_${semesterId}_${j - 1}`] || {};
-        var currentYear = new Date().getFullYear();
-        var yearOptions = ''; 
-        yearOptions += '<option value="">Select Year</option>';
-        for (var year = currentYear; year >= currentYear - 20; year--) {
-            yearOptions += `<option value="${year}" ${rowData.year === year ? 'selected' : ''}>${year}</option>`;
-        }
-
-        tbody.append(`
-            <tr>
-                <td><input type="text" class="form-control" name="Sub_${semesterId}_${j}"  id="Sub_${semesterId}_${j}" value="${rowData.subject || ''}" /></td>
-                <td>
-                    <select class="form-control" id="Cat_${semesterId}_${j}" name="Cat_${semesterId}_${j}">
-                        <option value="">Select Category</option>
-                        <option value="Part I" ${rowData.category === 'Part I' ? 'selected' : ''}>Part I</option>
-                        <option value="Part II" ${rowData.category === 'Part II' ? 'selected' : ''}>Part II</option>
-                        <option value="Part III" ${rowData.category === 'Part III' ? 'selected' : ''}>Part III</option>
-                        <option value="Part IV" ${rowData.category === 'Part IV' ? 'selected' : ''}>Part IV</option>
-                        <option value="Part V" ${rowData.category === 'Part V' ? 'selected' : ''}>Part V</option>
-                    </select>
-                </td>
-                <td><input type="number" class="form-control" name="Maxi_${semesterId}_${j}" id="Maxi_${semesterId}_${j}" value="${rowData.maximumMarks || ''}" /></td>
-                <td><input type="number" class="form-control" name="Obt_${semesterId}_${j}" id="Obt_${semesterId}_${j}" value="${rowData.obtainedMarks || ''}" /></td>
-                <td><div class="dropdown-container">
-                        <select class="select2me form-control month" id="Mon_${semesterId}_${j}"  name="Mon_${semesterId}_${j}" >
-                            <option value="">Select Month</option>
-                            <option value="January" ${rowData.month === 1 ? 'selected' : ''}>January</option>
-                            <option value="February" ${rowData.month === 2 ? 'selected' : ''}>February</option>
-                            <option value="March" ${rowData.month === 3 ? 'selected' : ''}>March</option>
-                            <option value="April" ${rowData.month === 4 ? 'selected' : ''}>April</option>
-                            <option value="May" ${rowData.month === 5 ? 'selected' : ''}>May</option>
-                            <option value="June" ${rowData.month === 6 ? 'selected' : ''}>June</option>
-                            <option value="July" ${rowData.month === 7 ? 'selected' : ''}>July</option>
-                            <option value="August" ${rowData.month === 8 ? 'selected' : ''}>August</option>
-                            <option value="September" ${rowData.month === 9 ? 'selected' : ''}>September</option>
-                            <option value="October" ${rowData.month === 10 ? 'selected' : ''}>October</option>
-                            <option value="November" ${rowData.month === 11 ? 'selected' : ''}>November</option>
-                            <option value="December" ${rowData.month === 12 ? 'selected' : ''}>December</option>
-                        </select>
-                        <select class="select2me form-control year" name="Year_${semesterId}_${j}" id="Year_${semesterId}_${j}"  >
-                            ${yearOptions}
-                        </select>
-                    </div></td>
-            </tr>
-        `);
-    }
-}
-
-// Event listener for changes in the number of semesters dropdown
-$('#no-of-sem').on('change', function() {
-    var numSemesters = parseInt($(this).val());
-    generateSemesterTables(numSemesters);
-});
-
-// Function to store the data of each row
-function storeTableData() {
-    var storedData = {};
-
-    // Loop through each semester table
-    $('#tables_container').find('div').each(function() {
-        var semesterId = $(this).find('.no-of-subjects-select').data('semester-id');
-        storedData[`no_of_subjects_sem${semesterId}`] = $(this).find('.no-of-subjects-select').val();
-
-        // Loop through each row in the semester table
-        $(this).find('tbody tr').each(function(index) {
-            var rowData = {
-                subject: $(this).find('input[name^="Sub"]').val(),
-                category: $(this).find('select[name^="Cat"]').val(),
-                maximumMarks: $(this).find('input[name^="Maxi"]').val(),
-                obtainedMarks: $(this).find('input[name^="Obt"]').val(),
-                month: parseInt($(this).find('.month').val()),
-                year: parseInt($(this).find('.year').val())
-            };
-            storedData[`Row_${semesterId}_${index}`] = rowData;
-        });
-    });
-
-    // Return the stored data
-    return storedData;
-}
-
-// Retrieve stored data when the page loads
-$(document).ready(function() {
-    var storedData = JSON.parse(localStorage.getItem('storedData')) || {}; // Retrieve stored data from local storage
-    var numSemesters = parseInt($('#no-of-sem').val()); // Get the initial number of semesters
-    generateSemesterTables(numSemesters); // Generate tables based on the initial number of semesters
-    $('#no-of-sem').trigger('change'); // Trigger the change event to generate rows for initial semesters
-
-    // Event listener for changes in the number of semesters dropdown
-    $('#no-of-sem').on('change', function() {
-        var numSemesters = parseInt($(this).val());
-        generateSemesterTables(numSemesters); // Generate tables based on the selected number of semesters
-        storeTableData(); // Store the data whenever there's a change in the number of semesters
-    });
-
-    // Event listener for changes in the number of subjects dropdown
-    $(document).on('change', '.no-of-subjects-select', function() {
-        storeTableData(); // Store the data whenever there's a change in the number of subjects
-    });
-
-    // Store the data whenever the user leaves the page
-    $(window).on('beforeunload', function() {
-        var storedData = storeTableData(); // Store the data
-        localStorage.setItem('storedData', JSON.stringify(storedData)); // Save the data to local storage
-    });
-});
-
-// Function to calculate and update the total marks and percentage
-function calculateMarks() {
-    var totalMaxMarks = 0;
-    var totalObtMarks = 0;
-    var totalMaxMarksPartIII = 0;
-    var totalObtMarksPartIII = 0;
-    var totalSubjectsPartIII = 0;
-
-    // Loop through each semester table
-    $('#tables_container').find('div').each(function() {
-        $(this).find('tbody tr').each(function() {
-            var maxMarks = parseInt($(this).find('input[name^="Maxi"]').val()) || 0;
-            var obtMarks = parseInt($(this).find('input[name^="Obt"]').val()) || 0;
-            var category = $(this).find('select[name^="Cat"]').val() || '';
-
-            // Calculate total maximum and obtained marks
-            totalMaxMarks += maxMarks;
-            totalObtMarks += obtMarks;
-
-            // Calculate total maximum and obtained marks for Part III
-            if (category === 'Part III') {
-                totalMaxMarksPartIII += maxMarks;
-                totalObtMarksPartIII += obtMarks;
-                totalSubjectsPartIII++;
-            }
-        });
-    });
-
-    // Update the input fields with the calculated values
-    $('#max_mark_disp').val(totalMaxMarks);
-    $('#max_mark').val(totalMaxMarks);
-
-    $('#mark_obt_disp').val(totalObtMarks);
-    $('#mark_obt').val(totalObtMarks);
-
-    // Calculate percentage of marks for Part III
-    var percMarksPartIII = (totalObtMarksPartIII / totalMaxMarksPartIII) * 100 || 0;
-    $('#perc_mark_disp').val(percMarksPartIII.toFixed(3));
-    $('#perc_mark').val(percMarksPartIII.toFixed(3));
-}
-
-// Call the calculateMarks function initially and whenever there's a change in the marks
-$(document).ready(function() {
-    calculateMarks(); // Initial calculation
-
-    // Event listener for changes in the marks
-    $('#tables_container, #no-of-sem').on('change', function() {
-        calculateMarks(); // Recalculate marks whenever there's a change
-    });
-});
-
-
-$(document).ready(function() {
-    $('#education_details').on('submit', function(e) {
-        e.preventDefault(); // Prevent the default form submission
+        $stmt->close();  
+        $stmt1->close();  
+        $stmt2->close();  
+        $stmt3->close();  
+        $stmt4->close();  
+        $stmt5->close();  
+        $stmt6->close(); 
+        $stmt7->close();  
+        $stmt8->close(); 
+        $stmt9->close();  
+        $stmt10->close(); 
+        $conn->close();
         
-        $.ajax({
-            type: 'POST',
-            url: 'php/education_update.php',
-            data: $(this).serialize(), // Serialize the form data
-            dataType: 'json', // Expect a JSON response from the server
-            success: function(response) {
-                if (response.success) {
-                    Swal.fire({
-                      toast: true,
-                      position: 'top-end',
-                      title: 'Personal Information',
-                      text: 'You have been successfully submitted.',
-                      icon: 'success',
-                      timer: 3000, // Automatically close after 3 seconds
-                      showConfirmButton: false, // Remove the confirm button
-                      timerProgressBar: true, 
-                    }).then(() => {
-                      window.location.href = 'Certificate.html';
-                    });
-                  } else {
-                    Swal.fire({
-                      icon: 'error',
-                      title: 'Oops...',
-                      text: response.message,
-                      timer: 5000, // Automatically close after 5 seconds (adjust as needed)
-                      showConfirmButton: false, // Remove the confirm button
-                      timerProgressBar: true, // Enable timer progress bar
-                    });
-                  }
-            },
-            error: function(jqXHR, textStatus, errorThrown) {
-                console.error('AJAX Error: ' + textStatus + ': ' + errorThrown); // Log error to console
-                //alert('An error occurred. Please try again.');
-            }
-        });
-    });
-});
-
-
-$(document).ready(function() {
-    // Retrieve user data on page load
-    $.ajax({
-        type: 'POST',
-        url: 'php/education_retrieve.php',
-        success: function(response) {
-            if (response.success) {
-                $('#sslc_ins').val(response.data.sslc_inst);
-                $('#sslc_board').val(response.data.sslc_board);
-                $('#sslc_sub').val(response.data.sslc_sub);
-                $('#sslc_reg_no').val(response.data.sslc_reg);
-                $('#sslc_perc').val(response.data.sslc_per);
-                $('#sslc_month').val(response.data.sslc_month);
-                $('#sslc_year').val(response.data.sslc_year);
-                $('#sslc_mode').val(response.data.sslc_mode);
-                $('#hsc_course').val(response.data.hsc_course);
-                $('#hsc_ins').val(response.data.hsc_inst);
-                $('#hsc_board').val(response.data.hsc_board);
-                $('#hsc_sub').val(response.data.hsc_sub);
-                $('#hsc_reg_no').val(response.data.hsc_reg);
-                $('#hsc_perc').val(response.data.hsc_per);
-                $('#hsc_month').val(response.data.hsc_month);
-                $('#hsc_year').val(response.data.hsc_year);
-                $('#hsc_mode').val(response.data.hsc_mode);
-                $('#collegeName').val(response.data.college_Name);
-                $('#universityName').val(response.data.university_Name);
-                $('#qualification_type').val(response.data.qualification_type);
-                $('#qualificationdegree').val(response.data.qualification_degree);
-                $('#month_degree').val(response.data.month_degree);
-                $('#year_degree').val(response.data.year_degree);
-                $('#semester_type').val(response.data.semester_type);
-                var numSemesters = parseInt(response.data.no_of_sem);
-                $('#no-of-sem').val(numSemesters);
-                generateSemesterTables(numSemesters);
-                $('#awaiting_for_marksheet').val(response.data.awaiting_for_marksheet);
-                var value = response.data.awaiting_for_marksheet;
-                $('input[name=awaiting_for_marksheet][value=' + value + ']').prop('checked', true);
-                $('#programme-applied').val(response.data.programme_applied);
-                $('#select-programme').val(response.data.selected_programme);
-                var value_1=parseInt(response.data.no_of_subjects_sem1);
-                $('#no-of-subjects-sem1').val(value_1);
-                // Store the data whenever there's a change
-                 
-                for (var j = 1; j <= 8; j++) {
-                    for (var i = 1; i <= 10; i++) {
-                    $('#Sub_'+j+'_' + i).val(response.data['sub_'+j+'_' + i]);
-                    $('#Cat_'+j+'_' + i).val(response.data['cat_'+j+'_' + i]);
-                    $('#Maxi_'+j+'_' + i).val(response.data['maxi_'+j+'_' + i]);
-                    $('#Obt_'+j+'_' + i).val(response.data['obt_'+j+'_' + i]);
-                    $('#Mon_'+j+'_' + i).val(response.data['mon_'+j+'_' + i]);
-                    $('#Year_'+j+'_' + i).val(response.data['year_'+j+'_' + i]);
-                }
-            }
-                
-            } else {
-                alert(response.message);
-            }
-        },
-        error: function() {
-            alert('An error occurred. Please try again.');
-        }
-    });
-    });
+    } else {
+        echo json_encode(['success' => false, 'message' => 'All fields are required']);
+    }
+}
+?>
