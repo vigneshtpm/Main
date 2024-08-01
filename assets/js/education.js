@@ -273,6 +273,12 @@ $(document).ready(function() {
 
 $(document).ready(function() {
     $('#education_details').on('submit', function(e) {
+        if (!$('#dec_agree').is(':checked')) {
+            e.preventDefault(); // Prevent form submission
+            $('#error_message').show(); // Show error message
+        } else {
+            $('#error_message').hide(); // Hide error message
+        
         e.preventDefault(); // Prevent the default form submission
         // Basic client-side validation example
         if (!$('#sslc_ins').val()) {
@@ -337,7 +343,9 @@ $(document).ready(function() {
                 console.error('AJAX Error: ' + textStatus + ': ' + errorThrown); // Log error to console
                 /*alert('An error occurred. Please try again.');*/
             }
+        
         });
+    }
     });
 });
 
@@ -375,9 +383,9 @@ $(document).ready(function() {
                 var numSemesters = parseInt(response.data.no_of_sem);
                 $('#no-of-sem').val(numSemesters);
                 generateSemesterTables(numSemesters);
-                //$('#awaiting_for_marksheet').val(response.data.awaiting_for_marksheet);
-                //var value = response.data.awaiting_for_marksheet;
-                //$('input[name=awaiting_for_marksheet][value=' + value + ']').prop('checked', true);
+                $('#awaiting_for_marksheet').val(response.data.awaiting_for_marksheet);
+                var value = response.data.awaiting_for_marksheet;
+                $('input[name=awaiting_for_marksheet][value=' + value + ']').prop('checked', true);
                 $('#programme-applied').val(response.data.programme_applied);
                 $('#select-programme').val(response.data.selected_programme);
                 var value_1=parseInt(response.data.no_of_subjects_sem1);
@@ -409,4 +417,17 @@ $(document).ready(function() {
             alert('An error occurred. Please try again.');
         }
     });
+    $('#sslc_reg_no,#sslc_perc,#hsc_reg_no,#hsc_perc').on('input', function() {
+        // Filter non-numeric characters from input value
+        var filteredValue = $(this).val().replace(/\D/g, '');
+        // Update input field with filtered value
+        $(this).val(filteredValue);
     });
+    $('#grade').on('input', function() {
+        var inputVal = $(this).val();
+        // Remove numbers and convert to uppercase
+        var filteredVal = inputVal.replace(/[0-9]/g, '');
+        // Update the input field with the filtered uppercase value
+        $(this).val(filteredVal);
+    });
+});

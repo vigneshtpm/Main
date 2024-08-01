@@ -69,7 +69,7 @@ $(document).ready(function() {
         // AJAX request
         $.ajax({
             type: "POST",
-            url: "register.php", // Replace with your server-side script URL
+            url: "php/register.php", // Replace with your server-side script URL
             data: formData,
             success: function(response) {
                 console.log(response); // Log the response to inspect in the browser console

@@ -50,7 +50,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $year_degree=$_POST["year_degree"];
         $semester_type=$_POST["semester_type"];
         $no_of_sem=$_POST["no-of-sem"];
-        
+        $awaiting_for_marksheet=$_POST["awaiting_for_marksheet"];
         $programme_applied=$_POST["programme-applied"];
         $select_programme=$_POST["select-programme"];
 
@@ -58,14 +58,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         $stmt1 = $conn->prepare("UPDATE education_college
         SET college_Name= ?,university_Name= ?,qualification_type= ?,qualification_degree= ?,month_degree= ?,
-        year_degree= ?,semester_type= ?,no_of_sem= ?,
+        year_degree= ?,semester_type= ?,no_of_sem= ?,awaiting_for_marksheet=?,
         programme_applied= ?,selected_programme = ?
         
         WHERE id = (SELECT id FROM registration WHERE e_mail = ?);
         ");
 
-        $stmt1->bind_param("sssssssssss",$collegeName,$universityName,$qualification_type,$qualificationdegree,
-        $month_degree,$year_degree,$semester_type,$no_of_sem,
+        $stmt1->bind_param("ssssssssssss",$collegeName,$universityName,$qualification_type,$qualificationdegree,
+        $month_degree,$year_degree,$semester_type,$no_of_sem,$awaiting_for_marksheet,
         $programme_applied,$select_programme,
        
         $email);

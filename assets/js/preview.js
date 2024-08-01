@@ -140,6 +140,7 @@ function storeTableData() {
                 $('#mobile').val(response.data.mobile);
                 $('#father-name').val(response.data.father_name);
                 $('#mother-name').val(response.data.mother_name);
+                $('#applicant_image').attr('src','php/'+response.data.photoFile);
                 $('#gender').val(response.data.gender);
                 $('#dob').val(response.data.dob);
                 $('#guardian-name').val(response.data.guardian);

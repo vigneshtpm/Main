@@ -194,23 +194,57 @@ $('#uploadForm').submit(function(event) {
             console.log('Server Response:', response); // Log the response
             $('.error-message').text(''); // Clear all previous error messages
 
+            let allUploaded = true;
+
             $.each(response, function(key, value) {
                 if (value !== 'uploaded successfully and database updated') {
                     $('#' + key + 'Error').text(value);
+                    allUploaded = false;
                 } else {
                     $('#' + key + 'Error').text(''); // Clear specific error message if uploaded successfully
                 }
             });
+            if (allUploaded) {
+                Swal.fire({
+                  toast: true,
+                  position: 'top-end',
+                  title: 'Personal Information',
+                  text: 'You have been successfully submitted.',
+                  icon: 'success',
+                  timer: 2000, // Automatically close after 3 seconds
+                  showConfirmButton: false, // Remove the confirm button
+                  timerProgressBar: true, 
+                }).then(() => {
+                  window.location.href = 'preview.html';
+                });
+              } else {
+                Swal.fire({
+                  icon: 'error',
+                  title: 'Oops...',
+                  text: response.message,
+                  timer: 5000, // Automatically close after 5 seconds (adjust as needed)
+                  showConfirmButton: false, // Remove the confirm button
+                  timerProgressBar: true, // Enable timer progress bar
+                });
+              }
+            
         },
         error: function(jqXHR, textStatus, errorThrown) {
             // Handle error
             console.error('AJAX Error:', textStatus, errorThrown);
+            Swal.fire({
+                position: 'top-end',
+                icon: 'error',
+                title: 'AJAX request failed',
+                text: 'Please try again later.',
+                showConfirmButton: false,
+                timer: 1500
+            });
         }
     });
 
     return false;
 });
-
 });
 $(document).ready(function(){
     $("#header").load("header.html");

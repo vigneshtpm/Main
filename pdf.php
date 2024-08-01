@@ -124,8 +124,7 @@ $pdf->SetFont('Arial', 'B', 10);
 $pdf->SetX(95); // Adjust the X position
 $pdf->MultiCell(80, 5, 'Master of Computer Application - Computer Application', 0, 'L');
 $pdf->SetFont('Arial', '', 10);
-//Applicant Image 
-$pdf->Image("D:\Vicky\Photo\photo.jpg", 173, 60, 27, 30, 'jpg'); 
+
 
 $email = $_SESSION['email'];
 $stmt = $conn->prepare('
@@ -133,7 +132,8 @@ $stmt = $conn->prepare('
     registration.*, 
     personal.*,
     education_school.*, 
-    education_college.*
+    education_college.*,
+    cirtificate.*
    
 FROM 
     registration
@@ -143,6 +143,8 @@ JOIN
     education_college ON registration.id = education_college.id
 JOIN
     personal ON registration.id = personal.id
+JOIN
+    cirtificate ON registration.id = cirtificate.id
 WHERE 
     registration.e_mail = ?; 
 ');
@@ -151,6 +153,10 @@ $stmt->execute();
 $result = $stmt->get_result();
 $row = $result->fetch_assoc();
 $stmt->close();
+
+//Applicant Image 
+$pdf->Image('php/'.$row['photoFile'], 173, 60, 27, 30, 'jpg'); 
+
 
 
 //Applicant Name
@@ -1086,20 +1092,37 @@ $pdf->Cell(38,8,'Percentage of Marks',1,0, 'C');
 $pdf->Cell(30,8,'Class Obtained',1,0, 'C');
 $pdf->Cell(15,8,'CGPA',1,0, 'C');
 $pdf->Cell(27,8,'Overall Grade',1, 1, 'C');
+$stmt = $conn->prepare('
+    SELECT 
+    registration.*, 
+    education_result.*
+   
+FROM 
+    registration
 
-$pdf->Cell(40,8,'',1,0, 'C');
-$pdf->Cell(40,8,'',1,0, 'C');
-$pdf->Cell(38,8,'',1,0, 'C');
-$pdf->Cell(30,8,'',1,0, 'C');
-$pdf->Cell(15,8,'',1,0, 'C');
-$pdf->Cell(27,8,'',1, 1, 'C');
-
+JOIN
+    education_result ON registration.id = education_result.id
+WHERE 
+    registration.e_mail = ?; 
+');
+$stmt->bind_param("s", $email);
+$stmt->execute();
+$result = $stmt->get_result();
+$row = $result->fetch_assoc();
+$stmt->close();
+$pdf->Cell(40,8,$row['max_mark_disp'],1,0, 'C');
+$pdf->Cell(40,8,$row['mark_obt_disp'],1,0, 'C');
+$pdf->Cell(38,8,$row['perc_mark_disp'],1,0, 'C');
+$pdf->Cell(30,8,$row['cls_obt'],1,0, 'C');
+$pdf->Cell(15,8,$row['cgpa'],1,0, 'C');
+$pdf->Cell(27,8,$row['grade'],1, 1, 'C');
+/* 
 $pdf->ln(5);
 $pdf->Cell(5, 8, 'Do you have internet facility at your home?', 0, 0);
 $pdf->Cell(40, 8, "", 0, 0);
 $pdf->Cell(40, 8, ':', 0, 0, 'R');
 $pdf->Cell(75, 8, 'Yes',0,1, 'L');
-
+*/
 $pdf->Cell(30,6,'DECLARATION :',0,0, 'L');
 $pdf->Cell(0,6,'I declare that the information given above are true to the best of my knowledge and that I shall, if ',0,1, 'C');
 $pdf->Cell(0,6,'admitted abide by the rules of the University.',0,1, 'L');
@@ -1114,12 +1137,29 @@ $pdf->ln(3);
 // Save the current position
 $x = $pdf->GetX();
 $y = $pdf->GetY();
+$stmt = $conn->prepare('
+    SELECT 
+    registration.*, 
+    cirtificate.*
+   
+FROM 
+    registration
 
+JOIN
+    cirtificate ON registration.id = cirtificate.id
+WHERE 
+    registration.e_mail = ?; 
+');
+$stmt->bind_param("s", $email);
+$stmt->execute();
+$result = $stmt->get_result();
+$row = $result->fetch_assoc();
+$stmt->close();
 // Display the first image
-$pdf->Image("assets/images/black.jpg", $x + 82, $y, 40, 13, 'jpg');
+$pdf->Image('php/'.$row['parentSignatureFile'], $x + 82, $y, 40, 13, 'jpg');
 
 // Display the second image
-$pdf->Image("assets/images/VICTUS Dark 3.jpg", $x + 148, $y, 40, 13, 'jpg');
+$pdf->Image('php/'.$row['signatureFile'], $x + 148, $y, 40, 13, 'jpg');
 
 // Move down by the height of the image
 $pdf->SetY($y + 15);
@@ -1131,44 +1171,6 @@ $pdf->Cell(70,6,'Signature of the Applicant',0,1, 'R');
  
 
 
-/*
-// Query the database for specific email
-$email = 'mothish2@gmail.com';
-$sql = "SELECT photo, sign FROM upload WHERE email = ?";
-$stmt = $conn->prepare($sql);
-$stmt->bind_param('s', $email);
-$stmt->execute();
-$result = $stmt->get_result();
-
-if ($result->num_rows > 0) {
-    // Fetch the data
-    $row = $result->fetch_assoc();
-
-    // Assign data to specific variables
-    $field1 = $row['photo'];
-    $field2 = $row['sign'];
-    
-    // Output the data to the PDF
-    $pdf->SetFont('Arial', '', 12);
-    $pdf->Ln(20); // Line break
-
-    $pdf->Cell(50, 10, 'Field 1:', 0);
-    $pdf->Cell(130, 10, $field1, 0);
-    $pdf->Ln();
-
-    $pdf->Cell(50, 10, 'Field 2:', 0);
-    $pdf->Cell(130, 10, $field2, 0);
-    $pdf->Ln();
-
-    
-} else {
-    $pdf->SetFont('Arial', 'I', 12);
-    $pdf->Cell(0, 10, 'No data found for the provided email.', 0, 1, 'C');
-}
-
-// Close the database connection
-$conn->close();
-*/
 // Output the PDF to the browser
 $pdf->Output();
 

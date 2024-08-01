@@ -370,16 +370,16 @@
                                             <select class="select2me form-control month" id="month_degree" name="month_degree">
                                                 <option value="January">January</option>
                                                 <option value="February">February</option>
-                                                <option value="3">March</option>
-                                                <option value="4">April</option>
-                                                <option value="5">May</option>
-                                                <option value="6">June</option>
-                                                <option value="7">July</option>
-                                                <option value="8">August</option>
-                                                <option value="9">September</option>
-                                                <option value="10">October</option>
-                                                <option value="11">November</option>
-                                                <option value="12">December</option>
+                                                <option value="March">March</option>
+                                                <option value="April">April</option>
+                                                <option value="May">May</option>
+                                                <option value="June">June</option>
+                                                <option value="July">July</option>
+                                                <option value="August">August</option>
+                                                <option value="September">September</option>
+                                                <option value="October">October</option>
+                                                <option value="November">November</option>
+                                                <option value="December">December</option>
                                             </select>     
                                             <select class="select2me form-control year" id="year_degree" name="year_degree"></select>   
                                         </div>
@@ -428,7 +428,7 @@
                                     </div>
                                 </div>
 
-                            <!--<div class="form-group">
+                            <div class="form-group">
                             <div class="col-md-10" style="margin-block-start:1%">
                                 <div>
                                     Are you awaiting for Final Semester Marksheet? 
@@ -436,7 +436,7 @@
                                     <input type="radio" id="awaiting_for_marksheet" name="awaiting_for_marksheet" value="no" style="margin-left: 20px;"> No
                                 </div>
                             </div>
-                        </div>-->
+                        </div>
                         <h3 class="mt-3">Select Program</h3>
                         <div class="row mt-4">
                             <div class="col-sm-12 col-lg-6 col-md-12 mb-3">
@@ -532,6 +532,7 @@
     <div class="col-md-11">
     <input id="dec_agree" name="dec_agree" type="checkbox" value="agree"><span id="agree_alert">I agree to the declaration</span></input></div>
     </div>
+    <span id="error_message" style="color:red; display:none;">You must agree to the declaration before continuing.</span>
      
     </div>
     <input type="submit" class="btn mb-5 btn-primary float-end" value="Save & Continue">

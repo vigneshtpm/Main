@@ -1,5 +1,4 @@
 <?php
-
 session_start();
 include 'connection.php';
 
@@ -14,20 +13,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         mkdir($uploadDir, 0777, true);
     }
     $email = $_SESSION['email'];
+  
     $fields = [
-        'photoFile' => ['prefix' => 'photo', 'maxSize' => 30720, 'minSize' => 1, 'dbField' => 'photo'], // 30KB max, > 0 min
-        'signatureFile' => ['prefix' => 'signature', 'maxSize' => 30720, 'minSize' => 1, 'dbField' => 'sign'], // 30KB max, > 0 min
-        'parentSignatureFile' => ['prefix' => 'parent_signature', 'maxSize' => 30720, 'minSize' => 1, 'dbField' => 'parentsign'], // 400KB max, > 0 min
-        'communityCertificateFile' => ['prefix' => 'community_certificate', 'maxSize' => 409600, 'minSize' => 1, 'dbField' => 'community'], // 400KB max, > 0 min
-        'incomeCertificateFile' => ['prefix' => 'income_certificate', 'maxSize' => 409600, 'minSize' => 1, 'dbField' => 'income'], // 400KB max, > 0 min
-        'aadhaarCardFile' => ['prefix' => 'aadhaar_card', 'maxSize' => 409600, 'minSize' => 1, 'dbField' => 'aadhaar'], // 400KB max, > 0 min
-        '10marksheetFile' => ['prefix' => '10mark', 'maxSize' => 409600, 'minSize' => 1, 'dbField' => '10mark'], // 400KB max, > 0 min
-        '12marksheetFile' => ['prefix' => '12mark', 'maxSize' => 409600, 'minSize' => 1, 'dbField' => '12mark'], // 400KB max, > 0 min
-        'ugmarksheetFile' => ['prefix' => 'ugmark', 'maxSize' => 1048576, 'minSize' => 1, 'dbField' => 'ugmark'], // 400KB max, > 0 min
-        'exServicemenFile' => ['prefix' => 'ex_servicemen', 'maxSize' => 409600, 'minSize' => 1, 'dbField' => 'exservice'], // 400KB max, > 0 min
-        'differentlyAbledFile' => ['prefix' => 'differently_abled', 'maxSize' => 409600, 'minSize' => 1, 'dbField' => 'differently'], // 400KB max, > 0 min
-        'sportsQuotaFile' => ['prefix' => 'sports_quota', 'maxSize' => 409600, 'minSize' => 1, 'dbField' => 'sports'], // 400KB max, > 0 min
-        'othersFile' => ['prefix' => 'others', 'maxSize' => 409600, 'minSize' => 1, 'dbField' => 'others'], // 400KB max, > 0 min
+        'photoFile' => ['prefix' => 'photoFile', 'maxSize' => 30720, 'minSize' => 1, 'dbField' => 'photoFile'], // 30KB max, > 0 min
+        'signatureFile' => ['prefix' => 'signatureFile', 'maxSize' => 30720, 'minSize' => 1, 'dbField' => 'signatureFile'], // 30KB max, > 0 min
+        'parentSignatureFile' => ['prefix' => 'parentSignatureFile', 'maxSize' => 30720, 'minSize' => 1, 'dbField' => 'parentSignatureFile'], // 400KB max, > 0 min
+        'communityCertificateFile' => ['prefix' => 'communityCertificateFile', 'maxSize' => 409600, 'minSize' => 1, 'dbField' => 'communityCertificateFile'], // 400KB max, > 0 min
+        'incomeCertificateFile' => ['prefix' => 'incomeCertificateFile', 'maxSize' => 409600, 'minSize' => 1, 'dbField' => 'incomeCertificateFile'], // 400KB max, > 0 min
+        'aadhaarCardFile' => ['prefix' => 'aadhaarCardFile', 'maxSize' => 409600, 'minSize' => 1, 'dbField' => 'aadhaarCardFile'], // 400KB max, > 0 min
+        '10marksheetFile' => ['prefix' => '10marksheetFile', 'maxSize' => 409600, 'minSize' => 1, 'dbField' => '10marksheetFile'], // 400KB max, > 0 min
+        '12marksheetFile' => ['prefix' => '12marksheetFile', 'maxSize' => 409600, 'minSize' => 1, 'dbField' => '12marksheetFile'], // 400KB max, > 0 min
+        'ugmarksheetFile' => ['prefix' => 'ugmarksheetFile', 'maxSize' => 1048576, 'minSize' => 1, 'dbField' => 'ugmarksheetFile'], // 400KB max, > 0 min
+        'exServicemenFile' => ['prefix' => 'exServicemenFile', 'maxSize' => 409600, 'minSize' => 1, 'dbField' => 'exServicemenFile'], // 400KB max, > 0 min
+        'differentlyAbledFile' => ['prefix' => 'differentlyAbledFile', 'maxSize' => 409600, 'minSize' => 1, 'dbField' => 'differentlyAbledFile'], // 400KB max, > 0 min
+        'sportsQuotaFile' => ['prefix' => 'sportsQuotaFile', 'maxSize' => 409600, 'minSize' => 1, 'dbField' => 'sportsQuotaFile'], // 400KB max, > 0 min
+        'othersFile' => ['prefix' => 'othersFile', 'maxSize' => 409600, 'minSize' => 1, 'dbField' => 'othersFile'], // 400KB max, > 0 min
     ];
 
     foreach ($fields as $fieldName => $fileInfo) {
@@ -46,8 +46,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             } elseif ($fileSize < $fileInfo['minSize']) {
                 $response[$fieldName] = 'is too small. Min file size should be greater than 0 KB.';
             } else {
+               
                 // Check if the file already exists in the database
                 $dbField = $fileInfo['dbField'];
+                
                 $sql = "SELECT $dbField FROM cirtificate WHERE id = (SELECT id FROM registration WHERE e_mail = ?)";
                 $stmt = $conn->prepare($sql);
                 $stmt->bind_param('s', $email);
