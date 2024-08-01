@@ -177,32 +177,40 @@ $(document).ready(function() {
 
 
     // Form submission
-    $('#uploadForm').submit(function(event) {
-        event.preventDefault();
-       
-        $.ajax({
-            url: 'php/cirtificate_upload.php', 
-            type: 'POST',
-            data: $(this).serialize(),
-            dataType: 'json',
-            success: function(response) {
-                    var jsonResponse = JSON.parse(response);
-                    $('.error-message').text(''); // Clear all previous error messages
+   // Form submission
+// Form submission
+// Form submission
+$('#uploadForm').submit(function(event) {
+    event.preventDefault();
 
-                    $.each(jsonResponse, function(key, value) {
-                        if (value !== 'uploaded successfully') {
-                            $('#' + key + 'Error').text(value);
-                        }
-                    });
-                },
+    $.ajax({
+        url: 'php/cirtificate_upload.php',
+        type: 'POST',
+        data: new FormData(this),
+        processData: false,
+        contentType: false,
+        dataType: 'json',
+        success: function(response) {
+            console.log('Server Response:', response); // Log the response
+            $('.error-message').text(''); // Clear all previous error messages
+
+            $.each(response, function(key, value) {
+                if (value !== 'uploaded successfully and database updated') {
+                    $('#' + key + 'Error').text(value);
+                } else {
+                    $('#' + key + 'Error').text(''); // Clear specific error message if uploaded successfully
+                }
+            });
+        },
         error: function(jqXHR, textStatus, errorThrown) {
             // Handle error
-            console.error('AJAX Error: ' + textStatus + ': ' + errorThrown);
-        },
-
+            console.error('AJAX Error:', textStatus, errorThrown);
+        }
     });
+
     return false;
 });
+
 });
 $(document).ready(function(){
     $("#header").load("header.html");

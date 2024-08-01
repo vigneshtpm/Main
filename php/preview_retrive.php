@@ -20,7 +20,8 @@ if (isset($_SESSION['email'])) {
     college_sem_5.*,
     college_sem_6.*,
     college_sem_7.*,
-    college_sem_8.*
+    college_sem_8.*,
+    education_result.* 
    
 FROM 
     registration
@@ -46,7 +47,8 @@ JOIN
     college_sem_7 ON registration.id = college_sem_7.id
 JOIN
     college_sem_8 ON registration.id = college_sem_8.id
-
+JOIN
+    education_result ON registration.id =  education_result.id
 
 WHERE 
     registration.e_mail = ?; 

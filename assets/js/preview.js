@@ -228,10 +228,16 @@ function storeTableData() {
 
                     // Set the concatenated value to the input field
                     $('#Mon_'+j+'_' + i).val(value);
-
+                 
                 
                   
                 }
+                $('#max_mark_disp').val(response.data.max_mark_disp);  
+                $('#mark_obt_disp').val(response.data.mark_obt_disp);  
+                $('#perc_mark_disp').val(response.data.perc_mark_disp);
+                $('#cls_obt').val(response.data.cls_obt);
+                $('#cgpa').val(response.data.cgpa);
+                $('#grade').val(response.data.grade);   
             }
             } else {
                 alert(response.message);

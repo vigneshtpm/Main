@@ -123,7 +123,9 @@ $(document).ready(function() {
             $.ajax({
                 type: 'POST',
                 url: 'php/personal_update.php',
-                data: $(this).serialize(), // Serialize the form data
+                data: $(this).serialize()+'&permanent-address-1=' + encodeURIComponent($('#permanent-address-1').val()) + 
+          '&permanent-address-2=' + encodeURIComponent($('#permanent-address-2').val()) + 
+          '&permanent-address-3=' + encodeURIComponent($('#permanent-address-3').val()), // Serialize the form data
                 dataType: 'json', // Expect a JSON response from the server
                 success: function(response) {
                     if (response.success) {

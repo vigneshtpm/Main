@@ -42,7 +42,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmt->execute();
 
         
-
         $collegeName=$_POST["collegeName"];
         $universityName=$_POST["universityName"];
         $qualification_type=$_POST["qualification_type"];
@@ -71,7 +70,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
        
         $email);
         $stmt1->execute();
- 
         
         $sub_1_1=$_POST["Sub_1_1"];
         $cat_1_1=$_POST["Cat_1_1"];
@@ -162,6 +160,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $sub_1_9,$cat_1_9,$maxi_1_9,$obt_1_9,$mon_1_9,$year_1_9,
         $sub_1_10,$cat_1_10,$maxi_1_10,$obt_1_10,$mon_1_10,$year_1_10,
         $email);
+
         $stmt2->execute();
 
         $sub_2_1=$_POST["Sub_2_1"];
@@ -365,7 +364,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         $stmt4->execute();
 
-        // Semester 4
         $sub_4_1 = $_POST["Sub_4_1"];
         $cat_4_1 = $_POST["Cat_4_1"];
         $maxi_4_1 = $_POST["Maxi_4_1"];
@@ -564,7 +562,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $email);
         $stmt6->execute();
 
-        // Semester 6
         $sub_6_1 = $_POST["Sub_6_1"];
         $cat_6_1 = $_POST["Cat_6_1"];
         $maxi_6_1 = $_POST["Maxi_6_1"];
@@ -763,7 +760,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $email);
         $stmt8->execute();
 
-        // Semester 8
         $sub_8_1 = $_POST["Sub_8_1"];
         $cat_8_1 = $_POST["Cat_8_1"];
         $maxi_8_1 = $_POST["Maxi_8_1"];
@@ -863,7 +859,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $email);
         $stmt9->execute();
 
-        
         $max_mark_disp = $_POST["max_mark_disp"];
         $mark_obt_disp = $_POST["mark_obt_disp"];
         $perc_mark_disp = $_POST["perc_mark_disp"];
@@ -885,18 +880,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo json_encode(['success' => true,'message' => 'Profile updated successfully ']);
     
         $stmt->close();  
-        $stmt1->close();  
-        $stmt2->close();  
-        $stmt3->close();  
-        $stmt4->close();  
-        $stmt5->close();  
+        $stmt1->close(); 
+        $stmt2->close(); 
+        $stmt3->close(); 
+        $stmt4->close(); 
+        $stmt5->close(); 
         $stmt6->close(); 
-        $stmt7->close();  
+        $stmt7->close(); 
         $stmt8->close(); 
-        $stmt9->close();  
+        $stmt9->close(); 
         $stmt10->close(); 
-        $conn->close();
-        
+
     } else {
         echo json_encode(['success' => false, 'message' => 'All fields are required']);
     }

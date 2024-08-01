@@ -298,11 +298,12 @@ $(document).ready(function() {
                 Swal.showLoading();
             }
         });
-     
+       
         $.ajax({
             type: 'POST',
             url: 'php/education_update.php',
-            data: $(this).serialize(),
+            data: $(this).serialize()+ '&max_mark_disp=' + $('#max_mark_disp').val() + '&mark_obt_disp=' + $('#mark_obt_disp').val() + 
+          '&perc_mark_disp=' + $('#perc_mark_disp').val(),
             dataType: 'json', // Expect a JSON response from the server
             success: function(response) {
                 loadingIndicator.close();
@@ -393,7 +394,13 @@ $(document).ready(function() {
                     $('#Year_'+j+'_' + i).val(response.data['year_'+j+'_' + i]);
                 }
             }
-                
+            $('#max_mark_disp').val(response.data.max_mark_disp);  
+            $('#mark_obt_disp').val(response.data.mark_obt_disp);  
+            $('#perc_mark_disp').val(response.data.perc_mark_disp);
+            $('#cls_obt').val(response.data.cls_obt);
+            $('#cgpa').val(response.data.cgpa);
+            $('#grade').val(response.data.grade);   
+              
             } else {
                 alert(response.message);
             }
