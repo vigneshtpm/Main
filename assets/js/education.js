@@ -384,8 +384,6 @@ $(document).ready(function() {
                 $('#no-of-sem').val(numSemesters);
                 generateSemesterTables(numSemesters);
                 $('#awaiting_for_marksheet').val(response.data.awaiting_for_marksheet);
-                var value = response.data.awaiting_for_marksheet;
-                $('input[name=awaiting_for_marksheet][value=' + value + ']').prop('checked', true);
                 $('#programme-applied').val(response.data.programme_applied);
                 $('#select-programme').val(response.data.selected_programme);
                 var value_1=parseInt(response.data.no_of_subjects_sem1);

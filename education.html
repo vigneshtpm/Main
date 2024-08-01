@@ -430,11 +430,19 @@
 
                             <div class="form-group">
                             <div class="col-md-10" style="margin-block-start:1%">
-                                <div>
-                                    Are you awaiting for Final Semester Marksheet? 
-                                    <input type="radio" id="awaiting_for_marksheet" name="awaiting_for_marksheet" value="yes" style="margin-left: 20px;"> Yes
-                                    <input type="radio" id="awaiting_for_marksheet" name="awaiting_for_marksheet" value="no" style="margin-left: 20px;"> No
-                                </div>
+                                <div class="row">
+                                    <div class="col-sm-4 col-md-6 col-xs-4">
+                                        <label class="control-label" for="no-of-sem"> Are you awaiting for Final Semester Marksheet? <span style="color: red;">*</span></label>
+                                    </div>
+                                    <div class="col-sm-8 col-md-3 col-xs-8">    
+                                        <select class="select2me form-control" id="awaiting_for_marksheet" name="awaiting_for_marksheet" tabindex="1">
+                                            <option value="" >Select Option</option> 
+                                            <option value="Yes">Yes</option>
+                                            <option value="No">No</option>
+                                        </select>
+                                    </div>
+                            </div>
+                                
                             </div>
                         </div>
                         <h3 class="mt-3">Select Program</h3>
