@@ -305,19 +305,21 @@ $(document).ready(function() {
             }
         });
        
+       
         $.ajax({
             type: 'POST',
             url: 'php/education_update.php',
             data: $(this).serialize()+ '&max_mark_disp=' + $('#max_mark_disp').val() + '&mark_obt_disp=' + $('#mark_obt_disp').val() + 
           '&perc_mark_disp=' + $('#perc_mark_disp').val(),
             dataType: 'json', // Expect a JSON response from the server
+           
             success: function(response) {
                 loadingIndicator.close();
                 if (response.success) {
                     Swal.fire({
                       toast: true,
                       position: 'top-end',
-                      title: 'Personal Information',
+                      title: 'Educational Information',
                       text: 'You have been successfully submitted.',
                       icon: 'success',
                       timer: 2000, // Automatically close after 3 seconds

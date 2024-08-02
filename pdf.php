@@ -226,26 +226,6 @@ $pdf->Cell(40, 8, " Communication  Address  ", 0, 1);
 $pdf->SetX(95);
 $pdf->MultiCell(80, 5, $row['communication_address_1'].', '.$row['communication_address_2'].', '.$row['communication_address_3'], 0, 'L'); 
 
-/* 
-//Address Com Line 1
-$pdf->Cell(5, 8, '', 0, 0);
-$pdf->Cell(40, 8, "Line 1", 0, 0);
-$pdf->Cell(40, 8, ':', 0, 0, 'R');
-$pdf->Cell(75, 8, 'S/O: KRISHNAMOORHTY, 219/1',0,1, 'L');
-
-//Address Com Line 2
-$pdf->Cell(5, 8, '', 0, 0);
-$pdf->Cell(40, 8, "Line 2 ", 0, 0);
-$pdf->Cell(40, 8, ':', 0, 0, 'R');
-$pdf->Cell(75, 8, 'INDIRA NAGAR, THIMMAPURAM, PANDIYANKUPPAM POST',0,1, 'L');
-
-//Address Com Line 3
-$pdf->Cell(5, 8, '', 0, 0);
-$pdf->Cell(40, 8, "Line 3 ", 0, 0);
-$pdf->Cell(40, 8, ':', 0, 0, 'R');
-$pdf->Cell(75, 8, 'CHINNASELAM TALUK',0,1, 'L');
-*/
-
 //Address Com District
 $pdf->Cell(5, 8, '', 0, 0);
 $pdf->Cell(40, 8, "District", 0, 0);
@@ -929,7 +909,7 @@ if ($row) {
         }
     } else {
         // If all fields are empty, handle appropriately
-        $pdf->Cell(0, 10, 'No data available for Semester 6', 1, 1, 'C');
+       
     }
 } else {
     $pdf->Cell(0, 10, 'No data available for Semester 6', 1, 1, 'C');

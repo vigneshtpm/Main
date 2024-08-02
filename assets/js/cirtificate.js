@@ -208,8 +208,8 @@ $('#uploadForm').submit(function(event) {
                 Swal.fire({
                   toast: true,
                   position: 'top-end',
-                  title: 'Personal Information',
-                  text: 'You have been successfully submitted.',
+                  title: 'Cirtificate Uploaded',
+                  text: 'You have been successfully Uploaded.',
                   icon: 'success',
                   timer: 2000, // Automatically close after 3 seconds
                   showConfirmButton: false, // Remove the confirm button
